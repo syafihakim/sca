@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pilih Langkah Anda</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="app.js"></script>
+  <style>
+  .gradient-text {
+    background: linear-gradient(270deg, #ef4444, #f97316, #ef4444);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: moveGradient 1s ease infinite;
+  }
+
+  @keyframes moveGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .fire-icon {
+    width: 16px;
+    height: auto;
+  }
+
+  </style>
+
+</head>
+<body class="min-h-screen">
+
+  <!-- Section: Options -->
+    <section id="main-section" class="bg-gradient-to-br from-indigo-600 to-purple-700 min-h-screen flex items-center justify-center px-6 py-12">
+    <div class="max-w-5xl w-full text-center">
+
+      <!-- Title -->
+      <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-2">
+        Jom Mula Belajar C++ 
+      </h1>
+      <p class="text-indigo-100 mb-12">
+        Pilih perjalanan anda 🎉
+      </p>
+
+      <!-- Cards Grid -->
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- Card 1: Join Level 1 Class -->
+        <div id="class-card"
+             class="cursor-pointer bg-white border-4 border-yellow-400 rounded-2xl shadow-lg p-8 hover:shadow-2xl hover:-translate-y-1 transition transform relative">
+          <span class="absolute -top-4 right-4 bg-yellow-400 text-gray-900 text-xs font-bold uppercase px-3 py-1 rounded-full shadow">
+            Limited Offer
+          </span>
+          <!-- Thumbnail Image -->
+          <div class="mb-4">
+            <img src="Kamus_Mock.png" alt="Thumbnail" 
+                 class="w-48 h-48 mx-auto object-contain rounded-xl shadow-md" />
+          </div>
+
+          <h2 class="text-xl font-bold mb-4 text-gray-800">C++ Level 1 :<br>Panduan Dari Zero</h2>
+
+          <ul class="text-gray-600 space-y-2 text-sm md:text-base text-left">
+            <li class="feature">5 Kamus Coding Lengkap</li>
+            <li class="feature">25+ Video Panduan</li>
+            <li class="feature">10 Latihan + 10 Video Jawapan</li>
+            <li class="feature">Sesuai untuk beginner</li>
+          </ul>
+
+          <!-- Price Section -->
+          <div class="text-center font-bold mt-6 mb-2">
+            <span id="aa" class="original-price text-red-600 font-extrabold text-5xl ml-2">RM40</span>
+            <span id="bb" class="promo-price hidden text-red-600 font-extrabold text-5xl ml-2">RM --</span>
+          </div>
+
+          <!-- For Level 1 Card -->
+          <div class="mt-6 text-center">
+            <button 
+              onclick="showOTO()" 
+              class="bg-gradient-to-r from-green-500 to-green-700 text-white px-6 py-3 rounded-xl font-semibold transition transform hover:scale-105 shadow-md">
+              Join Level 1 →
+            </button>
+            <p class="mt-2 text-xs text-gray-600">
+              300+ pelajar dah join
+            </p>
+
+          </div>
+        </div>
+
+        <!-- Card 2: Free Lead Magnet -->
+        <div id="download-card"
+             class="cursor-pointer bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl hover:-translate-y-1 transition transform relative">
+          <!-- Thumbnail Image -->
+          <div class="mb-4">
+            <img src="Kamus_Mock.png" alt="Thumbnail" 
+                 class="w-48 h-48 mx-auto object-contain rounded-xl shadow-md" />
+          </div>
+
+          <h2 class="text-xl font-bold mb-4 text-gray-800">Kamus Coding C++ sahaja</h2>
+
+          <ul class="text-gray-600 space-y-2 text-sm md:text-base text-left">
+            <li class="feature">Panduan ringkas sahaja</li>
+            <li class="feature">1 Kamus Coding sahaja</li>
+            <li class="feature">Sesuai untuk yang ingin mencuba</li>
+          </ul>
+
+          <!-- Free Price -->
+          <div class="text-center font-bold mt-6 mb-2">
+            <span class="text-green-600 text-4xl">FREE</span>
+          </div>
+
+          <!-- For Free Lead Magnet Card -->
+          <div class="mt-6 text-center">
+            <button 
+              onclick="downloadLeadMagnet()" 
+              class="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-6 py-3 rounded-xl font-semibold transition transform hover:scale-105 shadow-md">
+              Download Now 📥
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= OTO Section (Full Page Style) ======= -->
+  <section id="oto" class="hidden">
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-blue-600 to-indigo-700 text-white">
+      <div class="max-w-7xl mx-auto px-6 py-24 text-center">
+
+        <!-- Flash Sale (show only if promo is active) -->
+        <div id="flash-sale" class="mb-10 hidden">
+          <span class="text-yellow-300 font-bold text-2xl md:text-3xl block mb-4">
+            ⚡ Flash Sale: Sewaktu Live Sahaja!
+          </span>
+          <div id="countdown" class="text-4xl font-extrabold text-red-200">--</div>
+
+          <!-- Countdown Bar -->
+          <div class="w-full h-3 bg-red-200 rounded-full mt-4 overflow-hidden max-w-xl mx-auto">
+            <div id="countdown-bar" class="h-full bg-red-600 transition-all duration-1000"></div>
+          </div>
+        </div>
+
+        <!-- Heading -->
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+          Belajar teknik asas untuk <span class="text-yellow-300">bina apa-apa program dalam dunia! </span>
+        </h1>
+
+        <!-- CTA -->
+        <div class="mt-16">
+          <a href="#pay" 
+            class="px-8 py-4 bg-yellow-400 text-gray-900 font-semibold rounded-2xl shadow-lg hover:bg-yellow-300 transition">
+            Daftar Sekarang →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="bg-gray-50 py-20 relative">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-8">
+          Apa yang anda akan dapat dalam <span class="text-indigo-600">Level 1</span>
+        </h2>
+
+        <ul class="space-y-4 text-sm text-gray-700 text-left max-w-xl mx-auto py-4 px-6">
+          <li class="feature flex items-center gap-3">Access 25+ Video Tutorial!</li>
+          <li class="feature flex items-center gap-3">10 Latihan untuk buktikan pemahaman anda</li>
+          <li class="feature flex items-center gap-3">Lengkap dengan Nota dan Skema Jawapan</li>
+          <li class="feature flex items-center gap-3">... dengan WhatsApp support dan banyak lagi!</li>
+          <li class="feature-plus gradient-text flex items-center gap-3 font-bold">Bonus Percuma Kamus Python + Java</li>
+          <li class="feature-plus gradient-text flex items-center gap-3 font-bold">Access Seumur Hidup</li>
+        </ul>
+      </div>
+
+      <!-- Pricing + Join Button -->
+      <div class="mt-6 mb-12 text-center">
+        <!-- Price Block -->
+        <div class="mb-8">
+          <span id="xx" class="original-price text-red-600 text-6xl font-extrabold drop-shadow-sm">RM40</span>
+          <span id="yy" class="promo-price hidden text-red-600 text-6xl font-extrabold drop-shadow-sm">RM -- </span>
+        </div>
+
+        <!-- Join Button -->
+        <div class="text-center">
+          <a href="#pay"
+             class="bg-gradient-to-r from-green-500 to-green-700 text-white px-10 py-5 rounded-2xl font-extrabold text-lg transition transform hover:scale-105 shadow-xl inline-block">
+            Daftar Sekarang →
+          </a>
+        </div>
+ 
+
+        <!-- Guarantee -->
+        <p class="mt-6 text-xs text-gray-500">
+          💰 Dijamin Puas Hati (atau refund penuh tanpa soal!)
+        </p> 
+      </div>      
+    </section>
+
+    <section class="bg-gradient-to-r from-orange-400 to-pink-500 text-white py-16 px-6">
+        <div class="max-w-3xl mx-auto text-center">
+          <!-- Big Number -->
+          <h2 class="text-4xl md:text-5xl font-extrabold">
+            🎉 300+ pelajar dah join dalam August 2025!
+          </h2>
+        </div>
+      </section>
+
+    <section id="pay" class="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl p-6 border border-gray-100 mb-20">
+      <h2 class="text-2xl font-bold mb-4 text-gray-800">Cara pembayaran</h2>
+
+      <!-- Total badge -->
+      <div class="inline-block bg-yellow-600 text-white font-semibold px-4 py-2 rounded-full mb-6">
+        Total anda : <span class="final-total-price-text">RM 40</span>
+      </div>
+
+
+      <!-- Payment mode tabs -->
+      <div id="paymentModes" class="mb-6">
+        <nav class="flex space-x-4 border-b border-gray-300 mb-4">
+          <button class="payment-tab border-b-4 border-orange-500 text-orange-600 py-2 px-4 font-semibold" data-mode="qr">
+            QR Code
+          </button>
+          <button class="payment-tab text-gray-600 py-2 px-4 hover:text-orange-600" data-mode="bank">
+            Bank Transfer
+          </button>
+          <button class="payment-tab text-gray-600 py-2 px-4 hover:text-orange-600" data-mode="tng">
+            TnG QR Code
+          </button>
+        </nav>
+
+        <!-- Payment details -->
+        <div id="qr" class="payment-content">
+          <img src="maybank_qr.jpg" alt="QR Code" 
+               class="mx-auto max-w-full rounded-lg shadow-md object-contain" />
+          <div class="text-center mt-2">
+            <div class="mt-2 flex items-center justify-center space-x-2 text-sm text-gray-700 cursor-pointer hover:text-gray-900">
+              <span>Ambil screenshot atau <a href="maybank_qr.jpg" download class = "text-blue-700 underline">download QR</a></span>
+            </div>
+          </div>
+        </div>
+
+        <div id="bank" class="payment-content hidden text-gray-700 space-y-2">
+          <p><span class="font-semibold">Bank:</span> Maybank</p>
+          <p><span class="font-semibold">Nama Pemegang Akaun:</span> Syafi Hakim</p>
+          <p class="flex items-center space-x-2">
+            <span><span class="font-semibold">No Akaun:</span> 1062 0305 8090</span>
+            <button id="copyAccBtn" 
+                    class="bg-gray-200 hover:bg-gray-300 text-gray-700 px-2 py-1 rounded text-xs shadow-sm"
+                    title="Copy account number">
+              Copy
+            </button>
+          </p>
+        </div>
+
+        <div id="tng" class="payment-content hidden">
+          <img src="tng.jpg" alt="Touch 'n Go QR Code" 
+               class="mx-auto max-w-full rounded-lg shadow-md object-contain" />
+          <div class="text-center mt-2">
+            <div class="mt-2 flex items-center justify-center space-x-2 text-sm text-gray-700 cursor-pointer hover:text-gray-900">
+              <span>Ambil screenshot atau <a href="tng.jpg" download class = "text-blue-700 underline">download QR</a></span>
+            </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-sm text-gray-600">
+        Whatsapp resit pembayaran ke <span class="font-semibold">010-5820083</span>. Saya akan reply secepat mungkin.
+      </p>
+    </section>
+
+  </section>
+
+
+
+
+</body>
+</html>
