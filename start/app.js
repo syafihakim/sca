@@ -50,15 +50,44 @@ function handleFinalTotalPriceText(price) {
 
 }
 
-// ==================== PROMO LOGIC ==================== //
-function getPromoDetails() {
-  // Replace with DB/API/condition checks later
-  const hasPromo = true;      // toggle promo
-  const promoPrice = 15;      // promo price
-  const promoDuration = 300;  // duration in seconds
+// ===== Promo Logic Scaffold =====
+async function fetchPromoFromSheet() {
+  const sheetId = "1o_PVByfyy3NNcHfUMK2obi1jquivOHr6PZjvouksqRk";
+  const apiKey = "AIzaSyBU8TMPP0ZUxS_979y6cYdNOU6SfdfBXYc";
+  const range = "Promos!A2:C20"; // Adjust columns: A=code, B=validUntil, C=price
+  const promoCode = new URLSearchParams(window.location.search).get("promo");
 
-  return hasPromo ? { promoPrice, promoDuration } : null;
+  if (!promoCode) return null;
+
+  const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`;
+
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error("Failed to fetch sheet data");
+
+    const data = await res.json();
+    console.log(data);
+
+    if (!data.values) return null;
+
+    // data.values is an array of rows, each row is an array of cells
+    for (let row of data.values) {
+      const [code, validUntil, price] = row;
+      if (code.trim() === promoCode) {
+        return {
+          price: Number(price),
+          validUntil: new Date(validUntil)
+        };
+      }
+    }
+
+    return null; // promo code not found
+  } catch (err) {
+    console.error("Error fetching promo:", err);
+    return null;
+  }
 }
+
 
 function applyPromo(originalPricesEl, promoPricesEl, price) {
     originalPricesEl.forEach(el => {
@@ -83,33 +112,39 @@ function startFlashSale(promo) {
   const promoPricesEl = document.querySelectorAll(".promo-price");
 
   flashSaleEl.classList.remove("hidden");
-  applyPromo(originalPricesEl, promoPricesEl, promo.promoPrice);
+  applyPromo(originalPricesEl, promoPricesEl, promo.price);
 
-  let timeLeft = promo.promoDuration;
+  // Absolute end time
+  const endTime = new Date(promo.validUntil).getTime();
+  const startTime = Date.now(); // assuming promo starts now
+  const totalDuration = Math.floor((endTime - startTime) / 1000); // in seconds
 
   function updateCountdown() {
-    if (timeLeft <= 0) {
+    const now = Date.now();
+    let diff = Math.floor((endTime - now) / 1000); // remaining seconds
+
+    if (diff <= 0) {
       countdownEl.textContent = "Promo Tamat!";
       countdownBarEl.style.width = "0%";
       return;
     }
 
-    const minutes = Math.floor(timeLeft / 60);
-    const seconds = timeLeft % 60;
+    const minutes = Math.floor(diff / 60);
+    const seconds = diff % 60;
 
     // Format as MM:SS
-    const formatted = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
-    countdownEl.textContent = formatted;
+    countdownEl.textContent = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
 
-    countdownBarEl.style.width = `${(timeLeft / promo.promoDuration) * 100}%`;
-    timeLeft--;
+    // Update countdown bar
+    countdownBarEl.style.width = `${(diff / totalDuration) * 100}%`;
 
     setTimeout(updateCountdown, 1000);
   }
 
-
   updateCountdown();
 }
+
+
 
 // ==================== NAVIGATION ==================== //
 function showOTO() {
@@ -193,10 +228,14 @@ document.addEventListener("DOMContentLoaded", () => {
   paymentTabsHandler();
 
   // Apply promo logic for OTO section
-  const promo = getPromoDetails();
-  if (promo) {
-    startFlashSale(promo);
-  }
+  fetchPromoFromSheet().then(promo => {
+    if (promo) {
+      console.log("Promo found:", promo);
+      startFlashSale(promo)
+    } else {
+      console.log("Promo code invalid or expired");
+    }
+  });
 
   // Add ticks to feature lists
   addSVGs();
