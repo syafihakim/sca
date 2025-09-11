@@ -171,8 +171,7 @@ function takeOffer() {
 }
 
 function downloadLeadMagnet() {
-  alert("📥 Downloading your Free Lead Magnet...");
-  // window.location.href = "/path-to-lead-magnet.pdf";
+  window.open("Kamus_Coding_Free.pdf", "_blank");
 }
 
 function goToPayment() {
@@ -229,7 +228,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Apply promo logic for OTO section
   fetchPromoFromSheet().then(promo => {
-    if (promo) {
+    if (promo && Date.now() < new Date(promo.validUntil).getTime()) {
       console.log("Promo found:", promo);
       startFlashSale(promo)
     } else {
