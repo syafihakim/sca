@@ -54,7 +54,7 @@ function handleFinalTotalPriceText(price) {
 async function fetchPromoFromSheet() {
   const sheetId = "1o_PVByfyy3NNcHfUMK2obi1jquivOHr6PZjvouksqRk";
   const apiKey = "AIzaSyBU8TMPP0ZUxS_979y6cYdNOU6SfdfBXYc";
-  const range = "Promos!A2:C20"; // Adjust columns: A=code, B=validUntil, C=price
+  const range = "Promos!A2:D20"; // Adjust columns: A=code, B=validUntil, C=price
   const promoCode = new URLSearchParams(window.location.search).get("promo");
 
   if (!promoCode) return null;
@@ -72,11 +72,12 @@ async function fetchPromoFromSheet() {
 
     // data.values is an array of rows, each row is an array of cells
     for (let row of data.values) {
-      const [code, validUntil, price] = row;
+      const [code, validUntil, price, promoName] = row;
       if (code.trim() === promoCode) {
         return {
           price: Number(price),
-          validUntil: new Date(validUntil)
+          validUntil: new Date(validUntil),
+          promoName : String(promoName)
         };
       }
     }
@@ -105,6 +106,7 @@ function applyPromo(originalPricesEl, promoPricesEl, price) {
 
 // ==================== FLASH SALE ==================== //
 function startFlashSale(promo) {
+  const flashSaleTitleEl = document.getElementById("flash-sale-title");
   const flashSaleEl = document.getElementById("flash-sale");
   const countdownEl = document.getElementById("countdown");
   const countdownBarEl = document.getElementById("countdown-bar");
@@ -112,6 +114,7 @@ function startFlashSale(promo) {
   const promoPricesEl = document.querySelectorAll(".promo-price");
 
   flashSaleEl.classList.remove("hidden");
+  flashSaleTitleEl.textContent = promo.promoName;
   applyPromo(originalPricesEl, promoPricesEl, promo.price);
 
   // Absolute end time
@@ -129,17 +132,19 @@ function startFlashSale(promo) {
       return;
     }
 
-    const minutes = Math.floor(diff / 60);
+    const hours = Math.floor(diff / 3600);
+    const minutes = Math.floor((diff % 3600) / 60);
     const seconds = diff % 60;
 
-    // Format as MM:SS
-    countdownEl.textContent = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+    // Format as HH:MM:SS
+    countdownEl.textContent = `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
 
     // Update countdown bar
     countdownBarEl.style.width = `${(diff / totalDuration) * 100}%`;
 
     setTimeout(updateCountdown, 1000);
   }
+
 
   updateCountdown();
 }
