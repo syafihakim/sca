@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Intro Level 2",
+    "actual_price": 40,
+    "price": 15
+  },
+  {
+    "title": "If Statements Basic and Advanced",
+    "actual_price": 180,
+    "price": 50
+  },
+  {
+    "title": "While Loop Basic and Advanced",
+    "actual_price": 150,
+    "price": 40
+  },
+  {
+    "title": "Algorithms Basic",
+    "actual_price": 40,
+    "price": 15
+  },
+  {
+    "title": "Mini Projects",
+    "actual_price": 100,
+    "price": 30
+  }
+]
