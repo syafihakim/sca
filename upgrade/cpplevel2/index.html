@@ -10,15 +10,15 @@
 <body class="bg-gray-50 text-gray-900">
 
   <!-- Top Banner -->
-  <div id="countdown-banner" class="text-center w-full bg-yellow-100 border-b border-yellow-300 text-yellow-900 py-3 px-4 flex flex-col items-center justify-center text-sm font-semibold fixed top-0 left-0 z-50">
-    <div>⏳ Pendaftaran Akan Dibuka Dalam</div>
+  <div id="countdown-banner" class="text-center w-full bg-yellow-100 border-b border-yellow-300 text-yellow-900 py-3 px-4 flex flex-col items-center justify-center text-sm font-semibold">
+    <div>⏳ Flash Sale : Upgrade dan Belajar Bila Dah Ready</div>
     <span id="banner-timer" class="font-bold text-lg mt-1">--:--:--</span>
+    <div id="coupon-code-msg" class="hidden text-red-500">Guna coupon : PR33</div>
   </div>
-
 
   <!-- Hero Section -->
   <section class="relative bg-gradient-to-br from-blue-600 to-indigo-700 text-white">
-    <div class="max-w-7xl mx-auto px-6 py-24 text-center">
+    <div class="max-w-7xl mx-auto px-6 py-16 text-center">
       <!-- Small Tagline -->
       <span class="inline-block bg-white/20 text-sm uppercase tracking-wide px-4 py-1 rounded-full mb-6">
         🔥 Tawaran Khas Pelajar Baru Level 1
@@ -34,18 +34,28 @@
         Kuasai topik-topik Intermediate C++ untuk jawab ujian, buat assignment dan project di Universiti anda
       </p>
 
-      <!-- CTA -->
-      <div class="mt-16">
+      <!-- CTA Section -->
+      <div class="mt-16 flex flex-col md:flex-row gap-4">
+        <!-- Primary CTA -->
         <a href="#checkout" 
-          class="px-8 py-4 bg-yellow-400 text-gray-900 font-semibold rounded-2xl shadow-lg hover:bg-yellow-300 transition">
+           class="px-8 py-4 bg-yellow-400 text-gray-900 font-semibold rounded-2xl shadow-lg hover:bg-yellow-300 transition text-center">
           Upgrade ke Level 2 Sekarang →
         </a>
+
+        <!-- Secondary CTA -->
+        <a href="#learn-more"
+           class="px-8 py-4 bg-black text-white font-medium rounded-2xl shadow hover:bg-gray-300 hover:text-black transition text-center">
+          Tonton Video Level 1 vs Level 2
+        </a>
       </div>
+
+
+
     </div>
   </section>
 
   <!-- Section 2: Acknowledge Their Progress -->
-  <section class="bg-white py-20">
+  <section id="learn-more"  class="bg-white py-20">
     <div class="max-w-5xl mx-auto px-6 text-center">
       <!-- Section Heading -->
       <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -85,7 +95,14 @@
           Sebenarnya hanya keyword dan teknik yang sama je akan digunakan berulang kali. Dengan menguasai 3 topik wajib ni, anda bakal mampu untuk buat 1000+ program dah pun 🔥
         </p>
       </div>
+
+      <a href="#checkout" 
+        class="mt-8 inline-block px-8 py-3 bg-indigo-600 text-white font-semibold rounded-xl shadow hover:bg-indigo-500 transition">
+        Upgrade ke Level 2 Sekarang →
+      </a>
     </div>
+
+
   </section>
 
   <!-- Section: Transformation & Desires -->
