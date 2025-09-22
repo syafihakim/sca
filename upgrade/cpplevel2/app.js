@@ -1,6 +1,69 @@
 final_price = 75;
 couponRedeemed = false;
 
+paymentSection = `
+      <h2 class="text-2xl font-bold mb-4 text-gray-800">Cara pembayaran</h2>
+
+      <!-- Total badge -->
+      <div class="final-total-price-text inline-block bg-yellow-600 text-white font-semibold px-4 py-2 rounded-full mb-6">
+        Total: RM75
+      </div>
+
+
+      <!-- Payment mode tabs -->
+      <div id="paymentModes" class="mb-6">
+        <nav class="flex space-x-4 border-b border-gray-300 mb-4">
+          <button class="payment-tab border-b-4 border-orange-500 text-orange-600 py-2 px-4 font-semibold" data-mode="qr">
+            QR Code
+          </button>
+          <button class="payment-tab text-gray-600 py-2 px-4 hover:text-orange-600" data-mode="bank">
+            Bank Transfer
+          </button>
+          <button class="payment-tab text-gray-600 py-2 px-4 hover:text-orange-600" data-mode="tng">
+            TnG QR Code
+          </button>
+        </nav>
+
+        <!-- Payment details -->
+        <div id="qr" class="payment-content">
+          <img src="maybank_qr.jpg" alt="QR Code" 
+               class="mx-auto max-w-full max-h-64 rounded-lg shadow-md object-contain" />
+          <div class="text-center mt-2">
+            <div class="mt-2 flex items-center justify-center space-x-2 text-sm text-gray-700 cursor-pointer hover:text-gray-900">
+              <span>Ambil screenshot atau <a href="/assets/images/maybank_qr.jpg" download class = "text-blue-700 underline">download QR</a></span>
+            </div>
+          </div>
+        </div>
+
+        <div id="bank" class="payment-content hidden text-gray-700 space-y-2">
+          <p><span class="font-semibold">Bank:</span> Maybank</p>
+          <p><span class="font-semibold">Nama Pemegang Akaun:</span> Syafi Hakim</p>
+          <p class="flex items-center space-x-2">
+            <span><span class="font-semibold">No Akaun:</span> 1062 0305 8090</span>
+            <button id="copyAccBtn" 
+                    class="bg-gray-200 hover:bg-gray-300 text-gray-700 px-2 py-1 rounded text-xs shadow-sm"
+                    title="Copy account number">
+              Copy
+            </button>
+          </p>
+        </div>
+
+        <div id="tng" class="payment-content hidden">
+          <img src="tng.jpg" alt="Touch 'n Go QR Code" 
+               class="mx-auto max-w-full rounded-lg shadow-md object-contain" />
+          <div class="text-center mt-2">
+            <div class="mt-2 flex items-center justify-center space-x-2 text-sm text-gray-700 cursor-pointer hover:text-gray-900">
+              <span>Ambil screenshot atau <a href="/assets/images/tng.jpg" download class = "text-blue-700 underline">download QR</a></span>
+            </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-sm text-gray-600">
+        Whatsapp resit pembayaran ke <span class="font-semibold">010-5820083</span>. Saya akan reply sebelum pukul 5 petang (sebarang pertanyaan Whatsapp je)
+      </p>`
+
 async function loadTopics() {
   try {
     let totalPrice = 0;
@@ -342,7 +405,7 @@ async function addCouponHandler() {
 function startCountdown() {
   let countDownIntervalId = null;
 
-  const targetDate = new Date("September 16, 2025 23:59:59").getTime();
+  const targetDate = new Date("September 4, 2025 21:00:00").getTime();
 
   const payDiv = document.getElementById("pay");
   const checkoutWrapper = document.getElementById("checkout-pay-button");
@@ -353,7 +416,9 @@ function startCountdown() {
     const now = new Date().getTime();
     const distance = targetDate - now;
 
-    if (distance <= 0) {     
+    if (distance <= 0) {
+      // Countdown finished → show real content
+      payDiv.innerHTML = paymentSection;
 
       // Restore active checkout button
       checkoutWrapper.innerHTML = `
@@ -369,6 +434,7 @@ function startCountdown() {
         el.textContent = `RM ${final_price}`;
       });
 
+      banner.style.display = "none";
       paymentTabsHandler();
 
       clearInterval(countDownIntervalId);
@@ -381,6 +447,25 @@ function startCountdown() {
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+    // Update pay box
+    payDiv.innerHTML = `
+      <div class="bg-yellow-50 border border-yellow-300 text-yellow-800 rounded-xl p-6 text-center font-semibold">
+        ⏳ Pendaftaran Akan Dibuka Dalam 
+        <span class="font-bold">${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}</span>
+      </div>
+    `;
+
+    // Replace checkout button with disabled state
+    checkoutWrapper.innerHTML = `
+      <div class="bg-gray-400 text-xs text-white px-6 py-3 rounded-lg shadow flex flex-col items-center text-center cursor-not-allowed">
+        <div>⏳ Pendaftaran Akan Dibuka Dalam</div>
+        <div class="font-bold mt-1">
+          ${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}
+        </div>
+      </div>
+
+    `;
+
     timerEl.textContent = 
           `${hours.toString().padStart(2,"0")}:${minutes.toString().padStart(2,"0")}:${seconds.toString().padStart(2,"0")}`;
   }
@@ -390,24 +475,8 @@ function startCountdown() {
   countDownIntervalId = setInterval(updateTimer, 1000);
 }
 
-function showCouponToUse() {
-  // 1. Get the query string parameter ?promo=...
-  const params = new URLSearchParams(window.location.search);
-  const promo = params.get('promo');
 
-  // 2. If promo === 'PR33', show the element
-  if (promo === 'PR33') {
-    const msgEl = document.getElementById('coupon-code-msg');
-    if (msgEl) {
-      // Option A: use style
-      msgEl.style.display = 'block';
-      // or Option B: remove hidden class if you use Tailwind:
-      // msgEl.classList.remove('hidden')
-    }
-  }
-}
 
-showCouponToUse();
 loadTopics();
 loadPriceSummary();
 paymentTabsHandler();
