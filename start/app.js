@@ -226,6 +226,25 @@ function addSVGs() {
 
 }
 
+function appendCouponToPayLinks() {
+  // Select all <a> elements with id="payLink"
+  const links = document.querySelectorAll('a#payLink');
+
+  links.forEach(link => {
+    try {
+      const url = new URL(link.href);
+
+      // Append the coupon parameter (overwrites if it already exists)
+      url.searchParams.set('coupon', 'FLASHLIVE');
+
+      // Update the link's href
+      link.href = url.toString();
+    } catch (err) {
+      console.error('Invalid href on link:', link, err);
+    }
+  });
+}
+
 // ==================== INIT ==================== //
 document.addEventListener("DOMContentLoaded", () => {
   // Add handlers to payment tab
@@ -234,8 +253,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Apply promo logic for OTO section
   fetchPromoFromSheet().then(promo => {
     if (promo && Date.now() < new Date(promo.validUntil).getTime()) {
-      console.log("Promo found:", promo);
-      startFlashSale(promo)
+      startFlashSale(promo);
+      appendCouponToPayLinks();
     } else {
       console.log("Promo code invalid or expired");
     }
