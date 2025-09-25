@@ -6,37 +6,57 @@
   <title>Syafi Coding Academy</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-blue-700 min-h-screen flex items-center justify-center px-6">
+<body class="bg-blue-700 min-h-screen flex flex-col">
 
   <!-- Hero Section -->
-  <section class="text-center max-w-3xl mx-auto">
-    
-    <!-- Title -->
-    <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">
-      Selamat Datang ke <span class="text-yellow-300">Syafi Coding Academy</span>
-    </h1>
-    
-    <!-- Subtitle -->
-    <p class="text-white/80 text-lg mb-8">
-      Belajar coding dari zero hingga boleh bina projek sendiri, cepat & mudah.
-    </p>
-    
-    <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6">
-      <!-- Fillout Button -->
-      <a href="https://forms.fillout.com/t/a5C9UWHdYbus" 
-         class="bg-yellow-500 text-white px-8 py-4 rounded-xl font-bold text-sm hover:bg-yellow-600 transition inline-block text-center">
-        Dapatkan Kamus Coding Percuma
-      </a>
+  <section class="flex flex-1 items-center justify-center px-6">
+    <div class="text-center max-w-3xl">
+      <!-- Title -->
+      <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">
+        Selamat Datang ke <span class="text-yellow-300">Syafi Coding Academy</span>
+      </h1>
 
-      <!-- Contact Button -->
-      <a href="https://wa.link/al48h1" 
-         class="bg-green-500 text-white px-8 py-4 rounded-xl font-bold text-sm hover:bg-green-600 transition inline-block text-center">
-        Contact Me
-      </a>
+      <!-- Subtitle -->
+      <p class="text-white/80 text-lg mb-8">
+        Belajar coding dari zero hingga boleh bina projek sendiri, cepat & mudah.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6">
+        <!-- Fillout Button -->
+        <a href="https://forms.fillout.com/t/a5C9UWHdYbus" 
+           class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-white px-8 py-4 rounded-2xl font-bold text-sm hover:scale-105 hover:shadow-xl transition transform inline-block text-center">
+          Dapatkan Kamus Coding Percuma
+        </a>
+
+        <!-- Contact Button -->
+        <a href="https://wa.link/al48h1" 
+           class="bg-gradient-to-r from-green-500 to-green-700 text-white px-8 py-4 rounded-2xl font-bold text-sm hover:scale-105 hover:shadow-xl transition transform inline-block text-center">
+          Contact Me
+        </a>
+      </div>
     </div>
-
-
   </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-8 px-6 mt-auto">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <!-- Links -->
+      <nav class="flex space-x-6 text-sm">
+        <a href="tnc.html" class="hover:text-yellow-400 transition">Terms & Conditions</a>
+        <a href="refund_policy.html" class="hover:text-yellow-400 transition">Refund Policy</a>
+      </nav>
+
+      <!-- Contact Info -->
+      <div class="text-center md:text-right text-sm space-y-1">
+        <div>Email: <a href="mailto:msyafihakim@gmail.com" class="hover:text-yellow-400 transition">msyafihakim@gmail.com</a></div>
+        <div>Phone: <a href="tel:+60105820083" class="hover:text-yellow-400 transition">010-5820083</a></div>
+        <div>Location: Operating Remotely</div>
+      </div>
+    </div>
+    <div class="text-center text-xs text-gray-500 mt-6">
+      &copy; Syafi Hakim Resources (003435578-M)
+    </div>
+  </footer>
 
 </body>
 </html>
