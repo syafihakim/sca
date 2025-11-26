@@ -108,4 +108,3 @@ function changeStep(delta) {
 
 // Initial display
 showStep(currentStep);
-updateDiagram();
