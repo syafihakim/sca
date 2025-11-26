@@ -7,11 +7,11 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/heroicons@2.1.1/dist/umd/heroicons.js"></script>
 </head>
-<body class="font-sans bg-gray-50">
+<body class="font-sans bg-gray-50 px-auto">
 
   <!-- HERO SECTION -->
   <section class="bg-gradient-to-br from-indigo-700 via-indigo-800 to-indigo-900 to-black text-white py-20 px-6">
-    <div class="max-w-8xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+    <div class="max-w-4xl mx-auto grid gap-10 items-center">
 
       <!-- Hero Text -->
       <div>
@@ -43,7 +43,7 @@
   <section id="features" class="bg-gray-50">
     <div class="mx-auto">
 
-      <div class="grid md:grid-cols-2 gap-6">
+      <div class="grid gap-6">
 
         <!-- Core Offer Cards -->
 
@@ -54,7 +54,7 @@
               Apa Yang Anda Akan Dapat
             </h2>
 
-            <div class="grid md:grid-cols-2 gap-6">
+            <div class="grid mx-auto gap-6 md:grid-cols-2 max-w-4xl">
 
               <!-- Card 1 -->
               <div class="bg-gradient-to-r from-blue-100 to-blue-50 p-4 rounded-2xl shadow-md border border-blue-200 hover:shadow-lg transition">
@@ -129,7 +129,7 @@
               Bonus FREE untuk anda study anytime anywhere
             </h3>
 
-            <div class="grid md:grid-cols-2 gap-6">
+            <div class="grid mx-auto gap-6 md:grid-cols-2 max-w-4xl">
 
               <!-- Bonus 1 -->
               <div class="bg-gradient-to-r from-green-100 to-green-50 p-4 rounded-2xl shadow-md border border-green-200 hover:shadow-lg transition">
@@ -207,7 +207,7 @@
           <h2 class="text-4xl font-extrabold text-gray-800">Access semuanya</h2>
           <p class="mt-3 text-gray-600 text-lg"> Berapa lama anda mahu Sir Syafi akan menemani anda?</p>
       </div>
-      <div class="mt-14 grid md:grid-cols-2 gap-10 max-w-8xl mx-auto">
+      <div class="mt-14 grid gap-10 max-w-2xl mx-auto">
           <!-- RM25 - Recommended Card -->
           <div class="relative bg-white rounded-2xl shadow-2xl border border-green-300 p-8 md:scale-105">
               <!-- Highlight Badge with Heroicons -->
@@ -215,7 +215,7 @@
                   <span class="bg-yellow-400 text-black text-sm font-semibold py-1 px-4 rounded-full shadow-md whitespace-nowrap flex items-center gap-1">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4">
                           <path fill-rule="evenodd" d="M12 2.25c.41 0 .77.25.92.63l2.1 5.26 5.64.44a.97.97 0 0 1 .55 1.69l-4.27 3.52 1.36 5.48a.97.97 0 0 1-1.45 1.06L12 17.77l-4.85 2.6a.97.97 0 0 1-1.45-1.06l1.36-5.48-4.27-3.52a.97.97 0 0 1 .55-1.69l5.64-.44 2.1-5.26c.15-.38.52-.63.92-.63Z" clip-rule="evenodd" />
-                      </svg> Recommended — Best Value </span>
+                      </svg> Disediakan khas untuk Pelajar Uni dan Kolej </span>
               </div>
               <!-- Title -->
               <h3 class="text-3xl font-bold text-gray-900 text-center mt-4"> C++ Semester 1 Mastery Program&trade;</h3>
@@ -293,7 +293,7 @@
       </div>
   </section>
 
-  <section id="paysection" class="max-w-xl mx-auto bg-gradient-to-r from-indigo-50 to-indigo-100 p-6 rounded-2xl shadow-lg space-y-8">
+  <section id="paysection" class="max-w-xl mx-auto bg-gradient-to-r from-indigo-50 to-indigo-100 p-6 rounded-2xl shadow-lg space-y-8 my-12">
 
     <h2 class="text-4xl font-extrabold text-gray-800 text-center">Last Step: Bayar Yuran</h2>
 
@@ -477,263 +477,51 @@
     </div>
   </section>
 
-  <section id="faq" class="max-w-3xl mx-auto py-16 px-6">
-      
-      <h2 class="text-3xl font-extrabold text-gray-900 mb-10 text-center">
-          ❓ FAQ (Early Access Edition)
-      </h2>
+  <section id="terms" class="max-w-4xl mx-auto px-6 py-12 space-y-6">
 
-      <!-- SECTION 1 -->
-      <h3 class="text-xl font-bold text-gray-800 mt-12 mb-4">SECTION 1 — EARLY ACCESS OVERVIEW</h3>
+    <h2 class="text-3xl font-extrabold text-gray-800 text-center mb-8">
+      Terma dan Syarat
+    </h2>
 
-      <!-- FAQ Item -->
-      <div class="mb-3 border rounded-xl">
-          <button onclick="toggleFAQ(this)" class="w-full flex justify-between items-center p-4">
-              <span class="font-medium text-left">1. Apa sebenarnya Early Access ini?</span>
-              <span class="faq-icon text-xl">+</span>
-          </button>
-          <div class="faq-content hidden px-4 pb-4 text-gray-700 leading-relaxed">
-              Early Access bermaksud anda masuk sebelum pelancaran penuh dengan harga paling rendah. Anda akan dapat:
-              <ul class="list-disc ml-5 mt-2">
-                  <li>Akses awal ke Syafi Coding Academy</li>
-                  <li>Jaminan menerima 5 Kamus PDF Topik Penting C++</li>
-                  <li>Tempat terawal dalam Group Telegram Exclusive</li>
-                  <li>Kelas Live Mingguan bermula minggu pelancaran penuh</li>
-                  <li>Semua update & bonus</li>
-                  <li>Harga terendah sebelum naik ke RM25</li>
-              </ul>
-              Masuk awal = jimat dan dapat semua dulu.
-          </div>
+    <!-- Term 1 -->
+    <div class="border border-gray-200 rounded-xl shadow-sm p-4">
+      <button class="w-full text-left flex justify-between items-center" onclick="toggleCard(this)">
+        <span class="font-semibold text-lg text-gray-800">1 - Kelas Live Mingguan (C++ Study-With-Sir-Syafi)</span>
+        <span class="text-gray-500">+</span>
+      </button>
+      <div class="mt-3 hidden space-y-2 text-gray-700 text-sm">
+        <p>1a. Kelas Live akan dijalankan setiap minggu pada hari Rabu (9PM - 10PM).</p>
+        <p>1b. Saya berhak menukar masa dan hari kelas berlangsung mengikut kesesuaian.</p>
+        <p>1c. Saya berhak menjalankan lebih dari 1 kelas mingguan bergantung pada kesesuaian.</p>
+        <p>1d. Anda berhak submit assignment sepanjang kelas berlangsung, saya akan memilih beberapa assignment terawal sahaja (jika assignment anda tidak terpilih, boleh cuba lagi minggu hadapan).</p>
+        <p>1e. Anda berhak submit soalan assignment yang masih belum dibuat untuk dibincangkan - saya akan cuba memberikan rough idea/cara untuk mula membuat soalan tersebut.</p>
       </div>
+    </div>
 
-      <div class="mb-3 border rounded-xl">
-          <button onclick="toggleFAQ(this)" class="w-full flex justify-between p-4">
-              <span class="font-medium text-left">2. Kenapa saya perlu join kalau nota belum siap?</span>
-              <span class="faq-icon text-xl">+</span>
-          </button>
-          <div class="faq-content hidden px-4 pb-4 text-gray-700 leading-relaxed">
-              Early Access dibuat untuk reward pelajar awal, bagi harga paling murah, kumpulkan founding batch, dan pastikan sistem berjalan lancar masa pelancaran. Anda tetap dapat semua nota, kelas, dan group — cuma anda masuk lebih awal.
-          </div>
+    <!-- Term 2 -->
+    <div class="border border-gray-200 rounded-xl shadow-sm p-4">
+      <button class="w-full text-left flex justify-between items-center" onclick="toggleCard(this)">
+        <span class="font-semibold text-lg text-gray-800">2 - Bantuan Assignment Mingguan (C++ Study-With)</span>
+        <span class="text-gray-500">+</span>
+      </button>
+      <div class="mt-3 hidden space-y-2 text-gray-700 text-sm">
+        <p>2a. Student wajib menghantar coding yang telah dibuat (tak kisah samaada ada error atau tak).</p>
+        <p>2b. Saya akan buat 1 video untuk fix dan pastikan codes anda working.</p>
+        <p>2c. Ini adalah flow anda nanti :</p>
+        <ul class="list-disc list-inside space-y-1">
+          <li>Anda submit code dan soalan assignment asal.</li>
+          <li>Code disimpan dalam "Peti Soalan".</li>
+          <li>Saya akan pilih 1 code + soalan untuk dibaiki.</li>
+          <li>Saya akan buat video untuk code yang telah dipilih.</li>
+          <li>Saya akan upload video untuk rujukan semua.</li>
+          <li>Codes yang tidak terpilih akan disimpan dalam "Peti Soalan".</li>
+          <li>Setiap hari, codes yang baru akan diambil dari "Peti Soalan" untuk dibaiki.</li>
+        </ul>
       </div>
-
-      <div class="mb-3 border rounded-xl">
-          <button onclick="toggleFAQ(this)" class="w-full flex justify-between p-4">
-              <span class="font-medium text-left">3. Adakah saya akan rugi kalau join sekarang?</span>
-              <span class="faq-icon text-xl">+</span>
-          </button>
-          <div class="faq-content hidden px-4 pb-4 text-gray-700 leading-relaxed">
-              Tidak. Early Access memberi harga termurah, nota awal + semua update, akses group awal, tempat terjamin, dan semua faedah pelajar RM25. Tiada kerugian.
-          </div>
-      </div>
-
-      <div class="mb-3 border rounded-xl">
-          <button onclick="toggleFAQ(this)" class="w-full flex justify-between p-4">
-              <span class="font-medium text-left">4. Adakah Early Access ini limited?</span>
-              <span class="faq-icon text-xl">+</span>
-          </button>
-          <div class="faq-content hidden px-4 pb-4 text-gray-700">
-              Ya. Ia hanya untuk batch pertama. Lepas cukup kuota, ia ditutup dan harga kembali RM25.
-          </div>
-      </div>
-
-      <div class="mb-3 border rounded-xl">
-          <button onclick="toggleFAQ(this)" class="w-full flex justify-between p-4">
-              <span class="font-medium text-left">5. Apa beza Early Access vs Full Access (RM25)?</span>
-              <span class="faq-icon text-xl">+</span>
-          </button>
-          <div class="faq-content hidden px-4 pb-4 text-gray-700 leading-relaxed">
-              <strong>Early Access:</strong>
-              <ul class="list-disc ml-5 mt-2">
-                  <li>Harga paling rendah</li>
-                  <li>Masuk paling awal</li>
-                  <li>Tempat confirm</li>
-                  <li>Nota awal + semua update</li>
-                  <li>Semua bonus</li>
-              </ul>
-              <strong class="block mt-3">Full Access (RM25):</strong>
-              <ul class="list-disc ml-5 mt-2">
-                  <li>Harga lebih tinggi</li>
-                  <li>Masuk selepas batch Early Access</li>
-                  <li>Group lebih ramai</li>
-              </ul>
-          </div>
-      </div>
-
-      <!-- SECTION 2 -->
-      <h3 class="text-xl font-bold text-gray-800 mt-12 mb-4">SECTION 2 — NOTES & PDF MATERIALS</h3>
-
-      <!-- FAQ Items… -->
-      <!-- Continue same pattern -->
-
-      <div class="mb-3 border rounded-xl">
-          <button onclick="toggleFAQ(this)" class="w-full flex justify-between p-4">
-              <span class="font-medium text-left">6. Bila 5 Kamus PDF C++ akan siap?</span>
-              <span class="faq-icon text-xl">+</span>
-          </button>
-          <div class="faq-content hidden px-4 pb-4 text-gray-700">
-              Nota sedang difinalize. Early Access members akan menerima versi awal, semua update, dan akan dihantar melalui WhatsApp & Telegram.
-          </div>
-      </div>
-
-      <div class="mb-3 border rounded-xl">
-          <button onclick="toggleFAQ(this)" class="w-full flex justify-between p-4">
-              <span class="font-medium text-left">7. Bagaimana saya akan terima update-progress?</span>
-              <span class="faq-icon text-xl">+</span>
-          </button>
-          <div class="faq-content hidden px-4 pb-4 text-gray-700">
-              Anda akan menerima update melalui WhatsApp
-          </div>
-      </div>
-
-      <!-- SECTION 3 -->
-      <h3 class="text-xl font-bold text-gray-800 mt-12 mb-4">SECTION 3 — GROUP TELEGRAM</h3>
-
-      <div class="mb-3 border rounded-xl">
-          <button onclick="toggleFAQ(this)" class="w-full flex justify-between p-4">
-              <span class="font-medium text-left">8. Bila Group Telegram dibuka?</span>
-              <span class="faq-icon text-xl">+</span>
-          </button>
-          <div class="faq-content hidden px-4 pb-4 text-gray-700">
-              Tarikh akan diberitahu kemudian tetapi yang pasti sebelum bulan 12.
-          </div>
-      </div>
-
-      <div class="mb-3 border rounded-xl">
-          <button onclick="toggleFAQ(this)" class="w-full flex justify-between p-4">
-              <span class="font-medium text-left">9. Berapa lama akses Group Telegram?</span>
-              <span class="faq-icon text-xl">+</span>
-          </button>
-          <div class="faq-content hidden px-4 pb-4 text-gray-700">
-              3 bulan penuh atau anda boleh kira 90 hari
-          </div>
-      </div>
-
-      <!-- SECTION 4 -->
-      <h3 class="text-xl font-bold text-gray-800 mt-12 mb-4">SECTION 4 — LIVE CLASSES</h3>
-
-      <div class="mb-3 border rounded-xl">
-          <button onclick="toggleFAQ(this)" class="w-full flex justify-between p-4">
-              <span class="font-medium text-left">10. Bila kelas Live Mingguan bermula?</span>
-              <span class="faq-icon text-xl">+</span>
-          </button>
-          <div class="faq-content hidden px-4 pb-4 text-gray-700">
-              Minggu pelancaran penuh. Setiap Rabu, 9PM–10PM.
-          </div>
-      </div>
-
-      <div class="mb-3 border rounded-xl">
-          <button onclick="toggleFAQ(this)" class="w-full flex justify-between p-4">
-              <span class="font-medium text-left">11. Kelas Live dalam bentuk apa?</span>
-              <span class="faq-icon text-xl">+</span>
-          </button>
-          <div class="faq-content hidden px-4 pb-4 text-gray-700">
-              Live session — boleh tanya soalan, bawa assignment, hantar code. Semua dirakam.
-          </div>
-      </div>
-
-      <div class="mb-3 border rounded-xl">
-          <button onclick="toggleFAQ(this)" class="w-full flex justify-between p-4">
-              <span class="font-medium text-left">12. Kalau tak sempat join Live Class?</span>
-              <span class="faq-icon text-xl">+</span>
-          </button>
-          <div class="faq-content hidden px-4 pb-4 text-gray-700">
-              Semua rakaman disimpan ikut universiti & topik. Anda boleh tengok bila-bila.
-          </div>
-      </div>
-
-      <!-- SECTION 5 -->
-      <h3 class="text-xl font-bold text-gray-800 mt-12 mb-4">SECTION 5 — WEEKLY CODING HELP</h3>
-
-      <div class="mb-3 border rounded-xl">
-          <button onclick="toggleFAQ(this)" class="w-full flex justify-between p-4">
-              <span class="font-medium text-left">13. Macam mana Bantuan Coding Mingguan berfungsi?</span>
-              <span class="faq-icon text-xl">+</span>
-          </button>
-          <div class="faq-content hidden px-4 pb-4 text-gray-700">
-              Setiap Selasa–Khamis anda boleh hantar code, screenshot, error dan saya akan semak + jelaskan melalui video / voice note.
-          </div>
-      </div>
-
-      <div class="mb-3 border rounded-xl">
-          <button onclick="toggleFAQ(this)" class="w-full flex justify-between p-4">
-              <span class="font-medium text-left">14. Boleh ke saya minta bantuan assignment?</span>
-              <span class="faq-icon text-xl">+</span>
-          </button>
-          <div class="faq-content hidden px-4 pb-4 text-gray-700">
-              Ya. Program ini memang untuk bantu assignment sebenar.
-          </div>
-      </div>
-
-      <!-- SECTION 6 -->
-      <h3 class="text-xl font-bold text-gray-800 mt-12 mb-4">SECTION 6 — CONTENT LIBRARY & ACCESS</h3>
-
-      <div class="mb-3 border rounded-xl">
-          <button onclick="toggleFAQ(this)" class="w-full flex justify-between p-4">
-              <span class="font-medium text-left">15. Adakah saya boleh akses rakaman lama?</span>
-              <span class="faq-icon text-xl">+</span>
-          </button>
-          <div class="faq-content hidden px-4 pb-4 text-gray-700">
-              Ya. Sepanjang 3 bulan anda boleh akses semua rakaman, codes, nota & bonus.
-          </div>
-      </div>
-
-      <div class="mb-3 border rounded-xl">
-          <button onclick="toggleFAQ(this)" class="w-full flex justify-between p-4">
-              <span class="font-medium text-left">16. Apa berlaku selepas pelancaran penuh?</span>
-              <span class="faq-icon text-xl">+</span>
-          </button>
-          <div class="faq-content hidden px-4 pb-4 text-gray-700">
-              Anda terus masuk group, dan access kelas mingguan, bantuan coding, rakaman, codes, dan nota lengkap. Tiada bayaran tambahan.
-          </div>
-      </div>
-
-      <!-- SECTION 7 -->
-      <h3 class="text-xl font-bold text-gray-800 mt-12 mb-4">SECTION 7 — SIAPA SESUAI JOIN?</h3>
-
-      <div class="mb-3 border rounded-xl">
-          <button onclick="toggleFAQ(this)" class="w-full flex justify-between p-4">
-              <span class="font-medium text-left">17. Siapa sesuai join program ini?</span>
-              <span class="faq-icon text-xl">+</span>
-          </button>
-          <div class="faq-content hidden px-4 pb-4 text-gray-700">
-              Pelajar semester 1, pelajar yang blur, selalu error, nak belajar simple, nak survive tanpa stress — semua sesuai.
-          </div>
-      </div>
-
-      <div class="mb-3 border rounded-xl">
-          <button onclick="toggleFAQ(this)" class="w-full flex justify-between p-4">
-              <span class="font-medium text-left">18. Saya zero coding — layak join tak?</span>
-              <span class="faq-icon text-xl">+</span>
-          </button>
-          <div class="faq-content hidden px-4 pb-4 text-gray-700">
-              Layak 100%. Program direka untuk pelajar mula dari kosong.
-          </div>
-      </div>
-
-      <!-- SECTION 8 -->
-      <h3 class="text-xl font-bold text-gray-800 mt-12 mb-4">SECTION 8 — PAYMENT & REFUND</h3>
-
-      <div class="mb-3 border rounded-xl">
-          <button onclick="toggleFAQ(this)" class="w-full flex justify-between p-4">
-              <span class="font-medium text-left">19. Bagaimana proses pembayaran?</span>
-              <span class="faq-icon text-xl">+</span>
-          </button>
-          <div class="faq-content hidden px-4 pb-4 text-gray-700">
-              Anda boleh bayar melalui QR Payment atau Bank Transfer. Selepas bayar, anda diminta hantar resit kepada Sir Syafi - supaya anda tidak terlepas apabila group dah mula dibuka.
-          </div>
-      </div>
-
-      <div class="mb-3 border rounded-xl">
-          <button onclick="toggleFAQ(this)" class="w-full flex justify-between p-4">
-              <span class="font-medium text-left">20. Ada refund?</span>
-              <span class="faq-icon text-xl">+</span>
-          </button>
-          <div class="faq-content hidden px-4 pb-4 text-gray-700">
-              Tiada refund untuk Early Access kerana ia harga paling rendah dan tempat terus disediakan dalam batch pelancaran.
-          </div>
-      </div>
+    </div>
 
   </section>
+
 
   <!-- Footer -->
   <footer class="bg-gray-900 text-gray-300 py-8 px-6 mt-auto">

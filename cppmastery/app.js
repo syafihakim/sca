@@ -68,18 +68,10 @@ function updatePaymentDetails() {
     document.getElementById("bankSection").classList.toggle("hidden", method !== "bank")
 }
 
-function toggleFAQ(button) {
-    const content = button.nextElementSibling;
-    const icon = button.querySelector(".faq-icon");
-
-    content.classList.toggle("hidden");
-
-    // Toggle + / -
-    if (content.classList.contains("hidden")) {
-        icon.textContent = "+";
-    } else {
-        icon.textContent = "–";
-    }
+function toggleCard(btn) {
+  const content = btn.nextElementSibling;
+  content.classList.toggle('hidden');
+  btn.querySelector('span:last-child').textContent = content.classList.contains('hidden') ? '+' : '−';
 }
 
 // Function to handle selection highlight
