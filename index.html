@@ -1,62 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Syafi Coding Academy</title>
+
+  <!-- Quicksand Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body { font-family: 'Quicksand', sans-serif; }
+  </style>
 </head>
-<body class="bg-blue-700 min-h-screen flex flex-col">
 
-  <!-- Hero Section -->
-  <section class="flex flex-1 items-center justify-center px-6">
-    <div class="text-center max-w-3xl">
-      <!-- Title -->
-      <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">
-        Selamat Datang ke <span class="text-yellow-300">Syafi Coding Academy</span>
-      </h1>
+<body class="bg-gray-50 text-gray-800">
 
-      <!-- Subtitle -->
-      <p class="text-white/80 text-lg mb-8">
-        Belajar coding dari zero hingga boleh bina projek sendiri, cepat & mudah.
-      </p>
+<!-- ======================= HEADER ======================= -->
+<header class="w-full bg-white shadow-sm py-4 sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
+    
+    <!-- Logo + Name -->
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 bg-gradient-to-br from-indigo-600 to-purple-700 rounded-xl"></div>
+      <span class="font-bold text-lg">Syafi Coding Academy</span>
+    </div>
 
-      <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6">
-        <!-- Fillout Button -->
-        <a href="https://forms.fillout.com/t/a5C9UWHdYbus" 
-           class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-white px-8 py-4 rounded-2xl font-bold text-sm hover:scale-105 hover:shadow-xl transition transform inline-block text-center">
-          Dapatkan Kamus Coding Percuma
-        </a>
+    <nav class="hidden md:flex gap-6 text-sm">
+      <a href="#about" class="hover:text-indigo-600">About</a>
+      <a href="#services" class="hover:text-indigo-600">Services</a>
+      <a href="#contact" class="hover:text-indigo-600">Contact</a>
+    </nav>
+  </div>
+</header>
 
-        <!-- Contact Button -->
-        <a href="https://wa.link/al48h1" 
-           class="bg-gradient-to-r from-green-500 to-green-700 text-white px-8 py-4 rounded-2xl font-bold text-sm hover:scale-105 hover:shadow-xl transition transform inline-block text-center">
-          Contact Me
-        </a>
+<!-- ======================= HERO SECTION ======================= -->
+<section class="bg-gradient-to-br from-indigo-700 via-indigo-800 to-indigo-900 text-white py-24 px-6">
+  <div class="max-w-5xl mx-auto text-center">
+    <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+      Learn Coding from Zero — Guided, Simple & Beginner-Friendly
+    </h1>
+
+    <p class="mt-6 text-indigo-100 text-lg max-w-3xl mx-auto">
+      Syafi Coding Academy helps students master the fundamentals of programming
+      through beginner-friendly lessons, coaching, and digital study resources.
+      No prior experience needed — we guide you from the first step.
+    </p>
+
+    <a href="#contact" 
+      class="mt-10 inline-block bg-yellow-400 text-black font-semibold py-3 px-8 rounded-xl shadow-lg hover:brightness-110 transition">
+      Contact Us
+    </a>
+  </div>
+</section>
+
+<!-- ======================= ABOUT SECTION ======================= -->
+<section id="about" class="py-20 px-6 bg-white">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl font-extrabold text-gray-900 mb-4">About Us</h2>
+    <p class="text-gray-700 text-lg leading-relaxed">
+      Syafi Coding Academy provides beginner-friendly coding classes, coaching, 
+      and digital learning resources for students starting programming from zero.
+      Our mission is to make coding simple, clear, and accessible to all.
+    </p>
+  </div>
+</section>
+
+<!-- ======================= SERVICES SECTION ======================= -->
+<section id="services" class="py-20 px-6 bg-gray-50">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-12">Our Services</h2>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      
+      <div class="bg-white rounded-2xl shadow p-6 border border-gray-200">
+        <h3 class="text-xl font-bold text-indigo-700 mb-3">Coding Classes for Beginners</h3>
+        <p class="text-gray-600">Structured lessons designed specifically for students with zero coding background.</p>
       </div>
-    </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-gray-300 py-8 px-6 mt-auto">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-      <!-- Links -->
-      <nav class="flex space-x-6 text-sm">
-        <a href="tnc.html" class="hover:text-yellow-400 transition">Terms & Conditions</a>
-        <a href="refund_policy.html" class="hover:text-yellow-400 transition">Refund Policy</a>
-      </nav>
-
-      <!-- Contact Info -->
-      <div class="text-center md:text-right text-sm space-y-1">
-        <div>Email: <a href="mailto:msyafihakim@gmail.com" class="hover:text-yellow-400 transition">msyafihakim@gmail.com</a></div>
-        <div>Phone: <a href="tel:+60105820083" class="hover:text-yellow-400 transition">010-5820083</a></div>
-        <div>Location: Operating Remotely</div>
+      <div class="bg-white rounded-2xl shadow p-6 border border-gray-200">
+        <h3 class="text-xl font-bold text-indigo-700 mb-3">Coaching & Mentorship</h3>
+        <p class="text-gray-600">1-on-1 coaching, help with concepts, assignments, and personalised student guidance.</p>
       </div>
+
+      <div class="bg-white rounded-2xl shadow p-6 border border-gray-200">
+        <h3 class="text-xl font-bold text-indigo-700 mb-3">Digital Learning Materials</h3>
+        <p class="text-gray-600">Cheat sheets, modules, exercises, templates, and reference notes.</p>
+      </div>
+
     </div>
-    <div class="text-center text-xs text-gray-500 mt-6">
-      &copy; Syafi Hakim Resources (003435578-M)
+  </div>
+</section>
+
+<!-- ======================= CONTACT SECTION ======================= -->
+<section id="contact" class="py-20 px-6 bg-white">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-12">Contact Us</h2>
+
+    <div class="bg-gray-100 p-8 rounded-2xl shadow space-y-4">
+      
+      <p><strong>Business Name:</strong> Syafi Coding Academy</p>
+      <p><strong>Parent Company:</strong> Syafi Hakim Resources (003435578-M)</p>
+      <p><strong>Location:</strong> Operating Remotely</p>
+
+      <p><strong>Email:</strong> msyafihakim@gmail.com</p>
+      <p><strong>Phone:</strong> 010-5820083</p>
+
+      <a href="https://wa.me/60105820083"
+        class="inline-block mt-4 bg-green-500 text-white font-semibold py-3 px-6 rounded-xl hover:bg-green-600 transition">
+        Contact via WhatsApp
+      </a>
     </div>
-  </footer>
+  </div>
+</section>
+
+<!-- ======================= PRIVACY POLICY ======================= -->
+<section id="privacy" class="max-w-5xl mx-auto px-6 py-20">
+  <h2 class="text-3xl font-extrabold mb-6">Privacy Policy</h2>
+  <p class="text-gray-700 leading-relaxed mb-4">
+    Syafi Coding Academy collects only the information necessary to provide our services,
+    including your name, email, and contact details. We do not sell or share your information
+    with third parties except when required to deliver our services or comply with the law.
+  </p>
+  <p class="text-gray-700 leading-relaxed">
+    By using this website or enrolling in our services, you consent to the terms in this Privacy Policy.
+  </p>
+</section>
+
+<!-- ======================= TERMS OF SERVICE ======================= -->
+<section id="terms" class="max-w-5xl mx-auto px-6 py-20">
+  <h2 class="text-3xl font-extrabold mb-6">Terms of Service</h2>
+  <p class="text-gray-700 leading-relaxed mb-4">
+    By accessing or using Syafi Coding Academy’s services, you agree to follow all guidelines,
+    instructions, and rules provided. Digital products, learning materials, and coaching sessions
+    are non-transferable. Payments are final unless otherwise stated.
+  </p>
+  <p class="text-gray-700 leading-relaxed">
+    We reserve the right to update, adjust, or improve our services at any time.
+  </p>
+</section>
+
+<!-- ======================= FOOTER ======================= -->
+<footer class="bg-gray-900 text-gray-300 py-10 px-6">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-6">
+    
+    <div class="space-y-1 text-sm">
+      <p>Syafi Coding Academy</p>
+      <p>Operating Remotely</p>
+      <p>Email: msyafihakim@gmail.com</p>
+      <p>Phone: 010-5820083</p>
+      <p>Company No: Syafi Hakim Resources (003435578-M)</p>
+    </div>
+
+    <div class="text-sm md:text-right space-y-1">
+      <a href="#privacy" class="hover:text-yellow-400">Privacy Policy</a><br>
+      <a href="#terms" class="hover:text-yellow-400">Terms of Service</a>
+    </div>
+
+  </div>
+
+  <div class="text-center text-xs text-gray-500 mt-6">
+    © Syafi Hakim Resources (003435578-M)
+  </div>
+</footer>
 
 </body>
 </html>
