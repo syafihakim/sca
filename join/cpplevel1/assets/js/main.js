@@ -39,7 +39,7 @@ tabs.forEach(tab => {
 
 if(copyBtn) {
   copyBtn.addEventListener('click', () => {
-    const accNumber = "1062 0305 8090";
+    const accNumber = "39501212556";
     navigator.clipboard.writeText(accNumber).then(() => {
       copyBtn.textContent = "Copied!";
       setTimeout(() => {
