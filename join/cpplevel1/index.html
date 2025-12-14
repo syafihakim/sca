@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C++ Level 1</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body class="bg-white text-gray-800">
+  <div id="banner" class="sticky top-0 z-50 bg-yellow-300 text-black shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between gap-2">
+      
+      <!-- Left: Text & Progress -->
+      <div class="flex-1">
+        <div id="top-banner" class="md:text-base mb-1 text-center md:text-left">
+          🚀 Loading data...
+        </div>
+        <div id= "countdown-container" class="flex justify-center items-center hidden">
+          <span class="countdown px-6 py-4shadow-lg rounded-2xl text-l font-mono text-red-600 tracking-widest">
+            --
+          </span>
+        </div>
+      </div>
+      
+      <!-- Right: Button -->
+      <a href="#join" class="bg-black text-white text-sm md:text-base px-4 py-2 rounded-full hover:bg-gray-800 transition">
+        Daftar Sekarang
+      </a>
+    </div>
+  </div>
+
+
+
+
+  <!-- HERO SECTION -->
+  <section id="hero-section" class="flex flex-col justify-center px-6">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4">
+      Belajar teknik asas yang boleh digunakan untuk buat <span class="text-red-600"> apa-apa program dalam dunia.</span>
+    </h1>
+    <p class="text-lg md:text-xl mb-6 max-w-xl text-gray-600">
+      Panduan visual dan praktikal untuk pelajar yang nak cepat faham asas coding tanpa stress.
+    </p>
+    <a href="#join" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full text-lg transition text-center">
+      Daftar Sekarang
+    </a>
+    <p class="text-sm text-center mt-2">100+ students dah mula coding!</p>
+  </section>
+
+  <section class="bg-gray-50 py-16 px-6">
+    <div class="max-w-6xl mx-auto mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Belajar teknik-teknik yang University pun tak ajar!</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Teknik yang direka khas untuk anda yang mula dari zero dan tak pernah sentuh coding
+      </p>
+    </div>
+
+    <div class="grid gap-8 md:grid-cols-3 sm:grid-cols-2">
+      <!-- Feature 1 -->
+      <div class="feature p-6 rounded-xl shadow hover:shadow-lg transition">
+        <img src="assets/images/bulb.png"
+             class="p-2 mb-4 w-24 h-24 rounded-full border-2 bg-blue-100 object-cover"
+             width="32" />
+        <h3 class="text-xl font-semibold mb-2 leading-2">Belajar "5 Steps A-to-Z"</h3>
+        <p class="text-gray-600 text-sm">Buat apa sahaja program dan jawab soalan-soalan coding dengan mudah, cepat dan tepat. </br> </br>
+        Senior Software Engineer pun gunakan teknik yang sama dalam kerja mereka.</p>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="feature p-6 rounded-xl shadow hover:shadow-lg transition">
+        <img src="assets/images/lightning.png"
+             class="p-2 mb-4 w-24 h-24 rounded-full border-2 bg-blue-100 object-cover"
+             width="32" />
+        <h3 class="text-xl font-semibold mb-2 leading-2">Belajar teknik menghafal coding</h3>
+        <p class="text-gray-600 text-sm">Teknik mengingat keyword-keyword C++ supaya anda tahu apa yang perlu ditulis setiap kali membuat coding</p>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="feature p-6 rounded-xl shadow hover:shadow-lg transition">
+        <img src="assets/images/puzzle.png"
+             class="p-4 mb-4 w-24 h-24 rounded-full bg-blue-100 object-cover"
+             width="32" />
+        <h3 class="text-xl font-semibold mb-2 leading-2">Buktikan kefahaman anda : Buat 10 program sebenar</h3>
+        <p class="text-gray-600 text-sm">Anda bakal mampu membuat 10 program C++ tanpa anda sedar. 
+        </br> </br> Buat bersama-sama saya (melalui video) dan lihat cara saya menggunakan "5 Steps A-to-Z"</p>
+      </div>
+    </div>
+    </section>
+
+
+    <section class="bg-white py-16 px-6">
+    <div class="max-w-6xl mx-auto mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Apa Yang Termasuk Dalam Pakej Ini</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Setiap benda di bawah diberikan supaya anda tidak akan tersangkut langsung di mana-mana step
+      </p>
+    </div>
+
+    <div class="grid gap-10 md:grid-cols-2 max-w-6xl mx-auto">
+
+      <!-- ITEM 1 -->
+      <div class="border-l-4 bg-blue-100 border-blue-500 p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-4 leading-2">Video panduan "5 Steps A to Z"</h3>
+        <img src="assets/images/video_1.png" alt="Video Modul" class="rounded-lg mb-4" width="128">
+        <ul class="list-outside ml-4 text-sm list-disc list-inside text-left text-gray-700 space-y-2 mb-4">
+          <li>Anda busy? Belajar ikut masa dan jadual anda sendiri</li>
+          <li>Video mudah faham - ibarat anda sedang berada kelas secara 1 to 1 dengan Sir Syafi</li>
+        </ul>
+        <span class="inline-block bg-green-100 text-green-700 text-sm font-medium px-4 py-1 rounded-full">
+          Harga asal: RM100
+        </span>
+      </div>
+
+      <!-- ITEM 2 -->
+      <div class="border-l-4 bg-blue-100 border-blue-500 p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-4 leading-2">10 Video jawapan untuk latihan</h3>
+        <img src="assets/images/video_2.png" alt="Fail Projek" class="rounded-lg mb-4 " width="128">
+        <ul class="list-outside ml-4 text-sm list-disc list-inside text-left text-gray-700 space-y-2 mb-4">
+          <li>Tersangkut sewaktu buat latihan? Tonton dan follow</li>
+          <li>Sir Syafi akan explain setiap langkah dan cara berfikir</li>
+        </ul>
+        <span class="inline-block bg-green-100 text-green-700 text-sm font-medium px-4 py-1 rounded-full">
+          Harga asal: RM160
+        </span>
+      </div>
+
+      <!-- ITEM 3 -->
+      <div class="border-l-4 bg-blue-100 border-blue-500 p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-4 leading-2">Kamus "5 Steps A-to-Z"</h3>
+        <img src="assets/images/kamus_1.png" alt="Fail Projek" class="rounded-lg mb-4" width="128">
+        <ul class="list-outside ml-4 text-sm list-disc list-inside text-left text-gray-700 space-y-2 mb-4">
+          <li>Terlupa step? Buka je kamus ni dan ingat balik serta merta</li>
+          <li>Anda boleh guna teknik yang sama untuk semua program dalam dunia ni</li>
+        </ul>
+        <span class="inline-block bg-green-100 text-green-700 text-sm font-medium px-4 py-1 rounded-full">
+          Harga asal: RM50
+        </span>
+      </div>    
+
+      <!-- BONUS SECTION -->
+      <div class="mt-10">
+        <h2 class="text-xl font-bold text-pink-600 uppercase mb-4">🎁 Bonus Istimewa Untuk Anda!</h2>
+        
+        <div class="space-y-4">
+
+          <!-- Bonus 1 -->
+          <div class="border-l-4 border-pink-500 bg-pink-50 p-4 shadow rounded-md flex items-start gap-4">
+            <img src="assets/images/kamus_2.png" alt="Bonus 1" class="w-12 h-12">
+            <div>
+              <h3 class="font-semibold text-pink-700">BONUS #1: Kamus "Cara baiki error dalam C++"</h3>
+              <p class="text-sm text-gray-600">Anda takkan dapat lari dari menghadapi error, tapi dengan kamus ni error akan jadi hal kecik je lepas ni</p>
+              <div class="text-sm text-gray-400 line-through">Bernilai RM50</div>
+              <div class="text-green-600 font-bold">Percuma 🎉</div>
+            </div>
+          </div>
+
+          <!-- Bonus 2 -->
+          <div class="border-l-4 border-pink-500 bg-pink-50 p-4 shadow rounded-md flex items-start gap-4">
+            <img src="assets/images/whatsapp.svg" alt="Bonus 2" class="w-12 h-12">
+            <div>
+              <h3 class="font-semibold text-pink-700">BONUS #2: Support melalui whatsapp oleh Sir Syafi</h3>
+              <p class="text-sm text-gray-600">Saya bersedia menjawab pertanyaan anda. Tak faham atau sangkut? Roger je, saya akan bantu!</p>
+              <div class="text-sm text-gray-400 line-through">Bernilai RM200</div>
+              <div class="text-green-600 font-bold">Percuma 🎉</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    </section>
+
+    <section id="gold" class="bg-gradient-to-br from-yellow-100 via-yellow-50 to-white py-12 px-6">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-yellow-700 text-center mb-10">
+          Apa yang membuatkan teknik Syafi Coding Academy berbeza? ✨
+        </h2>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          
+          <!-- USP 1 -->
+          <div class="bg-yellow-50 border border-amber-400 rounded-xl shadow-lg p-6">
+            <h3 class="text-xl font-bold text-yellow-900 mb-1">Belajar anytime ikut rentak anda</h3>
+            <p class="text-sm text-yellow-800 italic mb-2">→ Sibuk? Tak ada masa? Bukan masalah lagi!</p>
+            <p class="text-gray-700 text-sm">
+              Nak belajar bila-bila pun boleh sebab saya dah susun semua video tutorial. Nak tengok berulang kali sampai faham pun tak ada masalah. Jadual padat bukan lagi penghalang untuk anda kuasai C++
+            </p>
+          </div>
+
+
+          <!-- USP 2 -->
+          <div class="bg-yellow-50 border border-amber-400 rounded-xl shadow-lg p-6">
+            <h3 class="text-xl font-bold text-yellow-900 mb-1">Teknik “5 Langkah A-to-Z”</h3>
+            <p class="text-sm text-yellow-800 italic mb-2">→ Bukan hafal, tapi faham susunan logik program</p>
+            <p class="text-gray-700 text-sm">
+              Pelajar diajar langkah demi langkah macam nak bina program dari kosong. Ini bantu mereka nampak corak, bukan hanya ikut contoh tanpa faham.
+            </p>
+          </div>
+
+          <!-- USP 3 -->
+          <div class="bg-yellow-50 border border-amber-400 rounded-xl shadow-lg p-6">
+            <h3 class="text-xl font-bold text-yellow-900 mb-1">Belajar ibarat dalam kelas 1-to-1</h3>
+            <p class="text-sm text-yellow-800 italic mb-2">→ Cara penjelasan saya tak kayu dan bosan</p>
+            <p class="text-gray-700 text-sm">
+              Anda sebenarnya belajar topik yang pelajar kelas 1-to-1 akan belajar pada hari pertama. Kualiti kelas private tetapi berpatutan!
+            </p>
+          </div>
+
+          <!-- USP 4 -->
+          <div class="bg-yellow-50 border border-amber-400 rounded-xl shadow-lg p-6">
+            <h3 class="text-xl font-bold text-yellow-900 mb-1">Anda. Tak akan. Sangkut.</h3>
+            <p class="text-sm text-yellow-800 italic mb-2">→ Setiap error dan masalah anda, saya dah jangka</p>
+            <p class="text-gray-700 text-sm">
+              Dengan pengalaman saya yang bertahun tahun coding (dan mengajar coding) saya dah boleh jangka masalah apa yang anda akan hadapi. Semua jalan penyelesaian saya dah sediakan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Items Summary Section -->
+    <section class="bg-gray-100 py-16 px-6"  id="join">
+      <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-8">
+
+        <!-- Title & Description -->
+        <div class="mb-10">
+          <h2 class="text-3xl font-bold mb-2">Ready nak jadi coder C++ yang pro?</h2>
+          <p class="text-gray-600">5 item berharga - dengan satu harga yang tak masuk akal</p>
+        </div>
+
+        <!-- Item List -->
+        <table class="w-full text-sm mb-8">
+          <tbody class="space-y-6">
+            
+            <!-- Row 1 -->
+            <tr class="border-b">
+              <td class="py-2 font-semibold text-left align-top">
+                Video Panduan "5 Steps A-To-Z"
+              </td>
+              <td class="py-2 text-right align-top">
+                <div class="text-gray-500 line-through">RM100</div>
+                <div id="price1" class="text-green-600 font-bold">RM8</div>
+              </td>
+            </tr>
+
+            <!-- Row 2 -->
+            <tr class="border-b">
+              <td class="py-2 font-semibold text-left align-top">
+                10 Video Jawapan
+              </td>
+              <td class="py-2 text-right align-top">
+                <div class="text-gray-500 line-through">RM160</div>
+                <div id="price2" class="text-green-600 font-bold">RM7</div>
+              </td>
+            </tr>
+
+            <!-- Row 3 -->
+            <tr class="border-b">
+              <td class="py-2 font-semibold text-left align-top">
+                Kamus "5 Steps A-to-Z"
+              </td>
+              <td class="py-2 text-right align-top">
+                <div class="text-gray-500 line-through">RM50</div>
+                <div id="price3" class="text-green-600 font-bold">RM5</div>
+              </td>
+            </tr>
+
+            <!-- Row 4 -->
+            <tr class="border-b">
+              <td class="py-2 font-semibold text-left align-top">
+                Kamus "Cara baiki error"
+              </td>
+              <td class="py-2 text-right align-top">
+                <div class="text-gray-500 line-through">RM50</div>
+                <div class="text-pink-600 font-bold">Percuma</div>
+              </td>
+            </tr>
+
+            <!-- Row 5 -->
+            <tr>
+              <td class="py-2 font-semibold text-left align-top">
+                Support whatsapp Sir Syafi
+              </td>
+              <td class="py-2 text-right align-top">
+                <div class="text-gray-500 line-through">RM200</div>
+                <div class="text-pink-600 font-bold">Percuma</div>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+
+        <!-- Grand Total -->
+        <div class="border-t pt-6 mb-6">
+          <div class="grid grid-cols-[1fr_auto] gap-0 text-2xl font-bold items-center">
+            
+            <!-- Row 1 -->
+            <div></div>
+            <div class="text-sm text-gray-500 line-through text-right">RM310</div>
+
+            <!-- Row 2 -->
+            <div>Total harga</div>
+            <div class="total-price text-right text-green-600">RM20</div>
+
+            <!-- Row 3 -->
+            <!-- <div class="promo">Promo Discount</div>
+            <div id="promo-amount" class="promo total-price text-right">-RM25</div> -->
+
+            <!-- Row 4 -->
+            <!-- <div class="promo">Harga Selepas Discount</div>
+            <div id="price-after-discount" class="promo total-price text-green-600 text-right"> RM15</div>-->
+          </div>
+        </div>
+
+
+        <!-- CTA Button -->
+        <div class="text-center">
+          <a href="#pay" class="pulse-border bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg shadow transition duration-300 hover:shadow-lg hover:-translate-y-0.5 flex justify-center items-center">
+            Buat bayaran
+          </a>
+          <p class="text-xs text-gray-400 mt-2">Bayar melalui QR/Bank transfer/TnG</p>
+        </div>
+
+      </div>
+      <section class="bg-gray-100 py-10 rounded-lg mt-12">
+      <div class="max-w-3xl mx-auto text-center space-y-4">
+        <!-- Guarantee Image -->
+        <img src="assets/images/guarantee.svg" alt="Guarantee Badge" class="mx-auto w-24 h-24">
+
+        <!-- Title -->
+        <h2 class="text-2xl font-bold text-gray-800">Jaminan Puas Hati 100%</h2>
+
+        <!-- Description -->
+        <p class="text-gray-600 text-base">
+          Kalau lepas belajar anda rasa program ini tak membantu langsung —
+          <span class="font-semibold text-black">saya pulangkan semula <span class="total-price">RM20</span> anda</span>.  
+          Tiada soalan. Tiada syarat pelik. </br></br>
+          Saya bukan nak rugi, tapi saya nak anda rasa <span class="italic">selamat mencuba</span> tanpa takut rugi.
+          </br></br>Ramai pelajar sebelum ni berjaya, dan saya yakin anda pun boleh.
+        </p>
+      </div>
+    </section>
+
+    <section id="pay" class="max-w-xl mx-auto bg-gradient-to-r from-indigo-50 to-indigo-100 p-6 rounded-2xl shadow-lg space-y-8 my-12">
+      <h2 class="text-4xl font-extrabold text-gray-800 text-center">Last Step: Bayar Yuran</h2>
+
+      <!-- Steps wrapper -->
+      <div id="stepsWrapper" class="space-y-6">
+
+        <div class="step" data-step="2">
+          <h2 class="text-xl font-bold mb-3">Pilih Cara Pembayaran dan Bayar</h2>      
+          <div class="space-y-2">
+
+            <label class="block p-3 border border-yellow-400 rounded-xl cursor-pointer 
+                          bg-gradient-to-r from-yellow-200 to-yellow-300 shadow-lg
+                          hover:from-yellow-300 hover:to-yellow-400">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                  <input type="radio" name="paymethod" value="qr" class="mr-3 peer" checked onclick="updatePaymentDetails()">
+                  <span class="font-medium">QR Payment</span>
+                </div>
+                <span class="text-xs bg-black px-2 py-1 rounded-md flex items-center gap-1 text-white">
+                  ⚡ Paling Cepat
+                </span>
+              </div>
+              <div class="inline-flex items-center gap-2 bg-white px-4 py-2 mt-3 rounded-md">
+                <img src="assets/images/tng-icon.png" class="w-8 h-8 object-contain">
+                <img src="assets/images/grab-icon.svg" class="w-8 h-8 object-contain">
+                <img src="assets/images/mae-icon.png" class="w-8 h-8 object-contain">
+                <img src="assets/images/cimb-icon.png" class="w-8 h-8 object-contain">
+                <span class="text-gray-700 text-xs font-medium">plus 40 more banks and e-wallets</span>
+              </div>
+            </label>
+
+            <label class="flex items-center p-3 border border-yellow-400 rounded-xl cursor-pointer 
+                          bg-gradient-to-r from-yellow-200 to-yellow-300 shadow-lg
+                          hover:from-yellow-300 hover:to-yellow-400">
+              <input type="radio" name="paymethod" value="bank" class="mr-3 peer" onclick="updatePaymentDetails()">
+              <span class="font-medium">Bank Transfer</span>
+            </label>
+
+          </div>
+
+          <div class="flex items-start gap-2 bg-blue-50 border border-blue-200 text-blue-700 p-3 rounded-xl mt-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+            </svg>
+
+            <p class="text-xs">
+              Whatsapp resit ke 
+              <span class="font-semibold">010-5820083 (Sir Syafi)</span>
+            </p>
+          </div>
+
+          <div class="bg-gradient-to-r from-yellow-50 to-yellow-100 border border-yellow-200 rounded-xl p-4 space-y-4 shadow-lg mt-4">
+           
+
+            <div>
+              <p class="text-sm text-gray-600">Jumlah Perlu Dibayar:</p>
+              <p id="priceDisplay" class="total-price text-5xl font-bold text-green-600">RM40</p>
+            </div>
+
+            <div id="qrSection">
+              <img src="assets/images/duitnow-qr.png" class="w-full mx-auto rounded-xl shadow">
+              <p class="text-center text-sm mt-2 text-gray-600">
+                Ambil screenshot atau 
+                <a href="assets/images/duitnow-qr.png" download class="text-blue-600 font-semibold underline">
+                  tekan sini untuk download QR
+                </a>
+              </p>
+            </div>
+
+            <div id="bankSection" class="hidden space-y-2">
+              <div>
+                <p class="text-sm text-gray-600">Bank Account Number</p>
+                <div class="flex items-center gap-2">
+                  <span class="font-semibold text-lg">39501212556</span>
+                  <button id="copyAccBtn" onclick="copyAccount()" class="text-xs bg-black px-2 py-1 rounded-md hover:bg-gray-400 text-white">
+                    Copy
+                  </button>
+                </div>
+              </div>
+
+              <div>
+                <p class="text-sm text-gray-600">Bank Name</p>
+                <div class="flex items-center gap-2">
+                  <img src="assets/images/hlb-icon.png" class="w-6 h-6">
+                  <span class="font-medium">Hong Leong Bank</span>
+                </div>
+              </div>
+
+              <div>
+                <p class="text-sm text-gray-600">Account Name</p>
+                <p class="font-medium">Syafi Hakim Resources</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  </section>
+
+
+
+  <footer class="bg-gray-900 text-gray-300 py-8 px-6 mt-12">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <!-- Links -->
+      <nav class="flex space-x-6 text-sm">
+        <a href="tnc.html" class="hover:text-yellow-400 transition">Terms & Conditions</a>
+        <a href="refund_policy.html" class="hover:text-yellow-400 transition">Refund Policy</a>
+      </nav>
+
+      <!-- Contact Info -->
+      <div class="text-center md:text-right text-sm space-y-1">
+        <div>Email: <a href="mailto:msyafihakim@gmail.com" class="hover:text-yellow-400 transition">msyafihakim@gmail.com</a></div>
+        <div>Phone: <a href="tel:+60105820083" class="hover:text-yellow-400 transition">010-5820083</a></div>
+        <div>Location: Operating Remotely</div>
+      </div>
+    </div>
+    <div class="text-center text-xs text-gray-500 mt-6">
+      &copy; Syafi Hakim Resources (003435578-M)
+    </div>
+  </footer>
+
+</body>
+</html>
