@@ -130,7 +130,7 @@ fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?
 
     document.getElementById("top-banner").innerHTML = `
       <span class="text-sm font-semilight">
-      🚀 100+ pelajar dah mula bercoding!</br>
+      🚀 600+ pelajar dah mula bercoding!</br>
       <span class="text-4xl font-bold">RM40</span>
       </span>`;
     document.getElementById("countdown-container").classList.add("hidden");

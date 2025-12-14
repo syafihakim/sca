@@ -1,0 +1,105 @@
+[
+  {
+    "title": "Intro Level 2",
+    "subtopics": [
+      "(Bedah Computer) Cara sebenar coding berfungsi",
+      "\"string\" dalam C++",
+      "Contoh program dengan string",
+      "Apa itu getLine",
+      "Cara guna getLine"
+    ],
+    "price" : 40,
+    "d_price" : 10
+  },
+  {
+    "title": "If Statements Basic",
+    "subtopics": [
+      "Apa itu If Statements",
+      "Cara Guna If Statements",
+      "Teknik Buat Condition",
+      "If + Else",
+      "If + Else-If + Else",
+      "Perbezaan \"If If\" VS \"If-Else If\"",
+      "Contoh untuk \"Tanya\"",
+      "Contoh untuk \"Cakap\"",
+      "Contoh untuk \"Kira\""
+    ],
+    "price" : 50,
+    "d_price" : 10
+  },
+  {
+    "title": "Teknik If Statements Advanced",
+    "subtopics": [
+      "Teknik I : Ringkaskan \"Kira\"",
+      "Teknik II : Ringkaskan \"Cakap\"",
+      "Teknik III : Ringkaskan Lagi!!!"
+    ],
+    "price" : 60,
+    "d_price" : 10
+  },
+  {
+    "title": "Teknik If Statements Advanced II",
+    "subtopics": [
+      "Apa Itu Nested If Statements (If Dalam If)",
+      "Cara Buat Nested If Statements",
+      "Logical Operators"
+    ],
+    "price" : 70,
+    "d_price" : 10
+  },
+  {
+    "title": "While Loop Basics",
+    "subtopics": [
+      "Apa itu While Loop",
+      "Cara buat While Loop",
+      "Contoh guna While Loop untuk apa-apa program"
+    ],
+    "price" : 30,
+    "d_price" : 10
+  },
+  {
+    "title": "While Loop Basics II",
+    "subtopics": [
+      "Apa itu While Loop (Sentinel Controlled)",
+      "Teknik I : Cara buat While Loop",
+      "Cara guna While Loop untuk apa-apa program",
+      "Cara buat While Loop + String",
+      "Teknik II : Cara tanya soalan berulang kali",
+      "Cara buat Invalid Input (multiple conditions)"
+    ],
+    "price" : 60,
+    "d_price" : 10
+  },
+  {
+    "title": "Basic Algorithms : Counting dan Totalling",
+    "subtopics": [
+      "Apa itu Algorithm",
+      "Apa itu Counting",
+      "Apa itu Totalling",
+      "Cara buat Counting",
+      "Cara buat Totalling",
+      "Contoh kegunaan Counting dan Totalling"
+    ],
+    "price" : 40,
+    "d_price" : 10
+  },
+  {
+    "title": "While Loop Advanced",
+    "subtopics": [
+      "Apa itu Counter Controlled While Loop",
+      "Cara buat Counter Controlled Loop",
+      "Contoh program dengan loop ini"
+    ],
+    "price" : 60,
+    "d_price" : 10
+  },
+  {
+    "title": "Full Mini Project",
+    "subtopics": [
+      "Grocery Shop System",
+      "Airline Ticket System"
+    ],
+    "price" : 100,
+    "d_price" : 10
+  }
+]
