@@ -5,7 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Clarity Before Level 2</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .step-btn {
+      @apply flex-1 py-3 rounded-xl text-sm font-semibold
+             bg-white text-gray-600 border
+             hover:bg-gray-50 transition;
+    }
+
+    .step-active {
+      @apply bg-indigo-600 text-white border-indigo-600;
+    }
+  </style>
 </head>
+
 
 <body class="bg-gray-50 text-gray-900">
 
@@ -17,226 +29,293 @@
         Untuk Student Semester 1 C++
       </span>
 
-      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+      <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mb-6">
         Akhirnya.. anda akan mula faham Array, Function dan File
         <br/>
         <span class="text-yellow-300">(Walaupun sebelum ni rasa total lost dan blur)</span>
       </h1>
 
       <p class="max-w-2xl mx-auto text-lg text-white/90">
-        Tonton 3 video untuk 3 topik ni dan fahami
-        apa yang kelas anda di University tak pernah explain!
+        Hanya dalam 5 minit untuk setiap topik, saya terangkan
+        apa yang kelas anda di University tak pernah tunjuk!
       </p>
 
-    </div>
-  </section>
-
-  <!-- SECTION 2: VIDEO 1 -->
-  <section class="bg-white py-20 min-h-screen">
-    <div class="max-w-3xl mx-auto px-6 text-center">
-
-      <span class="inline-block bg-green-300 text-sm tracking-wide px-4 py-1 rounded-full mb-3">
-        Video 1 : Fahami Array
-      </span>
-
-      <h2 class="text-2xl font-bold mb-6">
-        Kalau boleh faham variable, mesti boleh faham Array
-      </h2>
-
-      <video 
-        src="assets/videos/array.mp4"
-        class="w-full rounded-xl shadow mb-6"
-        controls
-        playsinline
-      >
-        Your browser does not support the video tag.
-      </video>
-
-
-      <p class="text-sm text-gray-600 mb-6 mx-auto">
-        Lepas video ni, baru boleh fokus array + for loop + cin + cout + calculation + if statements sekali </br></br>
-        Dalam Level 2 kita akan cover detail detail
-      </p>
-
-      <a href="#level2"
-         class="inline-block px-6 py-3 border border-gray-300 rounded-xl text-sm font-medium hover:bg-gray-100 transition">
-        See Level 2
+      <a href="#secondSection"
+         class="inline-block px-8 py-3 rounded-xl text-sm font-medium bg-green-300 transition mt-8 text-black">
+        Tonton sekarang
       </a>
 
     </div>
   </section>
 
-  <!-- SECTION 3: VIDEO 2 -->
-  <section class="bg-gray-100 py-20 min-h-screen">
-    <div class="max-w-3xl mx-auto px-6 text-center">
+  <!-- SECTION 2: STEPPER -->
+  <section id="secondSection" class="bg-gray-100 py-20">
+    <div class="max-w-5xl mx-auto px-6">
 
-      <span class="inline-block bg-green-300 text-sm tracking-wide px-4 py-1 rounded-full mb-3">
-        Video 2 : Fahami Function
-      </span>
+      <!-- STEPPER -->
+      <div class="w-full bg-gray-50 border border-gray-200 rounded-xl shadow-sm p-4">
+        
+        <!-- Top: Circles + Arrows -->
+        <div class="grid grid-cols-7 items-center">
+          <!-- Step 1 -->
+          <span data-step="1" class="step-circle flex items-center justify-center w-10 h-10 text-sm font-bold border-2 border-indigo-600 rounded-full bg-indigo-600 text-white col-start-1">
+            1
+          </span>
+          <!-- Arrow 1 -->
+          <hr class="flex-1 border-t-2 border-gray-300 mx-1">
+          <!-- Step 2 -->
+          <span data-step="2" class="step-circle flex items-center justify-center w-10 h-10 text-sm font-bold border-2 border-gray-300 rounded-full bg-white text-gray-600 col-start-3">
+            2
+          </span>
+          <!-- Arrow 2 -->
+          <hr class="flex-1 border-t-2 border-gray-300 mx-1">
+          <!-- Step 3 -->
+          <span data-step="3" class="step-circle flex items-center justify-center w-10 h-10 text-sm font-bold border-2 border-gray-300 rounded-full bg-white text-gray-600 col-start-5">
+            3
+          </span>
+          <!-- Arrow 3 -->
+          <hr class="flex-1 border-t-2 border-gray-300 mx-1">
+          <!-- Step 4 -->
+          <span data-step="4" class="step-circle flex items-center justify-center w-10 h-10 text-sm font-bold border-2 border-gray-300 rounded-full bg-white text-gray-600 col-start-7">
+            4
+          </span>
+        </div>
+        
+        <!-- Bottom: Labels -->
+        <div class="grid grid-cols-7 mt-2">
+          <span class="col-start-1 text-xs font-medium text-gray-700 text-center">Array</span>
+          <span class="col-start-3 text-xs font-medium text-gray-700 text-center">Function</span>
+          <span class="col-start-5 text-xs font-medium text-gray-700 text-center">File</span>
+          <span class="col-start-7 text-xs font-medium text-gray-700 text-center">Access<br>All Topics</span>
+        </div>
 
-      <h2 class="text-2xl font-bold mb-6">
-        Sebenarnya anda dah faham function, cuma tak perasan je!
-      </h2>
+      </div>
 
-      <video 
-        src="assets/videos/function.mp4"
-        class="w-full rounded-xl shadow mb-6"
-        controls
-        playsinline
-      >
-        Your browser does not support the video tag.
-      </video>
 
-      <p class="text-sm text-gray-600 mb-6 mx-auto">
-        Lepas video function ni, mesti rasa macam dah mula faham
-        <br/><br/>
-        tapi anda still kena belajar lagi tau : parameters, void, return, pass by value vs pass by reference
-        <br/><br/>
-        Semua tu kita cover dalam Level 2
-      </p>
 
-      <a href="#level2"
-         class="inline-block px-8 py-4 bg-indigo-600 text-white font-semibold rounded-2xl shadow hover:bg-indigo-500 transition">
-        See Level 2
-      </a>
+      <!-- STEP CONTENTS -->
+
+      <!-- STEP 1 -->
+      <div class="step-content" data-step="1">
+        <!-- SECTION 2: VIDEO 1 -->
+          <section class="bg-white py-20 min-h-screen">
+            <div class="max-w-3xl mx-auto px-6 text-center">
+
+              <span class="inline-block bg-green-300 text-sm tracking-wide px-4 py-1 rounded-full mb-3">
+                Video 1 : Fahami Array
+              </span>
+
+              <h2 class="text-2xl font-bold mb-6">
+                Kalau boleh faham variable, mesti boleh faham Array
+              </h2>
+
+              <video 
+                src="assets/videos/array.mp4"
+                class="w-full rounded-xl shadow mb-6"
+                controls
+                playsinline
+              >
+                Your browser does not support the video tag.
+              </video>
+
+
+              <p class="text-sm text-gray-600 mb-6 mx-auto">
+                Lepas video ni, baru boleh fokus array + for loop + cin + cout + calculation + if statements sekali </br></br>
+                Dalam Level 2 kita akan cover detail detail
+              </p>
+
+              <a href="#level2"
+                 class="go-step-4 inline-block px-6 py-3 border border-gray-300 rounded-xl text-sm font-medium hover:bg-gray-100 transition">
+                See Level 2
+              </a>
+
+            </div>
+          </section>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="step-content hidden" data-step="2">
+        <!-- SECTION 3: VIDEO 2 -->
+        <section class="bg-gray-100 py-20 min-h-screen">
+          <div class="max-w-3xl mx-auto px-6 text-center">
+
+            <span class="inline-block bg-green-300 text-sm tracking-wide px-4 py-1 rounded-full mb-3">
+              Video 2 : Fahami Function
+            </span>
+
+            <h2 class="text-2xl font-bold mb-6">
+              Sebenarnya anda dah faham function, cuma tak perasan je!
+            </h2>
+
+            <video 
+              src="assets/videos/function.mp4"
+              class="w-full rounded-xl shadow mb-6"
+              controls
+              playsinline
+            >
+              Your browser does not support the video tag.
+            </video>
+
+            <p class="text-sm text-gray-600 mb-6 mx-auto">
+              Lepas video function ni, mesti rasa macam dah mula faham
+              <br/><br/>
+              tapi anda still kena belajar lagi tau : parameters, void, return, pass by value vs pass by reference
+              <br/><br/>
+              Semua tu kita cover dalam Level 2
+            </p>
+
+            <a href="#level2"
+               class="go-step-4 inline-block px-8 py-4 bg-indigo-600 text-white font-semibold rounded-2xl shadow hover:bg-indigo-500 transition">
+              See Level 2
+            </a>
+
+          </div>
+        </section>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="step-content hidden" data-step="3">
+        <!-- SECTION 4: VIDEO 3 -->
+        <section class="bg-white py-20 min-h-screen">
+          <div class="max-w-3xl mx-auto px-6 text-center">
+
+            <span class="inline-block bg-green-300 text-sm tracking-wide px-4 py-1 rounded-full mb-3">
+              Video 3 : Fahami File
+            </span>
+
+            <h2 class="text-2xl font-bold mb-6">
+              File ni cuma ganti cin dengan cout je rupanya?!
+            </h2>
+
+            <video 
+              src="assets/videos/file.mp4"
+              class="w-full rounded-xl shadow mb-6"
+              controls
+              playsinline
+            >
+              Your browser does not support the video tag.
+            </video>
+
+            <p class="text-gray-600 mb-6">
+              Video 1,2,3 ni adalah yang saya panggil
+              <span class="font-semibold">"Mindset shift”</span>.
+              <br/><br/>
+              Sebab anda akan mula fikir "Kejap.. nampak senang la pulak". 
+              Tapi belum ada gambaran lengkap
+              <img src="assets/images/momentum.png" class="my-6"/>
+
+              <span class="font-semibold">
+                Kalau anda stop kat sini, ibarat macam dah ambil momentum tapi tak SHOOT! Macam gambar anak panah kat atas tu
+              </span>
+              </br></br>
+
+              Jom study kaw-kaw dengan Level 2 untuk belajar 13 topik dengan lebih dalam
+
+              </br></br>
+            </p>
+
+            <a href=""
+               class="go-step-4 inline-block px-8 py-4 bg-indigo-600 text-white font-semibold rounded-2xl shadow hover:bg-indigo-500 transition">
+              See Level 2
+            </a>
+
+          </div>
+        </section>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="step-content hidden" data-step="4">
+        <!-- SECTION 5: LEVEL 2 OFFER -->
+          <section id="level2" class="bg-gradient-to-r from-indigo-900 to-purple-900 text-white py-24">
+            <div class="max-w-4xl mx-auto px-6">
+
+              <h2 class="text-3xl md:text-4xl font-bold mb-12">
+                Kalau 3 video pendek tu pun dah buat anda rasa lebih bersemangat, Level 2 ni perfect untuk anda
+              </h2>
+
+              <!-- WHO IT'S FOR -->
+              <div class="mb-4">
+                <p><b>Sebab video-video kat atas tu memang dibuat khas untuk </b> : Buktikan pada anda sebenarnya anda boleh sangat sangat fahamkan topik topik tu!</p>
+              </div>
+
+              <div class="mb-12">
+                <p><b>Dalam Level 2 baru kita akan betul betul masuk dengan lebih detail </b>dan buat kan anda jadi lebih confident untuk hadapi exam nanti</p>
+              </div>
+
+              <!-- WHAT THEY GET -->
+              <div class="mb-12">
+                <h3 class="text-xl font-bold mb-1">Dalam Level 2, anda akan belajar : </h3>
+                <ul class="text-white/90">
+                  <li>• 13 Topik Berbeza dari awal (semua topik semester 1)</li>
+                  <li>• Cara untuk berfikir tanpa meneka neka</li>
+                  <li>• Belajar melalui susunan topik yang paling tepat</li>          
+                </ul>
+              </div>
+
+              <!-- SCARCITY -->
+              <div class="bg-white/10 rounded-xl p-6 mb-10">
+                <p class="text-lg">
+                  Untuk pengajaran yang High Quality,  
+                  saya akan buka <span class="font-bold">40 slot sahaja</span>.
+                  <br/><br/>
+                  40 pelajar terawal ni, anda akan dibawa masuk ke group Telegram percuma untuk bincang past year questions, dan lab exercises!
+                </p>
+              </div>
+
+              <!-- RISK REVERSAL -->
+              <p class="text-center text-white/90 mb-10">
+                Jika selepas tonton Level 2, anda rasa seperti tiada perubahan langsung. Whatsapp je saya cakap "Sir nak refund". Saya akan terus bagi refund.
+              </p>
+
+              <!-- PRIMARY CTA -->
+              <div class="text-center">
+                <a href="/join/cpplevel2"
+                   class="inline-block px-12 py-5 bg-yellow-400 text-gray-900 font-extrabold rounded-2xl shadow-lg hover:bg-yellow-300 transition">
+                  Lihat Semua Topik Dalam Level 2
+                </a>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- SECTION 6: WHO IT'S NOT FOR -->
+          <section class="bg-white py-20">
+            <div class="max-w-3xl mx-auto px-6 text-center">
+
+              <h3 class="text-2xl font-bold mb-6">Level 2 TIDAK SESUAI untuk:</h3>
+
+              <ul class="text-gray-700">
+                <li>• Student yang taknak ikut step step saya</li>
+                <li>• Student yang malas buat latihan</li>
+                <li>• Student yang banyak alasan</li>
+              </ul>
+
+            </div>
+          </section>
+
+          <!-- SECTION 7: FINAL NUDGE -->
+          <section class="bg-gray-100 py-24">
+            <div class="max-w-3xl mx-auto px-6 text-center">
+
+              <p class="text-xl text-gray-800 mb-10">
+                Kalau video-video kat atas tu pun dah rasa membantu, itu tandanya anda sesuai dengan teknik Syafi Coding Academy
+                <br/><br/>
+                <span class="font-semibold">
+                  Mula sekarang, masih ada masa untuk anda prepare sebelum final test dan final exam
+                </span>
+              </p>
+
+              <a href="/join/cpplevel2"
+                 class="inline-block px-12 py-5 bg-indigo-600 text-white font-extrabold rounded-2xl shadow hover:bg-indigo-500 transition">
+                Lihat Semua Topik Dalam Level 2
+              </a>
+
+            </div>
+          </section>
+      </div>
 
     </div>
   </section>
-
-  <!-- SECTION 4: VIDEO 3 -->
-  <section class="bg-white py-20 min-h-screen">
-    <div class="max-w-3xl mx-auto px-6 text-center">
-
-      <span class="inline-block bg-green-300 text-sm tracking-wide px-4 py-1 rounded-full mb-3">
-        Video 3 : Fahami File
-      </span>
-
-      <h2 class="text-2xl font-bold mb-6">
-        File ni cuma ganti cin dengan cout je rupanya?!
-      </h2>
-
-      <video 
-        src="assets/videos/file.mp4"
-        class="w-full rounded-xl shadow mb-6"
-        controls
-        playsinline
-      >
-        Your browser does not support the video tag.
-      </video>
-
-      <p class="text-gray-600 mb-6">
-        Video 1,2,3 ni adalah yang saya panggil
-        <span class="font-semibold">"Mindset shift”</span>.
-        <br/><br/>
-        Sebab anda akan mula fikir "Kejap.. nampak senang la pulak". 
-        Tapi belum ada gambaran lengkap
-        <img src="assets/images/momentum.png" class="my-6"/>
-
-        <span class="font-semibold">
-          Kalau anda stop kat sini, ibarat macam dah ambil momentum tapi tak SHOOT! Macam gambar anak panah kat atas tu
-        </span>
-        </br></br>
-
-        Jom study kaw-kaw dengan Level 2 untuk belajar 13 topik dengan lebih dalam
-
-        </br></br>
-      </p>
-
-      <a href="#level2"
-         class="inline-block px-8 py-4 bg-indigo-600 text-white font-semibold rounded-2xl shadow hover:bg-indigo-500 transition">
-        See Level 2
-      </a>
-
-    </div>
-  </section>
-
-  <!-- SECTION 5: LEVEL 2 OFFER -->
-  <section id="level2" class="bg-gradient-to-r from-indigo-900 to-purple-900 text-white py-24">
-    <div class="max-w-4xl mx-auto px-6">
-
-      <h2 class="text-3xl md:text-4xl font-bold mb-12">
-        Kalau 3 video di atas buat anda rasa lebih bersemangat, Level 2 ni perfect untuk anda
-      </h2>
-
-      <!-- WHO IT'S FOR -->
-      <div class="mb-4">
-        <p><b>Sebab video-video kat atas tu memang dibuat khas untuk </b> : Buktikan pada anda sebenarnya anda boleh sangat sangat fahamkan topik topik tu!</p>
-      </div>
-
-      <div class="mb-12">
-        <p><b>Dalam Level 2 baru kita akan betul betul masuk dengan lebih detail </b>dan buat kan anda jadi lebih confident untuk hadapi exam nanti</p>
-      </div>
-
-      <!-- WHAT THEY GET -->
-      <div class="mb-12">
-        <h3 class="text-xl font-bold mb-1">Dalam Level 2, anda akan belajar : </h3>
-        <ul class="text-white/90">
-          <li>• 13 Topik Berbeza dari awal (semua topik semester 1)</li>
-          <li>• Cara untuk berfikir tanpa meneka neka</li>
-          <li>• Belajar melalui susunan topik yang paling tepat</li>          
-        </ul>
-      </div>
-
-      <!-- SCARCITY -->
-      <div class="bg-white/10 rounded-xl p-6 mb-10">
-        <p class="text-lg">
-          Untuk pengajaran yang High Quality,  
-          saya akan buka <span class="font-bold">100 slot sahaja</span>.
-          <br/><br/>
-          100 pelajar terawal ni, anda akan dibawa masuk ke group Telegram percuma untuk bincang past year questions, dan lab exercises!
-        </p>
-      </div>
-
-      <!-- RISK REVERSAL -->
-      <p class="text-center text-white/90 mb-10">
-        Jika selepas tonton Level 2, anda rasa seperti tiada perubahan langsung. Whatsapp je saya cakap "Sir nak refund". Saya akan terus bagi refund.
-      </p>
-
-      <!-- PRIMARY CTA -->
-      <div class="text-center">
-        <a href="/join/cpplevel2"
-           class="inline-block px-12 py-5 bg-yellow-400 text-gray-900 font-extrabold rounded-2xl shadow-lg hover:bg-yellow-300 transition">
-          Lihat Semua Topik Dalam Level 2
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- SECTION 6: WHO IT'S NOT FOR -->
-  <section class="bg-white py-20">
-    <div class="max-w-3xl mx-auto px-6 text-center">
-
-      <h3 class="text-2xl font-bold mb-6">Level 2 TIDAK SESUAI untuk:</h3>
-
-      <ul class="text-gray-700">
-        <li>• Student yang taknak ikut step step saya</li>
-        <li>• Student yang malas buat latihan</li>
-        <li>• Student yang banyak alasan</li>
-      </ul>
-
-    </div>
-  </section>
-
-  <!-- SECTION 7: FINAL NUDGE -->
-  <section class="bg-gray-100 py-24">
-    <div class="max-w-3xl mx-auto px-6 text-center">
-
-      <p class="text-xl text-gray-800 mb-10">
-        Kalau video-video kat atas tu pun dah rasa membantu, itu tandanya anda sesuai dengan teknik Syafi Coding Academy
-        <br/><br/>
-        <span class="font-semibold">
-          Mula sekarang, masih ada masa untuk anda prepare sebelum final test dan final exam
-        </span>
-      </p>
-
-      <a href="/join/cpplevel2"
-         class="inline-block px-12 py-5 bg-indigo-600 text-white font-extrabold rounded-2xl shadow hover:bg-indigo-500 transition">
-        Join Level 2 Now
-      </a>
-
-    </div>
-  </section>
-
 </body>
+<script src="app.js"></script>
 </html>

@@ -338,8 +338,74 @@ function updatePaymentDetails() {
     document.getElementById("bankSection").classList.toggle("hidden", method !== "bank")
 }
 
+async function updateScarcityBanner() {
+  const banner = document.getElementById("scarcity-banner");
+  const timerDiv = document.getElementById("countdown-timer");
+  const apiBase = "https://script.google.com/macros/s/AKfycbxHsPKkyyWGUBQgC2jt6HlujhUDBit2BM8BcpLirX-pP55tQghmgmV87lsa1fR7_NKh/exec";
+
+  try {
+    // Fetch open slots
+    const slotRes = await fetch(`${apiBase}?key=open_slot`);
+    const slotData = await slotRes.json();
+    const slots = parseInt(slotData.value || 0);
+
+    if (slots > 0) {
+      banner.innerHTML = `🔥 Tinggal <span class="font-extrabold">${slots}</span> slot lagi!`;
+      banner.appendChild(timerDiv);
+      banner.classList.remove("hidden");
+    } else {
+      banner.innerHTML = `😢 All slots are gone!`;
+      banner.appendChild(timerDiv);
+      banner.classList.add("bg-red-500", "text-white");
+    }
+
+    // Fetch close date/time
+    const closeRes = await fetch(`${apiBase}?key=close_date_time`);
+    const closeData = await closeRes.json();
+    const closeDate = new Date(closeData.value);
+
+    // Update countdown every second
+    function updateCountdown() {
+      const now = new Date();
+      let diff = closeDate - now;
+
+      if (diff <= 0) {
+        timerDiv.innerHTML = `<span class="text-xs text-black">⏰ Pendaftaran ditutup</span>`;
+        clearInterval(countdownInterval);
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      diff -= days * (1000 * 60 * 60 * 24);
+
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      diff -= hours * (1000 * 60 * 60);
+
+      const minutes = Math.floor(diff / (1000 * 60));
+      diff -= minutes * (1000 * 60);
+
+      const seconds = Math.floor(diff / 1000);
+
+      // Format with labels and red color
+      timerDiv.innerHTML = `
+        <span class="text-indigo-800 text-sm">${days} Hari : ${hours} Jam : ${minutes} Min : ${seconds} Saat</span><br>
+        <span class="text-xs text-black">Pendaftaran bakal ditutup</span>
+      `;
+    }
+
+    updateCountdown();
+    const countdownInterval = setInterval(updateCountdown, 1000);
+
+  } catch (err) {
+    console.error("Failed to fetch slots or close date:", err);
+    timerDiv.innerText = "Error loading countdown";
+  }
+}
+
+
 
 loadTopics();
 loadPriceSummary();
 paymentTabsHandler();
 addCouponHandler();
+document.addEventListener("DOMContentLoaded", updateScarcityBanner);
