@@ -101,5 +101,53 @@
     ],
     "price" : 100,
     "d_price" : 10
+  },
+  {
+    "title": "Array",
+    "subtopics": [
+      "Apa itu Array",
+      "Dua cara untuk buat array",
+      "Cout + Array",
+      "Cin + Array",
+      "Calculation + Array",
+      "Parellel Array",
+      "For Loop + Array"
+    ],
+    "price" : 120,
+    "d_price" : 10
+  },
+  {
+    "title": "Functions",
+    "subtopics": [
+      "Apa itu functions",
+      "Cara buat function paling basic",
+      "Cara buat function dengan parameter",
+      "Cara buat function dengan return (void vs int function)",
+      "Pass by reference vs Pass by value"
+    ],
+    "price" : 100,
+    "d_price" : 10
+  },
+  {
+    "title": "Files",
+    "subtopics": [
+      "Apa itu Files Input Output",
+      "Cara buat Files Input",
+      "Cara buat Files Output",
+      "Cara guna File dengan Array"
+    ],
+    "price" : 100,
+    "d_price" : 10
+  },
+  {
+    "title": "Pointer",
+    "subtopics": [
+      "Apa itu pointer",
+      "Symbol-symbol penting pointer : & dan *",
+      "Cara mudah baca coding yang melibatkan pointer",
+      "Cara buat function dengan return (void vs int function)"
+    ],
+    "price" : 100,
+    "d_price" : 10
   }
 ]

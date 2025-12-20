@@ -23,5 +23,25 @@
     "title": "Mini Projects",
     "actual_price": 100,
     "price": 30
+  },
+  {
+    "title": "Array",
+    "actual_price": 100,
+    "price": 30
+  },
+  {
+    "title": "Function",
+    "actual_price": 100,
+    "price": 30
+  },
+  {
+    "title": "Files",
+    "actual_price": 100,
+    "price": 30
+  },
+  {
+    "title": "Pointer",
+    "actual_price": 100,
+    "price": 30
   }
 ]
