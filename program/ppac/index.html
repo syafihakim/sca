@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="ms">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <title>Program Persediaan Asas Coding</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ["Libre Baskerville", "serif"],
+              sans: ["Inter", "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body class="bg-white text-slate-800">
+    <main
+      class="
+        max-w-[760px]
+        mx-auto
+        px-6
+        sm:px-10
+        lg:px-16
+        py-16
+        lg:py-20
+      "
+    >
+
+      <section
+        class="
+          relative
+          left-1/2
+          right-1/2
+          -ml-[50vw]
+          -mr-[50vw]
+          w-screen
+          h-[220px]
+          sm:h-[280px]
+          lg:h-[340px]
+          overflow-hidden
+          mb-12
+        "
+      >
+        <img
+          src="banner.jpg"
+          alt="Persekitaran pembelajaran coding dan pemikiran logik"
+          class="w-full h-full object-cover"
+        />
+      </section>
+
+      <!-- PROGRAM TITLE -->
+      <h1
+        class="
+          font-serif
+          text-slate-900
+          leading-tight
+          mb-6
+          text-[28px]
+          sm:text-[32px]
+          lg:text-[40px]
+        "
+      >
+        Program Persediaan Asas Coding (CS/IT/S.E)
+      </h1>
+
+      <!-- RULE -->
+      <div class="w-12 lg:w-16 h-[2px] bg-slate-400 mb-8"></div>
+
+      <!-- DESCRIPTION -->
+      <div
+        class="
+          font-sans
+          text-slate-700
+          space-y-4
+          max-w-[680px]
+          text-[15px]
+          sm:text-[16px]
+          leading-relaxed
+        "
+      >
+        <p>
+          Dalam semester 1 nanti, para pelajar kursus-kursus di atas akan
+          diperkenalkan dengan subjek coding.
+        </p>
+
+        <p>Namun, para pelajar yang :</p>
+
+        <ul class="list-disc pl-5">
+          <li>tidak mempunyai asas</li>
+          <li>pertama kali mendengar tentang “coding”</li>
+          <li>berharap University/Kolej akan bimbing mereka dari awal</li>
+        </ul>
+
+        <p>
+          berkemungkinan besar akan tercicir, berasa stress dan tak boleh memahami
+          subjek coding – dari awal semester hingga tamat semester!
+        </p>
+
+        <p class="text-slate-500 text-[13px] sm:text-[14px]">
+          *Berdasarkan pengalaman kami sejak 2017 lagi
+        </p>
+      </div>
+
+      <hr class="my-24 border-t border-slate-400" />
+
+      <section class="mt-16 max-w-[680px]">
+
+        <h2 class="font-sans font-semibold text-slate-800 text-[17px] mb-4">
+          Dalam halaman ini, anda boleh tahu tentang:
+        </h2>
+
+        <ul class="list-disc pl-6 space-y-2 font-sans text-slate-700 text-[15px] sm:text-[16px]">
+          <li>
+            <a href="#cara-pembelajaran" class="underline decoration-slate-300 hover:decoration-slate-500">
+              Bagaimana pelajar akan menguasai asas
+            </a>
+          </li>
+          <li>
+            <a href="#struktur-tempoh" class="underline decoration-slate-300 hover:decoration-slate-500">
+              Struktur, tempoh & kaedah pembelajaran
+            </a>
+          </li>
+          <li>
+            <a href="#penilaian-penguasaan" class="underline decoration-slate-300 hover:decoration-slate-500">
+              Bila program program dianggap tamat
+            </a>
+          </li>
+          <li>
+            <a href="#yuran-pengambilan" class="underline decoration-slate-300 hover:decoration-slate-500">
+              Yuran & pengambilan pelajar
+            </a>
+          </li>
+          <li>
+            <a href="#langkah-seterusnya" class="underline decoration-slate-300 hover:decoration-slate-500">
+              Langkah seterusnya untuk memulakan program
+            </a>
+          </li>
+        </ul>
+
+      </section>
+
+
+
+      <section class="mt-24 max-w-[760px]">
+
+        <!-- Main Heading -->
+        <h2
+          class="
+            font-serif
+            text-slate-900
+            text-[32px]
+            sm:text-[40px]
+            mb-8
+            font-bold
+          "
+        >
+          Tentang program ini
+        </h2>
+
+        <!-- Ringkasan Program -->
+        <div class="mb-14">
+          <h3
+            class="
+              font-sans
+              font-semibold
+              text-slate-800
+              text-[17px]
+              mb-4
+            "
+          >
+            Ringkasan program
+          </h3>
+
+          <div
+            class="
+              font-sans
+              text-slate-700
+              text-[15px]
+              sm:text-[16px]
+              leading-relaxed
+              space-y-4
+              max-w-[680px]
+            "
+          >
+            <p>
+              Program persediaan berstruktur secara individu (1-to-1) untuk pelajar
+              yang bercadang menguasai asas subjek coding.
+            </p>
+
+            <p>
+              Asas akan dibina dari kosong, jadi pelajar yang tiada pengalaman langsung
+              pun tetap sesuai! Bahkan, program ini dibuat khas untuk golongan tersebut.
+            </p>
+          </div>
+        </div>
+
+        <!-- Kisah Kewujudan Program -->
+        <div class="mb-14">
+          <h3
+            class="
+              font-sans
+              font-semibold
+              text-slate-800
+              text-[17px]
+              mb-4
+            "
+          >
+            Kisah kewujudan program ini
+          </h3>
+
+          <div
+            class="
+              font-sans
+              text-slate-700
+              text-[15px]
+              sm:text-[16px]
+              leading-relaxed
+              space-y-4
+              max-w-[680px]
+            "
+          >
+            <p>
+              Sejak 2018, saya (Sir Syafi) telah mula menjadi mentor dan tutor kepada
+              junior-junior coding. Sehingga tahun ini (2026) dan setelah mengajar dan
+              guide beratus ratus pelajar coding di seluruh Malaysia, saya nampak satu
+              pattern yang sama.
+            </p>
+
+            <p>
+              Pelajar yang memasuki Degree/Diploma/Kolej tanpa asas coding dan pertama
+              kali belajar coding di sana memang akan :
+            </p>
+
+            <ul class="list-disc pl-6">
+              <li>tercicir</li>
+              <li>tak faham pun apa yang dipelajari setiap kelas</li>
+              <li>
+                semakin lama dalam semester semakin tak faham (kerana setiap topik
+                memang berkait!)
+              </li>
+              <li>
+                tidak mampu pun nak buat soalan-soalan level Easy (yang sepatutnya boleh
+                dibuat selepas belajar coding selama 15 minit!)
+              </li>
+              <li>
+                tidak memahami maksud coding sebenar dan tak tahu apa sebenarnya yang
+                mereka pelajari
+              </li>
+            </ul>
+
+            <p>
+              dan macam-macam lagi rintangan yang sepatutnya boleh dielakkan. 
+              </br></br>
+              Maka, pada tahun 2026 saya berhasrat untuk bertukar
+              arah dan menjadikan institusi ini sebagai pusat persediaan awal
+              pelajar-pelajar coding.
+            </p>
+          </div>
+        </div>
+
+        <!-- Matlamat Akhir Program -->
+        <div>
+          <h3
+            class="
+              font-sans
+              font-semibold
+              text-slate-800
+              text-[17px]
+              mb-4
+            "
+          >
+            Matlamat Akhir Program
+          </h3>
+
+          <div
+            class="
+              font-sans
+              text-slate-700
+              text-[15px]
+              sm:text-[16px]
+              leading-relaxed
+              space-y-5
+              max-w-[680px]
+            "
+          >
+            <p>
+              Melalui sesi Live secara 1-to-1, pelajar akan :
+            </p>
+
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <svg
+                    class="w-[18px] h-[18px] flex-shrink-0 mt-[0.15em]"
+                    viewBox="0 0 18 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <rect
+                      x="0.75"
+                      y="0.75"
+                      width="16.5"
+                      height="16.5"
+                      rx="2"
+                      fill="white"
+                      stroke="#94A3B8"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                <span>Mampu menerangkan "apa itu coding"</span>
+              </li>
+
+              <li class="flex items-start gap-3">
+                <svg
+                    class="w-[18px] h-[18px] flex-shrink-0 mt-[0.15em]"
+                    viewBox="0 0 18 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <rect
+                      x="0.75"
+                      y="0.75"
+                      width="16.5"
+                      height="16.5"
+                      rx="2"
+                      fill="white"
+                      stroke="#94A3B8"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                <span>
+                  Mampu membaca setiap baris coding yang ditulis sendiri atau dari
+                  Internet/buku
+                </span>
+              </li>
+
+              <li class="flex items-start gap-3">
+                <svg
+                    class="w-[18px] h-[18px] flex-shrink-0 mt-[0.15em]"
+                    viewBox="0 0 18 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <rect
+                      x="0.75"
+                      y="0.75"
+                      width="16.5"
+                      height="16.5"
+                      rx="2"
+                      fill="white"
+                      stroke="#94A3B8"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                <span>
+                  Mampu menerangkan cara coding berfungsi dengan analogi mudah
+                </span>
+              </li>
+
+              <li class="flex items-start gap-3">
+                <svg
+                    class="w-[18px] h-[18px] flex-shrink-0 mt-[0.15em]"
+                    viewBox="0 0 18 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <rect
+                      x="0.75"
+                      y="0.75"
+                      width="16.5"
+                      height="16.5"
+                      rx="2"
+                      fill="white"
+                      stroke="#94A3B8"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                <span>
+                  Mampu menyiapkan coding dari awal hingga habis bagi peringkat asas
+                </span>
+              </li>
+
+              <li class="flex items-start gap-3">
+                <svg
+                    class="w-[18px] h-[18px] flex-shrink-0 mt-[0.15em]"
+                    viewBox="0 0 18 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <rect
+                      x="0.75"
+                      y="0.75"
+                      width="16.5"
+                      height="16.5"
+                      rx="2"
+                      fill="white"
+                      stroke="#94A3B8"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                <span>
+                  Mampu untuk menentukan sama ada code yang ditulis dikira tepat atau tak
+                </span>
+              </li>
+
+              <li class="flex items-start gap-3">
+                <svg
+                    class="w-[18px] h-[18px] flex-shrink-0 mt-[0.15em]"
+                    viewBox="0 0 18 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <rect
+                      x="0.75"
+                      y="0.75"
+                      width="16.5"
+                      height="16.5"
+                      rx="2"
+                      fill="white"
+                      stroke="#94A3B8"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                <span>
+                  Mampu untuk membaca error dan membaiki error dengan independent (berdikari)
+                </span>
+              </li>
+            </ul>
+
+            <p>
+              Ringkasannya, pelajar yang berjaya menamatkan program persediaan ini akan
+              mempunyai ilmu asas coding setara dengan pelajar coding di
+              University/Kolej yang telah belajar coding selama 1 bulan (bahkan lebih
+              dari itu kerana teknik dan silibus Syafi Coding Academy yang sangat mantap)
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <hr class="my-24 border-t border-slate-400" />
+
+      <section id="cara-pembelajaran" class="mt-24 max-w-[760px]">
+
+        <!-- Section Heading -->
+        <h2 class="font-serif text-slate-900 text-[32px] sm:text-[40px] mb-10 font-bold">
+          Bagaimana pelajar akan menguasai asas
+        </h2>
+
+        <div class="mb-14 max-w-[680px]">
+
+          <!-- Leading statement (exact sentence) -->
+          <p class="font-sans font-semibold text-slate-800 text-[16px] sm:text-[17px] mb-4">
+            Sesi 1-to-1 : Hanya anda dan saya, 100% attention saya untuk anda
+          </p>
+
+          <!-- Bullet points (exact wording) -->
+          <ul class="list-disc pl-6 font-sans text-slate-700 text-[15px] sm:text-[16px] leading-relaxed mb-4">
+            <li>Saya ajar theory untuk setiap topik</li>
+            <li>Saya ajar step-by-step untuk guna topik tu dalam apa-apa soalan</li>
+            <li>Saya ajar anda cara berfikir “waktu bila nak guna topik ni?”</li>
+          </ul>
+
+          <!-- Paragraph + bullets (exact wording) -->
+          <div class="font-sans text-slate-700 text-[15px] sm:text-[16px] leading-relaxed space-y-2">
+            <p>Dalam sesi macam ni, saya ajar melalui :</p>
+
+            <ul class="list-disc pl-6">
+              <li>Saya explain secara visual (bentuk lukisan)</li>
+              <li>Saya tunjuk cara buat coding satu per satu</li>
+            </ul>
+
+            <p>
+              Tanya apa jua soalan dan pertanyaan yang terlintas di fikiran
+            </p>
+
+          </div>
+        </div>
+
+
+          <div class="mb-14 max-w-[680px]">
+
+            <!-- Leading statement -->
+            <p class="font-sans font-semibold text-slate-800 text-[16px] sm:text-[17px] mb-4">
+              Guided coding session with Sir Syafi (No blind practice)
+            </p>
+
+            <!-- Intro sentence -->
+            <p class="font-sans text-slate-700 text-[15px] sm:text-[16px] leading-relaxed mb-4">
+              Sepanjang sesi 1-to-1 nanti, kita juga akan :
+            </p>
+
+            <!-- Bullet points (exact wording) -->
+            <ul class="list-disc pl-6 font-sans text-slate-700 text-[15px] sm:text-[16px] leading-relaxed mb-4">
+              <li>Buat coding bersama-sama</li>
+              <li>Anda dapat lihat output sebenar</li>
+              <li>Anda dapat lihat error sebenar</li>
+            </ul>
+
+            <!-- Supporting sentences -->
+            <div class="font-sans text-slate-700 text-[15px] sm:text-[16px] leading-relaxed space-y-4">
+              <p>
+                Saya guide anda step-by-step sehingga siap
+              </p>
+
+              <p>
+                Saya tak suap anda jawapan. Saya sentiasa menunggu kata-kata "Tak tahu la sir" untuk saya bawa dan pimpin anda ke jawapannya.
+              </p>
+
+              <p>
+                Saya akan cetus idea anda dan pimpin anda sehingga habis topik tersebut.
+              </p>
+            </div>
+
+          </div>
+      </section>
+
+      <hr class="my-24 border-t border-slate-400" />
+
+      <section id="struktur-tempoh" class="mt-24 max-w-[760px]">
+
+        <!-- Section Heading -->
+        <h2 class="font-serif text-slate-900 text-[32px] sm:text-[40px] mb-12 font-bold">
+          Struktur dan tempoh program
+        </h2>
+
+        <!-- Struktur Program -->
+        <div class="mb-14 max-w-[680px]">
+          <h3 class="font-sans font-semibold text-slate-800 text-[17px] mb-4">
+            Struktur program
+          </h3>
+
+          <div class="font-sans text-slate-700 text-[15px] sm:text-[16px] leading-relaxed space-y-4">
+            <p>
+              Program ini dijalankan secara <strong>1-to-1 dan live</strong>, sepenuhnya
+              antara pelajar dan Sir Syafi.
+            </p>
+
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Tiada kelas berkumpulan</li>
+              <li>Tiada tutorial rakaman untuk bahagian penting</li>
+              <li>Setiap sesi disesuaikan mengikut tahap dan keperluan pelajar</li>
+            </ul>
+
+            <p>Pembelajaran dijalankan secara berperingkat:</p>
+
+            <ul class="list-disc pl-6 space-y-2">
+              <li>bermula dari asas paling awal</li>
+              <li>diikuti penerangan dan latihan</li>
+              <li>difokuskan kepada kefahaman sebelum beralih ke topik seterusnya</li>
+            </ul>
+
+            <p>
+              Fokus utama program ini ialah <strong>keupayaan pelajar untuk memahami dan
+              menggunakan konsep</strong>, bukan sekadar menghabiskan silibus atau
+              mengikut jadual tetap.
+            </p>
+          </div>
+        </div>
+
+        <!-- Live & Recording -->
+        <div class="mb-14 max-w-[680px]">
+          <h3 class="font-sans font-semibold text-slate-800 text-[17px] mb-4">
+            Penggunaan sesi live dan rakaman sokongan
+          </h3>
+
+          <div class="font-sans text-slate-700 text-[15px] sm:text-[16px] leading-relaxed space-y-4">
+            <p>
+              Untuk memastikan sesi live digunakan secara paling efektif, pembelajaran
+              dijalankan melalui gabungan sesi live dan bahan sokongan.
+            </p>
+
+            <ul class="list-disc pl-6 space-y-2">
+              <li>
+                Sesi live digunakan untuk penerangan, latihan, perbincangan, dan
+                bimbingan cara berfikir
+              </li>
+              <li>
+                Rakaman pendek disediakan untuk penerangan tertentu yang sesuai diulang
+                tonton
+              </li>
+            </ul>
+
+            <p>
+              Rakaman ini bertujuan sebagai <strong>rujukan dan pengukuhan</strong>,
+              supaya pelajar boleh mengulang bahagian tertentu mengikut keperluan
+              masing-masing, tanpa menjejaskan fokus utama sesi live.
+            </p>
+          </div>
+        </div>
+
+        <!-- Tempoh Program -->
+        <div class="mb-14 max-w-[680px]">
+          <h3 class="font-sans font-semibold text-slate-800 text-[17px] mb-4">
+            Tempoh program
+          </h3>
+
+          <div class="font-sans text-slate-700 text-[15px] sm:text-[16px] leading-relaxed space-y-4">
+            <p>
+              Dari segi tempoh, program ini <strong>kebiasaannya mengambil masa sekitar
+              3 hingga 4 minggu</strong>.
+            </p>
+
+            <p>Namun, tempoh sebenar bergantung kepada:</p>
+
+            <ul class="list-disc pl-6 space-y-2">
+              <li>tahap permulaan pelajar</li>
+              <li>kadar kefahaman</li>
+              <li>penglibatan sepanjang sesi</li>
+            </ul>
+
+            <p>
+              Program ini <strong>tidak ditentukan oleh bilangan kelas semata-mata</strong>,
+              tetapi berdasarkan pencapaian asas yang diperlukan sebelum pelajar
+              memasuki pengajian Diploma atau Ijazah.
+            </p>
+          </div>
+        </div>
+
+        <!-- Materials -->
+        <div class="mb-14 max-w-[680px]">
+          <h3 class="font-sans font-semibold text-slate-800 text-[17px] mb-4">
+            Apa yang disediakan sepanjang program
+          </h3>
+
+          <div class="font-sans text-slate-700 text-[15px] sm:text-[16px] leading-relaxed space-y-4">
+            <p>
+              Sepanjang program ini, pelajar akan dibekalkan dengan bahan sokongan
+              pembelajaran.
+            </p>
+
+            <ul class="list-disc pl-6 space-y-2">
+              <li>nota ringkas</li>
+              <li>bahan rujukan</li>
+              <li>panduan untuk ulangkaji dan pengukuhan</li>
+            </ul>
+
+            <p>
+              Semua bahan disediakan sebagai <strong>alat sokongan pembelajaran</strong>,
+              dan digunakan bersama sesi bimbingan secara langsung — bukan sebagai
+              pengganti.
+            </p>
+
+            <figure class="mt-8 max-w-[480px]">
+              <img
+                src="note.png"
+                alt="Contoh bahan sokongan pembelajaran yang menerangkan cara menulis input dalam kod"
+                class="w-full border border-slate-200"
+              />
+              <figcaption class="mt-2 text-[13px] text-slate-500 leading-relaxed">
+                Contoh bahan yang digunakan semasa sesi pembelajaran untuk membantu
+                pelajar memahami cara menulis coding untuk "input"
+              </figcaption>
+            </figure>
+
+          </div>
+        </div>
+
+        <!-- Completion -->
+        <div id="penilaian-penguasaan" class="max-w-[680px]">
+          <h3 class="font-sans font-semibold text-slate-800 text-[17px] mb-4">
+            Bila program dianggap tamat
+          </h3>
+
+          <div class="font-sans text-slate-700 text-[15px] sm:text-[16px] leading-relaxed space-y-4">
+            <p>
+              Program ini dianggap tamat apabila pelajar berjaya melalui satu sesi
+              demonstrasi kefahaman secara praktikal.
+            </p>
+
+            <p>
+              Dalam sesi ini, pelajar akan diminta untuk menyiapkan satu tugasan coding
+              peringkat asas yang menggabungkan beberapa konsep utama yang telah
+              dipelajari — dari awal hingga kod tersebut berfungsi dengan betul.
+            </p>
+
+            <p>
+              Sepanjang tugasan ini, pelajar:
+            </p>
+
+            <ul class="list-disc pl-6 space-y-2">
+              <li>menunjukkan kefahaman terhadap konsep yang digunakan</li>
+              <li>mampu membaca dan menerangkan kod yang ditulis</li>
+              <li>mampu membaiki kesilapan dan menyiapkan tugasan secara berdikari</li>
+            </ul>
+
+            <p>
+              Pelajar <strong>dibenarkan merujuk nota, bahan rujukan, dan carian Internet</strong>
+              semasa sesi ini — kerana inilah cara coding dilakukan dalam dunia sebenar.
+            </p>
+
+            <p>
+              Tiada jawapan tunggal yang “betul”. Selagi kod berfungsi dan pelajar
+              memahami apa yang dilakukan, tugasan tersebut dianggap berjaya.
+            </p>
+
+            <p>
+              Penilaian dibuat berdasarkan <strong>keupayaan sebenar pelajar semasa sesi</strong>,
+              melalui pemerhatian dan perbincangan, bukan melalui peperiksaan bertulis.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <hr class="my-24 border-t border-slate-400" />
+
+      <section id="yuran-pengambilan" class="mt-24 max-w-[760px]">
+
+        <!-- Section Heading -->
+        <h2 class="font-serif text-slate-900 text-[32px] sm:text-[40px] mb-12 font-bold">
+          Yuran & pengambilan pelajar
+        </h2>
+
+        <!-- Pricing Logic -->
+        <div class="mb-14 max-w-[680px]">
+          <h3 class="font-sans font-semibold text-slate-800 text-[17px] mb-4">
+            Bagaimana yuran program ditentukan
+          </h3>
+
+          <div class="font-sans text-slate-700 text-[15px] sm:text-[16px] leading-relaxed space-y-4">
+            <p>
+              Yuran program ini ditentukan berdasarkan sifat pembelajaran yang dijalankan
+              secara individu (1-to-1), serta penglibatan langsung Sir Syafi sepanjang
+              program berlangsung.
+            </p>
+
+            <p>
+              Fokus utama program ini bukan pada bilangan sesi atau tempoh semata-mata,
+              tetapi pada keupayaan pelajar untuk mencapai tahap kefahaman asas yang
+              diperlukan sebelum memasuki pengajian Diploma atau Ijazah.
+            </p>
+
+            <p>
+              Setiap pelajar dibimbing secara peribadi, dengan pendekatan yang disesuaikan
+              mengikut tahap, kadar pembelajaran, dan keperluan masing-masing.
+            </p>
+          </div>
+        </div>
+
+        <!-- Price -->
+        <div class="mb-14 max-w-[680px]">
+          <h3 class="font-sans font-semibold text-slate-800 text-[17px] mb-4">
+            Yuran program
+          </h3>
+
+          <div class="font-sans text-slate-700 text-[15px] sm:text-[16px] leading-relaxed space-y-4">
+            <p>
+              Yuran bagi Program Persediaan Asas Coding ini adalah sebanyak
+              <strong>RM500</strong>.
+            </p>
+
+            <p>
+              Yuran ini merangkumi keseluruhan program persediaan, termasuk sesi bimbingan
+              secara live, bahan sokongan pembelajaran, serta penilaian kefahaman pelajar
+              berdasarkan keupayaan sebenar.
+            </p>
+          </div>
+        </div>
+
+        <!-- Capacity -->
+        <div class="mb-14 max-w-[680px]">
+          <h3 class="font-sans font-semibold text-slate-800 text-[17px] mb-4">
+            Kapasiti & pengambilan pelajar
+          </h3>
+
+          <div class="font-sans text-slate-700 text-[15px] sm:text-[16px] leading-relaxed space-y-4">
+            <p>
+              Oleh kerana program ini dijalankan secara 1-to-1, kapasiti pengambilan pelajar
+              adalah terhad pada satu-satu masa.
+            </p>
+
+            <p>
+              Pengambilan pelajar dibuat berdasarkan ketersediaan masa dan kesesuaian
+              keperluan pelajar dengan objektif program ini. Tidak semua pelajar yang
+              membuat pertanyaan akan diterima serta-merta.
+            </p>
+          </div>
+        </div>
+
+        <!-- Suitability -->
+        <div class="mb-14 max-w-[680px]">
+          <h3 class="font-sans font-semibold text-slate-800 text-[17px] mb-4">
+            Siapa yang sesuai mengikuti program ini
+          </h3>
+
+          <div class="font-sans text-slate-700 text-[15px] sm:text-[16px] leading-relaxed space-y-4">
+            <p>
+              Program ini sesuai untuk pelajar yang akan memasuki pengajian
+              Diploma atau Ijazah dalam bidang CS / IT / Software Engineering,
+              dan ingin membina asas coding dengan lebih teratur dan yakin.
+            </p>
+
+            <p>
+              Program ini kurang sesuai untuk pelajar yang hanya mencari kelas
+              ringkas tanpa komitmen, atau yang tidak bersedia untuk terlibat
+              secara aktif dalam sesi pembelajaran.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      
+
+      <section
+      id = "langkah-seterusnya"
+      class="
+        relative
+        left-1/2
+        right-1/2
+        -ml-[50vw]
+        -mr-[50vw]
+        w-screen
+        bg-yellow-500
+        py-16
+        px-8
+      ">
+
+        <h2 class="font-serif text-slate-900 text-[28px] sm:text-[32px] mb-8 font-bold">
+          Langkah seterusnya
+        </h2>
+
+        <div class="max-w-[680px] font-sans text-slate-700 text-[15px] sm:text-[16px] leading-relaxed space-y-6">
+
+          <div>
+            <p class="font-semibold text-slate-800 mb-1">
+              1. Hubungi melalui WhatsApp
+            </p>
+            <p>
+              Untuk menyatakan minat menyertai Program Persediaan Asas Coding.
+              <a
+                href="https://wa.me/60105820083?text=Saya%20berminat%20untuk%20menyertai%20Program%20Persediaan%20Asas%20Coding."
+                class="underline text-blue-700"
+              >
+                Tekan sini untuk Whatsapp
+              </a>
+            </p>
+          </div>
+
+          <div>
+            <p class="font-semibold text-slate-800 mb-1">
+              2. Pengesahan penyertaan
+            </p>
+            <p>
+              Ketersediaan tempat akan disemak sebelum pengesahan dibuat.
+            </p>
+          </div>
+
+          <div>
+            <p class="font-semibold text-slate-800 mb-1">
+              3. Penetapan jadual & mula sesi
+            </p>
+            <p>
+              Jadual sesi akan ditetapkan dan pembelajaran akan bermula dari asas.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+    </main>
+  </body>
+</html>
