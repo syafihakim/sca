@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pra-Semester 1: Program Persediaan Awal Coding</title>
   <link href="output.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
   <style>
     body {
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
@@ -33,55 +35,45 @@
 <body class="bg-white text-slate-900 pb-24">
 
 <!-- ================= HERO ================= -->
-<section class="px-6 py-16 text-center max-w-4xl mx-auto">
+<section id="heroSection" class="px-6 py-14 max-w-4xl mx-auto min-h-screen bg-gradient-to-b from-slate-200 via-blue-50 to-white">
 
-  <p class="text-sm uppercase tracking-wider text-blue-900 font-semibold">
-    Program Persediaan Akademik
+  <!-- Pre-title -->
+  <p class="text-sm uppercase tracking-wider text-blue-900 font-semibold text-center">
+    Program Persediaan Akademik Pra-Universiti
   </p>
 
-  <h1 class="mt-4 text-3xl sm:text-4xl font-bold leading-tight">
-    Anak bakal ambil Computer Science tapi belum pernah coding?
+  <!-- Hero Image -->
+  <div class="mt-6">
+    <img 
+      src="images/hero.png" 
+      alt="Pra-Semester 1 Program Persediaan Awal Coding"
+      class="w-full h-auto"
+    />
+  </div>
+
+  <!-- Title -->
+  <h1 class="mt-8 text-2xl sm:text-3xl font-bold leading-tight text-center">
+    Anak bakal ambil Computer Science tetapi belum pernah belajar coding?
   </h1>
 
-  <p class="mt-6 text-lg text-slate-600">
-    Tanpa persediaan awal, minggu pertama boleh menjatuhkan keyakinan anak anda.
+  <!-- Subtitle -->
+  <p class="mt-4 text-slate-600 text-center max-w-2xl mx-auto">
+    Ramai pelajar hilang keyakinan seawal minggu pertama kerana tidak
+    memahami asas Coding sebelum masuk universiti.
   </p>
 
-  <div class="mt-10 border rounded-lg p-8 bg-gray-50">
-
-    <h2 class="text-xl font-semibold text-blue-900">
-      Pra-Semester 1: Program Persediaan Awal Coding
-    </h2>
-
-    <p class="mt-4 text-sm text-slate-500 uppercase tracking-wide">
-      Yuran Komitmen
-    </p>
-
-    <p class="text-4xl font-bold mt-1">
-      RM20
-    </p>
-
-    <p class="mt-3 text-red-600 text-sm">
-      Tinggal <span class="seat-count font-semibold"></span> tempat untuk sesi minggu ini.
-    </p>
-
-    <p class="mt-4 text-slate-700">
-      Tarikh: <span class="session-date font-semibold"></span><br>
-      Masa: <span class="session-time font-semibold"></span><br>
-      Platform: Zoom (Live & Interaktif)
-    </p>
-
-    <a href="https://syafihakimresources.bcl.my/form/ppac"
-       class="mt-6 inline-block w-full sm:w-auto bg-[#0f172a] text-white px-8 py-3 rounded-lg font-semibold">
-      Daftar Sekarang
+  <!-- CTA -->
+  <div class="mt-8 text-center">
+    <a href="#checkout"
+       class="inline-block w-full sm:w-auto bg-[#0f172a] text-white px-8 py-3 rounded-lg font-semibold">
+       Lihat Butiran Program
     </a>
-
   </div>
 
 </section>
 
 <!-- ================= REALITY ================= -->
-<section class="bg-gray-50 px-6 py-16">
+<section class="bg-yellow-100 px-6 py-16">
   <div class="max-w-4xl mx-auto">
 
     <p class="text-sm uppercase tracking-wider text-blue-900 font-semibold">
@@ -99,6 +91,102 @@
     </p>
 
   </div>
+
+  <!-- 🔴 RED BOX -->
+    <div class="my-10">
+
+      <div class="text-red-600 rounded-xl text-md font-bold mb-8">
+        Tanpa Persediaan Sebelum Semester
+      </div>
+
+      <div class="space-y-6 text-gray-800 leading-relaxed text-sm">
+
+        <div class="flex items-start space-x-3">
+          <span class="text-red-600 text-xl">✖</span>
+          <div>
+            <p class="font-semibold">
+              Tidak jelas apa yang akan dipelajari dalam minggu pertama
+            </p>
+            <p class="text-gray-600">
+              Masuk semester dengan banyak tanda tanya.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start space-x-3">
+          <span class="text-red-600 text-xl">✖</span>
+          <div>
+            <p class="font-semibold">
+              Teruja tetapi risau sama ada mampu ikut rentak kuliah
+            </p>
+            <p class="text-gray-600">
+              Keyakinan belum berasaskan kefahaman sebenar.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start space-x-3">
+          <span class="text-red-600 text-xl">✖</span>
+          <div>
+            <p class="font-semibold">
+              Ibu bapa kurang pasti sama ada anak benar-benar bersedia
+            </p>
+            <p class="text-gray-600">
+              Harapan tinggi tetapi gambaran masih kabur.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 🟢 GREEN BOX -->
+    <div class="">
+
+      <div class="text-green-700 rounded-xl text-md font-bold mb-8">
+        Dengan Persediaan Sebelum Semester (Selepas Sesi 60 Minit Ini)
+      </div>
+
+      <div class="space-y-6 text-gray-800 leading-relaxed text-sm">
+
+        <div class="flex items-start space-x-3">
+          <span class="text-green-600 text-xl">✔</span>
+          <div>
+            <p class="font-semibold">
+              Faham gambaran sebenar bagaimana coding dipelajari
+            </p>
+            <p class="text-gray-600">
+              Tahu apa yang dijangka dan bagaimana struktur pembelajaran berlaku.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start space-x-3">
+          <span class="text-green-600 text-xl">✔</span>
+          <div>
+            <p class="font-semibold">
+              Lebih yakin dan teruja kerana memahami asas logik
+            </p>
+            <p class="text-gray-600">
+              Masuk semester dengan minda yang lebih tersusun.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start space-x-3">
+          <span class="text-green-600 text-xl">✔</span>
+          <div>
+            <p class="font-semibold">
+              Ibu bapa lebih tenang melihat arah yang jelas
+            </p>
+            <p class="text-gray-600">
+              Bukan sekadar “harap boleh ikut” tetapi sudah nampak laluan yang betul.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
 </section>
 
 <!-- ================= EXPERIENCE ================= -->
@@ -106,25 +194,48 @@
   <div class="max-w-4xl mx-auto">
 
     <p class="text-sm uppercase tracking-wider text-blue-900 font-semibold">
-      Hasil Sesi 90 Minit
+      Hasil Sesi 60 Minit
     </p>
 
-    <h2 class="mt-3 text-2xl font-bold">
-      Apa yang anak anda akan alami:
+    <h2 class="mt-3 text-2xl font-bold mb-8">
+      Apa yang anak akan pelajari dalam sesi ini:
     </h2>
 
-    <ul class="mt-8 space-y-4 text-slate-800">
-      <li>• Melihat bagaimana subjek Programming diajar pada minggu pertama</li>
-      <li>• Memahami konsep asas seperti variable & input/output</li>
-      <li>• Melihat contoh latihan seperti di universiti</li>
-      <li>• Membina keyakinan sebelum Semester 1 bermula</li>
+    <!-- Benefits -->
+    <ul class="space-y-5 text-sm">
+
+      <li class="border-l-4 border-blue-900 pl-4 py-2 bg-gray-50 rounded-r-md">
+        <span class="font-semibold">Apa itu Coding</span> –
+        Fahami kegunaan coding dan kenapa sebenarnya coding perlu dipelajari.
+      </li>
+
+      <li class="border-l-4 border-blue-900 pl-4 py-2 bg-gray-50 rounded-r-md">
+        <span class="font-semibold">Teknik berkesan mempelajari coding</span> –
+        Panduan yang boleh digunakan untuk menjadikan apa-apa topik coding lebih mudah.
+      </li>
+
+      <li class="border-l-4 border-blue-900 pl-4 py-2 bg-gray-50 rounded-r-md">
+        <span class="font-semibold">Mudahnya menulis coding</span> –
+        Pelajar bakal melihat teknik menulis coding yang jelas dan sistematik.
+      </li>
+
+      <li class="border-l-4 border-blue-900 pl-4 py-2 bg-gray-50 rounded-r-md">
+        <span class="font-semibold">Ilmu tersembunyi yang jarang ditekankan (Di Universiti sekalipun)</span> –
+        Perkara penting yang jarang ditekankan di Universiti tetapi wajib diketahui.
+      </li>
+
+      <li class="border-l-4 border-blue-900 pl-4 py-2 bg-gray-50 rounded-r-md">
+        <span class="font-semibold">Langkah pertama selepas kelas ini</span> –
+        Gambaran jelas tentang apa yang perlu dipelajari dahulu.
+      </li>
+
     </ul>
 
   </div>
 </section>
 
 <!-- ================= WHO THIS IS FOR ================= -->
-<section class="bg-gray-50 px-6 py-16">
+<section class="bg-gray-100 px-6 py-16">
   <div class="max-w-4xl mx-auto">
 
     <p class="text-sm uppercase tracking-wider text-blue-900 font-semibold">
@@ -144,42 +255,53 @@
   </div>
 </section>
 
-<!-- ================= INSTRUCTOR ================= -->
-<section class="px-6 py-16">
+<!-- ================= AUTHORITY ================= -->
+<section class="px-6 py-16 bg-gray-50">
   <div class="max-w-4xl mx-auto">
 
     <p class="text-sm uppercase tracking-wider text-blue-900 font-semibold">
       Tentang Pengajar
     </p>
 
-    <div class="mt-6 flex items-start space-x-4">
+    <div class="mt-8 space-x-5">
 
-      <img src="me.png"
+      <!-- Photo -->
+      <img src="images/img1.jpg"
            alt="Sir Syafi"
-           class="w-20 h-20 rounded-full object-cover">
+           class="object-cover">
 
-      <div>
-        <h3 class="font-semibold text-lg">Sir Syafi</h3>
-        <p class="text-slate-600 text-sm">
-          Pengasas Syafi Coding Academy<br><br>
-          Telah membimbing lebih 1000+ pelajar memahami asas Programming secara 1-to-1, kelas berkumpulan, kursus online sejak 2019.
-        </p>
+      <!-- Info -->
+      <div class="mt-4">
+        <h3 class="text-xl font-bold">
+          Salam Tuan/Puan, saya Sir Syafi
+        </h3>
+
+        <ul class="mt-4 space-y-2 text-sm text-slate-700">
+          <li>• Saya telah membimbing pelajar CS sejak 2019</li>
+          <li>• 1000+ pelajar dibimbing</li>
+          <li>• Bekas Software Engineer (2020 – 2023)</li>
+        </ul>
       </div>
 
     </div>
 
-    <p class="mt-6 max-w-3xl text-slate-700">
-      Fokus membimbing pelajar memahami asas logik coding secara sistematik
-      supaya mereka tidak mengalami kejutan akademik apabila memasuki
-      semester pertama universiti.
+    <!-- Positioning -->
+    <p class="mt-8 max-w-3xl text-slate-700 leading-relaxed">
+      Fokus utama adalah membantu pelajar memahami asas logik dan struktur
+      Programming sebelum mereka memasuki semester pertama universiti.
+    </p>
+
+    <p class="mt-4 max-w-3xl text-slate-700 leading-relaxed">
+      Dengan asas yang jelas, pelajar tidak sekadar menghafal syntax —
+      tetapi benar-benar faham bagaimana sesuatu kod berfungsi.
     </p>
 
   </div>
 </section>
 
 <!-- ================= OFFER SECTION ================= -->
-<section class="bg-[#0f172a] text-white px-6 py-16">
-  <div class="max-w-4xl mx-auto text-center">
+<section id="checkout" class="bg-[#0f172a] text-white px-6 py-16">
+  <div class="max-w-4xl mx-auto">
 
     <p class="text-sm uppercase tracking-wider text-blue-300 font-semibold">
       Sesi Minggu Ini
@@ -189,13 +311,37 @@
       Pra-Semester 1: Program Persediaan Awal Coding
     </h2>
 
-    <div class="mt-8 space-y-2 text-slate-300">
-      <p>Live 90 minit</p>
-      <p>Online</p>
-      <p>Interactive</p>
+    <!-- Things They Will Learn -->
+    <div class="mt-10 text-left max-w-xl mx-auto">
+      <p class="text-sm uppercase tracking-wide text-blue-300 font-semibold mb-4">
+        Apa Yang Anak Anda Akan Pelajari
+      </p>
+
+      <ul class="space-y-1 text-slate-200">
+        <li>• Apa itu coding</li>
+        <li>• Teknik belajar coding</li>
+        <li>• Teknik menulis coding</li>
+        <li>• Pendedahan ilmu-ilmu wajib tahu</li>
+        <li>• Langkah pertama yang jelas</li>
+      </ul>
     </div>
 
-    <p class="mt-8 text-sm uppercase tracking-wide text-slate-400">
+    <!-- Bonuses -->
+    <div class="mt-10 text-left max-w-xl mx-auto">
+      <p class="text-sm uppercase tracking-wide text-blue-300 font-semibold mb-4">
+        Bonus Percuma Disertakan
+      </p>
+
+      <ul class="space-y-1 text-slate-200">
+        <li>• Kamus C++</li>
+        <li>• Kamus Python</li>
+        <li>• Kamus Java</li>
+        <li>• Peta Perjalanan – "Seterusnya belajar apa dulu"</li>
+      </ul>
+    </div>
+
+    <!-- Pricing -->
+    <p class="mt-12 text-sm uppercase tracking-wide text-slate-400">
       Yuran Komitmen
     </p>
 
@@ -207,7 +353,8 @@
       Tinggal <span class="seat-count font-semibold"></span> tempat sahaja.
     </p>
 
-    <p class="mt-4 text-white">
+    <!-- Session Details -->
+    <p class="mt-6 text-white text-sm">
       Tarikh: <span class="session-date font-semibold"></span><br>
       Masa: <span class="session-time font-semibold"></span><br>
       Platform: Zoom (Live & Interaktif)
@@ -221,27 +368,105 @@
   </div>
 </section>
 
-<!-- ================= SELEPAS DAFTAR ================= -->
-<section class="bg-gray-50 px-6 py-16">
-  <div class="max-w-4xl mx-auto">
+<!-- ================= SELEPAS DAFTAR (COMPACT ICON FLOW) ================= -->
+<section class="bg-gray-50 px-6 py-12">
+  <div class="max-w-3xl mx-auto">
 
-    <p class="text-sm uppercase tracking-wider text-blue-900 font-semibold">
+    <p class="text-sm uppercase tracking-wider text-blue-900 font-semibold text-center">
       Selepas Pendaftaran
     </p>
 
-    <h2 class="mt-3 text-2xl font-bold">
+    <h2 class="mt-2 text-xl font-bold text-center">
       Apa yang berlaku selepas anda daftar:
     </h2>
 
-    <ul class="mt-8 space-y-4 text-slate-800">
-      <li>• Link Zoom akan dihantar melalui WhatsApp dalam masa 24 jam</li>
-      <li>• Sesi berlangsung selama 60 minit secara live & interaktif</li>
-      <li>• Anak anda hanya perlu hadir dan ikut arahan yang diberi</li>
-    </ul>
+    <div class="mt-8">
 
-    <p class="mt-8 text-slate-600 text-sm">
-      Proses pendaftaran ringkas. Tiada setup teknikal diperlukan.
-    </p>
+      <!-- STEP 1 -->
+      <div class="bg-white border border-gray-200 rounded-lg p-4 flex items-center space-x-6">
+        <div class="w-9 h-9 rounded-full bg-[#fff] flex items-center justify-center">
+          <!-- Payment Icon -->
+          <img src="svg/payment.svg">
+        </div>
+        <p class="text-sm font-medium">Buat Pendaftaran</p>
+      </div>
+
+      <div class="flex justify-center">
+        <img src="svg/triangle_down.svg" class="w-8 h-8" alt="">
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="bg-white border border-gray-200 rounded-lg p-4 flex items-center space-x-3">
+        <div class="w-9 h-9 rounded-full bg-[#fff] flex items-center justify-center">
+          <!-- Payment Icon -->
+          <img src="svg/ws.svg">
+        </div>
+        <p class="text-sm font-medium">
+          Terima Link Zoom melalui WhatsApp dalam masa 24 jam
+        </p>
+      </div>
+
+      <div class="flex justify-center">
+        <img src="svg/triangle_down.svg" class="w-8 h-8" alt="">
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="bg-white border border-gray-200 rounded-lg p-4 flex items-center space-x-3">
+        <div class="w-9 h-9 rounded-full bg-[#fff] flex items-center justify-center">
+          <!-- Payment Icon -->
+          <img src="svg/zoom.svg">
+        </div>
+        <p class="text-sm font-medium">
+          Sesi berlangsung selama 60 minit secara live & interaktif
+        </p>
+      </div>
+
+      <div class="flex justify-center">
+        <img src="svg/triangle_down.svg" class="w-8 h-8" alt="">
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="bg-white border border-gray-200 rounded-lg p-4 flex items-center space-x-3">
+        <div class="w-9 h-9 rounded-full bg-[#fff] flex items-center justify-center">
+          <!-- Payment Icon -->
+          <img src="svg/class.svg">
+        </div>
+        <p class="text-sm font-medium">
+          Anak hadiri sesi dan belajar tentang coding
+        </p>
+      </div>
+
+      <div class="flex justify-center">
+        <img src="svg/triangle_down.svg" class="w-8 h-8" alt="">
+      </div>
+
+      <!-- STEP 5 -->
+      <div class="bg-white border border-gray-200 rounded-lg p-4 flex items-center space-x-3">
+        <div class="w-9 h-9 rounded-full bg-[#fff] flex items-center justify-center">
+          <!-- Payment Icon -->
+          <img src="svg/improve.svg">
+        </div>
+        <p class="text-sm font-medium">
+          Anak kini yakin untuk mendalami ilmu coding
+        </p>
+      </div>
+
+      <div class="flex justify-center">
+        <img src="svg/triangle_down.svg" class="w-8 h-8" alt="">
+      </div>
+
+      <!-- STEP 6 -->
+      <div class="bg-white border border-gray-200 rounded-lg p-4 flex items-center space-x-3">
+        <div class="w-9 h-9 rounded-full bg-[#fff] flex items-center justify-center">
+          <!-- Payment Icon -->
+          <img src="svg/rocket.svg">
+        </div>
+        <p class="text-sm font-medium">
+          Anak dalami ilmu coding dengan lebih lanjut lagi
+        </p>
+      </div>
+
+    </div>
 
   </div>
 </section>
@@ -387,12 +612,16 @@
 </script>
 <script>
   const sticky = document.getElementById('stickyCTA');
+  sticky.style.display = 'none';
 
   window.addEventListener('scroll', () => {
     const scrollPosition = window.innerHeight + window.scrollY;
     const pageHeight = document.body.offsetHeight;
+    const heroSectionHeight = document.getElementById("heroSection").offsetHeight;
+    console.log(`heroSectionHeight ${heroSectionHeight}`)
+    console.log(`scrollPostion ${scrollPosition}`)
 
-    if (scrollPosition >= pageHeight - 200) {
+    if (scrollPosition >= pageHeight - 200 || scrollPosition <= heroSectionHeight*2) {
       sticky.style.display = 'none';
     } else {
       sticky.style.display = 'flex';
