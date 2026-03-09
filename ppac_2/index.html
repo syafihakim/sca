@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Program Persediaan Asas Coding</title>
+  <link href="styles.css" rel="stylesheet">
+
+  </head>
+
+<body>
+
+<section class="bg-white lg:grid lg:h-screen lg:place-content-center">
+  <div class="mx-auto w-screen max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
+    <div class="max-w-prose text-left">
+      <h1 class="text-4xl font-bold text-gray-900 sm:text-5xl">
+        Nak Ambil 
+        <strong class="text-indigo-600"> Diploma Computer Science </strong>
+        tapi tak pernah buat coding langsung?
+      </h1>
+
+      <p class="mt-4 text-base text-pretty text-gray-700 sm:text-lg/relaxed">
+        Hampir semua pelajar mula semester tanpa apa-apa persediaan. Menyebabkan mereka tercicir dan dapat markah rendah di Universiti
+      </p>
+
+      <div class="mt-4 flex gap-4 sm:mt-6">
+        <a onclick="trackCheckout()" class="inline-block rounded border border-indigo-600 bg-indigo-600 px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-indigo-700" href="#pay-start">
+          Sertai Kelas
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-gray-50">
+  <div class="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+
+    <h2 class="text-2xl font-bold text-gray-900 sm:text-3xl">
+      Adakah ini anda?
+    </h2>
+
+    <ul class="mt-6 space-y-4 text-gray-700">
+
+      <li class="flex items-start gap-3">
+        <span class="mt-1 text-indigo-600">✓</span>
+        <span>Bakal Pelajar Diploma atau Degree yang akan ambil Computer Science atau I.T</span>
+      </li>
+
+      <li class="flex items-start gap-3">
+        <span class="mt-1 text-indigo-600">✓</span>
+        <span>Ingin mulakan semester dengan asas yang cukup</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="bg-white">
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
+
+    <div class="mx-auto max-w-3xl">
+      <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">
+        Anda teruja untuk mulakan semester tapi rupanya ...
+      </h2>
+
+      <p class="mt-4 text-lg text-gray-700">
+        Sekarang baru tersedar perkara-perkara tersembunyi di bawah
+      </p>
+    </div>
+
+    <div class="mt-12 grid gap-8 md:grid-cols-3">
+
+      <!-- Problem 1 -->
+      <div class="rounded-xl bg-pink-50 border-2 border-red-300 p-6 shadow-sm flex items-start gap-4">
+        
+        <div class="w-12 h-12 shrink-0 flex items-center justify-center">
+            <svg class="w-10 h-10 text-red-600" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"/>
+            </svg>
+          </div>
+
+        <h3 class="text-lg font-semibold text-gray-900">
+          Anda tak pernah tengok coding langsung
+        </h3>
+
+      </div>
+
+      <!-- Problem 2 -->
+      <div class="rounded-xl bg-pink-50 border-2 border-red-300 p-6 shadow-sm flex items-start gap-4">
+
+        <div class="w-12 h-12 shrink-0 flex items-center justify-center">
+            <svg class="w-10 h-10 text-red-600" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"/>
+            </svg>
+          </div>
+
+        <h3 class="text-lg font-semibold text-gray-900">
+          Anda tak pasti apa yang akan diajar dalam semester pertama Computer Science.
+        </h3>
+
+      </div>
+
+      <!-- Problem 3 -->
+      <div class="rounded-xl bg-pink-50 border-2 border-red-300 p-6 shadow-sm flex items-start gap-4">
+
+        <div class="w-12 h-12 shrink-0 flex items-center justify-center">
+            <svg class="w-10 h-10 text-red-600" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"/>
+            </svg>
+          </div>
+
+        <h3 class="text-lg font-semibold text-gray-900">
+          Anda risau pelajar lain sudah tahu coding, tapi anda masih belum pernah cuba.
+        </h3>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="bg-gray-900">
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+
+    <div class="mx-auto max-w-3xl">
+      <h2 class="text-3xl font-bold text-white sm:text-4xl">
+        Cuba tengok coding di bawah ni
+      </h2>
+    </div>
+
+    <!-- Code block -->
+    <div class="mt-6 overflow-hidden rounded-xl border border-gray-800 bg-black">
+      <pre class="p-6 text-sm text-gray-200 overflow-x-auto"><code>#include &lt;iostream&gt;
+
+using namespace std;
+
+int main() {
+
+    cout &lt;&lt; "==========================" &lt;&lt; endl;
+    cout &lt;&lt; "Cafe Bayu Ordering System" &lt;&lt; endl;
+    cout &lt;&lt; "==========================" &lt;&lt; endl;
+    cout &lt;&lt; endl;
+
+    cout &lt;&lt; "+---------------------------+" &lt;&lt; endl;
+    cout &lt;&lt; "|          Cafe Bayu        |" &lt;&lt; endl;
+    cout &lt;&lt; "+------------+--------------+" &lt;&lt; endl;
+    cout &lt;&lt; "| Menu       | Price (RM)   |" &lt;&lt; endl;
+    cout &lt;&lt; "+------------+--------------+" &lt;&lt; endl;
+    cout &lt;&lt; "| Waffle     | 7            |" &lt;&lt; endl;
+    cout &lt;&lt; "| Latte      | 8            |" &lt;&lt; endl;
+    cout &lt;&lt; "+------------+--------------+" &lt;&lt; endl;
+    cout &lt;&lt; endl;
+
+    int waffle;
+    cout &lt;&lt; "Enter number of waffle: ";
+    cin &gt;&gt; waffle;
+
+    int latte;
+    cout &lt;&lt; "Enter number of latte: ";
+    cin &gt;&gt; latte;
+    ...
+    ...
+</code></pre>
+    </div>
+
+    <div class="mx-auto mt-10 max-w-3xl">
+      <p class="text-lg text-gray-300">
+        Bayangkan tanpa asas (lepas beberapa jam pensyarah ajar) anda kena tulis coding macam tu.
+      </p>
+
+      <p class="mt-4 text-lg text-gray-300">
+        Kalau sekarang ada rasa tak yakin dan gusar.. itu petanda anda dah mula sedar bahawa anda kekurang persiapan.
+      </p>
+
+      <p class="mt-4 text-lg text-gray-300">
+        Saya boleh bantu anda atasi kebimbangan tersebut.
+      </p>
+    </div>
+
+    <div class="max-w-4xl mx-auto mt-8">
+      <h3 class="text-3xl font-bold">
+        Hi, saya Sir Syafi
+      </h3>
+
+      <div class="mt-8 space-x-5">
+
+        <!-- Photo -->
+        <img src="images/img1.jpg"
+             alt="Sir Syafi"
+             class="object-cover">
+
+        <!-- Info -->
+        <div class="mt-4">
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>• Saya telah membimbing pelajar CS sejak 2019</li>
+            <li>• Dah bimbing 1000+ pelajar seluruh Malaysia</li>
+            <li>• Bekas Software Engineer (2020 – 2023)</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Positioning -->
+      <p class="mt-8 max-w-3xl leading-relaxed">
+        Fokus utama adalah membantu pelajar memahami asas logik dan struktur
+        Programming sebelum mereka memasuki semester pertama universiti.
+      </p>
+
+      <p class="mt-4 max-w-3xl leading-relaxed">
+        Dengan asas yang jelas, pelajar tidak sekadar menghafal syntax —
+        tetapi benar-benar faham bagaimana sesuatu kod berfungsi.
+      </p>
+
+      <p class="mt-4 max-w-3xl font-semibold leading-relaxed">
+        Dah ready untuk mulakan perjalanan coding dengan langkah kanan? Skroll sikit lagi
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="bg-gray-50">
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-24 lg:px-8">
+
+    <!-- Section intro -->
+    <div class="mx-auto max-w-3xl">
+      <p class="text-sm font-semibold tracking-wide text-indigo-600 uppercase">
+        Memperkenalkan
+      </p>
+
+      <h2 class="mt-2 text-3xl font-bold text-gray-900 sm:text-4xl">
+        Program Persediaan Asas Coding
+      </h2>
+
+      <p class="mt-4 text-lg text-gray-700">
+        Kelas yang direka khas untuk pelajar seperti anda memahami coding dari zero
+        sebelum semester bermula.
+      </p>
+    </div>
+
+    <!-- Image -->
+    <div class="mt-4 flex justify-center">
+      <img src="images/class_sample.png" class="w-full max-w-3xl rounded-xl bg-gray-200 aspect-video flex items-center justify-center text-gray-500">
+      </img>
+    </div>
+  </div>
+
+  <!-- What they will learn -->
+  <div class="mx-auto max-w-5xl p-4">
+
+    <h3 class="text-xl font-semibold text-gray-900">
+      5 Topik Utama Anda Akan Pelajari
+    </h3>
+
+    <div class="mt-6 grid gap-6 md:grid-cols-2">
+
+      <!-- Item 1 -->
+      <div class="rounded-xl bg-green-50 border-2 border-green-300 p-6 shadow-sm flex items-start gap-4">
+
+        <div class="w-10 h-10 shrink-0 flex items-center justify-center"> <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 512"><path fill="#3AAF3C" d="M256 0c141.39 0 256 114.61 256 256S397.39 512 256 512 0 397.39 0 256 114.61 0 256 0z"/><path fill="#0DA10D" fill-rule="nonzero" d="M391.27 143.23h19.23c-81.87 90.92-145.34 165.89-202.18 275.52-29.59-63.26-55.96-106.93-114.96-147.42l22.03-4.98c44.09 36.07 67.31 76.16 92.93 130.95 52.31-100.9 110.24-172.44 182.95-254.07z"/><path fill="#fff" fill-rule="nonzero" d="M158.04 235.26c19.67 11.33 32.46 20.75 47.71 37.55 39.53-63.63 82.44-98.89 138.24-148.93l5.45-2.11h61.06c-81.87 90.93-145.34 165.9-202.18 275.53-29.59-63.26-55.96-106.93-114.96-147.43l64.68-14.61z"/></svg> </div>
+
+        <div>
+          <p class="text-xs font-semibold text-green-700 uppercase tracking-wide">
+            Topic 1
+          </p>
+
+          <h3 class="mt-1 text-md font-semibold text-gray-900">
+            Penjelasan lebih mendalam tentang intro coding
+          </h3>
+        </div>
+
+      </div>
+
+      <!-- Item 2 -->
+      <div class="rounded-xl bg-green-50 border-2 border-green-300 p-6 shadow-sm flex items-start gap-4">
+
+        <div class="w-10 h-10 shrink-0 flex items-center justify-center">
+          <svg class="w-8 h-8" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#3AAF3C" d="M256 0c141.39 0 256 114.61 256 256S397.39 512 256 512 0 397.39 0 256 114.61 0 256 0z"/>
+            <path fill="#0DA10D" fill-rule="nonzero" d="M391.27 143.23h19.23c-81.87 90.92-145.34 165.89-202.18 275.52-29.59-63.26-55.96-106.93-114.96-147.42l22.03-4.98c44.09 36.07 67.31 76.16 92.93 130.95 52.31-100.9 110.24-172.44 182.95-254.07z"/>
+            <path fill="#fff" fill-rule="nonzero" d="M158.04 235.26c19.67 11.33 32.46 20.75 47.71 37.55 39.53-63.63 82.44-98.89 138.24-148.93l5.45-2.11h61.06c-81.87 90.93-145.34 165.9-202.18 275.53-29.59-63.26-55.96-106.93-114.96-147.43l64.68-14.61z"/>
+          </svg>
+        </div>
+
+        <div>
+          <p class="text-xs font-semibold text-green-700 uppercase tracking-wide">
+            Topic 2
+          </p>
+
+          <h3 class="mt-1 text-md font-semibold text-gray-900">
+            Bagaimana belajar coding dengan cara yang betul
+          </h3>
+        </div>
+
+      </div>
+
+
+      <!-- Item 3 -->
+      <div class="rounded-xl bg-green-50 border-2 border-green-300 p-6 shadow-sm flex items-start gap-4">
+
+        <div class="w-10 h-10 shrink-0 flex items-center justify-center">
+          <svg class="w-8 h-8" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#3AAF3C" d="M256 0c141.39 0 256 114.61 256 256S397.39 512 256 512 0 397.39 0 256 114.61 0 256 0z"/>
+            <path fill="#0DA10D" fill-rule="nonzero" d="M391.27 143.23h19.23c-81.87 90.92-145.34 165.89-202.18 275.52-29.59-63.26-55.96-106.93-114.96-147.42l22.03-4.98c44.09 36.07 67.31 76.16 92.93 130.95 52.31-100.9 110.24-172.44 182.95-254.07z"/>
+            <path fill="#fff" fill-rule="nonzero" d="M158.04 235.26c19.67 11.33 32.46 20.75 47.71 37.55 39.53-63.63 82.44-98.89 138.24-148.93l5.45-2.11h61.06c-81.87 90.93-145.34 165.9-202.18 275.53-29.59-63.26-55.96-106.93-114.96-147.43l64.68-14.61z"/>
+          </svg>
+        </div>
+
+        <div>
+          <p class="text-xs font-semibold text-green-700 uppercase tracking-wide">
+            Topic 3
+          </p>
+
+          <h3 class="mt-1 text-md font-semibold text-gray-900">
+            Bagaimana menulis program langkah demi langkah
+          </h3>
+        </div>
+
+      </div>
+
+
+      <!-- Item 4 -->
+      <div class="rounded-xl bg-green-50 border-2 border-green-300 p-6 shadow-sm flex items-start gap-4">
+
+        <div class="w-10 h-10 shrink-0 flex items-center justify-center">
+          <svg class="w-8 h-8" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#3AAF3C" d="M256 0c141.39 0 256 114.61 256 256S397.39 512 256 512 0 397.39 0 256 114.61 0 256 0z"/>
+            <path fill="#0DA10D" fill-rule="nonzero" d="M391.27 143.23h19.23c-81.87 90.92-145.34 165.89-202.18 275.52-29.59-63.26-55.96-106.93-114.96-147.42l22.03-4.98c44.09 36.07 67.31 76.16 92.93 130.95 52.31-100.9 110.24-172.44 182.95-254.07z"/>
+            <path fill="#fff" fill-rule="nonzero" d="M158.04 235.26c19.67 11.33 32.46 20.75 47.71 37.55 39.53-63.63 82.44-98.89 138.24-148.93l5.45-2.11h61.06c-81.87 90.93-145.34 165.9-202.18 275.53-29.59-63.26-55.96-106.93-114.96-147.43l64.68-14.61z"/>
+          </svg>
+        </div>
+
+        <div>
+          <p class="text-xs font-semibold text-green-700 uppercase tracking-wide">
+            Topic 4
+          </p>
+
+          <h3 class="mt-1 text-md font-semibold text-gray-900">
+            Ilmu asas yang ramai pelajar terlepas
+          </h3>
+        </div>
+
+      </div>
+
+
+      <!-- Item 5 -->
+      <div class="rounded-xl bg-green-50 border-2 border-green-300 p-6 shadow-sm flex items-start gap-4">
+
+        <div class="w-10 h-10 shrink-0 flex items-center justify-center">
+          <svg class="w-8 h-8" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#3AAF3C" d="M256 0c141.39 0 256 114.61 256 256S397.39 512 256 512 0 397.39 0 256 114.61 0 256 0z"/>
+            <path fill="#0DA10D" fill-rule="nonzero" d="M391.27 143.23h19.23c-81.87 90.92-145.34 165.89-202.18 275.52-29.59-63.26-55.96-106.93-114.96-147.42l22.03-4.98c44.09 36.07 67.31 76.16 92.93 130.95 52.31-100.9 110.24-172.44 182.95-254.07z"/>
+            <path fill="#fff" fill-rule="nonzero" d="M158.04 235.26c19.67 11.33 32.46 20.75 47.71 37.55 39.53-63.63 82.44-98.89 138.24-148.93l5.45-2.11h61.06c-81.87 90.93-145.34 165.9-202.18 275.53-29.59-63.26-55.96-106.93-114.96-147.43l64.68-14.61z"/>
+          </svg>
+        </div>
+
+        <div>
+          <p class="text-xs font-semibold text-green-700 uppercase tracking-wide">
+            Topic 5
+          </p>
+
+          <h3 class="mt-1 text-md font-semibold text-gray-900">
+            Ketahui semua kemahiran yang anda perlu ada untuk berjaya sebagai pelajar Semester 1
+          </h3>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+</section>
+
+        <!-- ================= OFFER ================= -->
+        <section id="checkout" class="bg-[#0f172a] text-white px-6 py-16">
+            <div class="max-w-3xl mx-auto text-center">
+                <p class="text-sm uppercase tracking-wider text-blue-300 font-semibold">
+                    Sesi Minggu Ini
+                </p>
+                <h2 class="mt-3 text-2xl font-bold">
+                    Program Persediaan Awal Coding
+                </h2>
+                <p class="mt-6 text-slate-300">
+                    Live 60 minit • Online • Interaktif
+                </p>
+                <div class="mt-6 mx-auto bg-gradient-to-b from-slate-100 via-gray-100 to-slate-200 border border-gray-300 rounded-lg p-4">
+
+                  <!-- <h3 class="text-left text-black font-bold uppercase mb-4 text-sm">Bukan kelas je, anda dapat semua ni juga</h3> -->
+
+                  <ul class="space-y-6 text-slate-800 text-left">
+
+                    <li class="flex items-start gap-3">
+                      <img src="svg/zoom.svg" class="w-6 h-6 shrink-0 mt-1" alt="">
+
+                      <div>
+                        <p class="font-semibold leading-5">Kelas Fahami Coding Dalam 60 Minit</p>
+                        <p class="text-sm text-slate-600">
+                          Pelajari 6 ilmu baharu untuk mulakan perjalanan coding dengan tepat
+                        </p>
+                      </div>
+                    </li>
+
+                    <li class="flex items-start gap-3">
+                      <img src="svg/cpp.svg" class="w-6 h-6 shrink-0 mt-1" alt="">
+
+                      <div>
+                        <p class="font-semibold">Kamus Coding C++</p>
+                        <p class="text-sm text-slate-600">
+                          Rujukan struktur coding asas dalam bahasa C++
+                        </p>
+                      </div>
+                    </li>
+
+                    <li class="flex items-start gap-3">
+                      <img src="svg/py.svg" class="w-6 h-6 shrink-0 mt-1" alt="">
+
+                      <div>
+                        <p class="font-semibold">Kamus Coding Python</p>
+                        <p class="text-sm text-slate-600">
+                          Rujukan struktur coding asas dalam bahasa Python
+                        </p>
+                      </div>
+                    </li>
+
+                    <li class="flex items-start gap-3">
+                      <img src="svg/java.svg" class="w-6 h-6 shrink-0 mt-1" alt="">
+
+                      <div>
+                        <p class="font-semibold">Kamus Coding Java</p>
+                        <p class="text-sm text-slate-600">
+                          Rujukan struktur coding asas dalam bahasa Java
+                        </p>
+                      </div>
+                    </li>
+
+                    <li class="flex items-start gap-3">
+                      <img src="svg/map.svg" class="w-6 h-6 shrink-0 mt-1" alt="">
+
+                      <div>
+                        <p class="font-semibold">Peta "Perjalanan Anda Selepas Ini"</p>
+                        <p class="text-sm text-slate-600">
+                          Langkah demi langkah bagaimana untuk terus berkembang selepas kelas ini.
+                        </p>
+                      </div>
+                    </li>
+
+                  </ul>
+
+                  <div class="mt-4 border-t border-slate-300">
+                    <p class="mt-4 text-sm text-gray-800 uppercase mb-4">
+                        Yuran Keseluruhan
+                    </p>
+                    <p class="text-2xl line-through text-gray-400">
+                      RM20
+                    </p>
+                    <p class="text-5xl font-bold text-black">
+                        RM10
+                    </p>
+
+                    <p class="mt-3 text-green-700 text-xs">
+                        Discount 50% untuk <span class="seat-count font-semibold"></span> peserta terawal
+                    </p>
+
+                    <a href="#pay-start"
+                      class="add-to-cart-btn mt-8 inline-block w-full text-center px-10 py-3 rounded-lg font-semibold
+                      bg-gradient-to-b from-yellow-300 via-yellow-400 to-yellow-500
+                      text-[#3b2f00] shadow-md hover:brightness-105 transition">
+                    Bayar Yuran dan Sahkan Tempat
+                    </a>
+                    <p class="mt-2 text-slate-400 text-xs">Bayar guna QR Payment, Online Banking (FPX) atau Credit/Debit Card</p>
+                  </div>
+
+                  
+
+                </div>
+
+                <div id="pay-start" class="promo-green">
+                  <p class="promo-label">DISKAUN KHAS</p>
+
+                  <p class="promo-main">
+                    Gunakan Kod <span class="promo-code">PPAC50</span>
+                  </p>
+
+                  <p class="promo-sub">
+                    untuk dapatkan <strong>50% diskaun</strong> bagi program ini
+                  </p>
+                </div>
+
+                <div id="bcl-payment-form" data-url="https://syafihakimresources.bcl.my/embed/form/ppac"></div>
+                <script src="https://bcl.my/js/bc-encrypted-payment-embed.js"></script>                
+            </div>
+        </section>
+
+        <section class="sticky-banner">
+
+          <div class="info-box">
+
+            <!-- Countdown Header -->
+            <div class="countdown-header" onclick="toggleDetails()">
+
+              <div class="small label">
+                Kelas seterusnya <a onclick="trackCheckout()" href="#pay-start" class="text-indigo-400 underline">Sertai Sekarang</a>
+              </div>
+
+              <div class="countdown-inline">
+                <div class="countdown">
+                  <div class="count-item">
+                    <div id="days" class="count-number">00</div>
+                    <div class="count-label">Hari</div>
+                  </div>
+
+                  <div class="count-item">
+                    <div id="hours" class="count-number">00</div>
+                    <div class="count-label">Jam</div>
+                  </div>
+
+                  <div class="count-item">
+                    <div id="minutes" class="count-number">00</div>
+                    <div class="count-label">Minit</div>
+                  </div>
+
+                  <div class="count-item">
+                    <div id="seconds" class="count-number">00</div>
+                    <div class="count-label">Saat</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="arrow" id="arrow">▲</div>
+
+            </div>
+
+            <!-- Expandable Section -->
+            <div class="details" id="details">
+
+              <div class="row">
+                <div class="label">Tarikh</div>
+                <div id="session-date">Isnin, 2 Mac 2026</div>
+              </div>
+
+              <div class="row">
+                <div class="label">Masa</div>
+                <div>10:15 PM – 11:15 PM</div>
+              </div>
+
+              <div class="row">
+                <div class="label">Platform</div>
+                <div>Zoom</div>
+              </div>
+
+              <div class="row">
+                <div class="label">Link</div>
+                <div>Akan dihantar melalui WhatsApp selepas pembayaran disahkan</div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+</body>
+<script src="script.js"></script>
+</html>
