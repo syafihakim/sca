@@ -2,6 +2,10 @@ const sessions = [
     {
       date: new Date("March 9, 2026 22:15:00 GMT+08:00"),
       label: "Isnin, 9 Mac 2026"
+    },
+    {
+      date: new Date("March 16, 2026 22:15:00 GMT+08:00"),
+      label: "Isnin, 16 Mac 2026"
     }
   ];
 
