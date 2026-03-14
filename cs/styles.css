@@ -81,6 +81,12 @@
 .h-8 {
   height: calc(var(--spacing) * 8);
 }
+.h-full {
+  height: 100%;
+}
+.h-screen {
+  height: 100vh;
+}
 .w-8 {
   width: calc(var(--spacing) * 8);
 }
@@ -318,6 +324,10 @@
   font-size: var(--text-xs);
   line-height: var(--tw-leading, var(--text-xs--line-height));
 }
+.font-black {
+  --tw-font-weight: var(--font-weight-black);
+  font-weight: var(--font-weight-black);
+}
 .font-bold {
   --tw-font-weight: var(--font-weight-bold);
   font-weight: var(--font-weight-bold);
@@ -463,6 +473,11 @@
     margin-top: calc(var(--spacing) * 6);
   }
 }
+.sm\:h-screen {
+  @media (width >= 40rem) {
+    height: 100vh;
+  }
+}
 .sm\:px-6 {
   @media (width >= 40rem) {
     padding-inline: calc(var(--spacing) * 6);
@@ -499,6 +514,11 @@
 .md\:col-span-2 {
   @media (width >= 48rem) {
     grid-column: span 2 / span 2;
+  }
+}
+.md\:h-screen {
+  @media (width >= 48rem) {
+    height: 100vh;
   }
 }
 .md\:grid-cols-2 {
