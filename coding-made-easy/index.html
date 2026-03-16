@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fahami Coding Dalam Masa 60 Minit</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+	body{
+		padding-bottom:120px;
+	}
+
+	.sticky-banner{
+	  position:fixed;
+	  bottom:0;
+	  left:0;
+	  width:100%;
+	  z-index:9999;
+	  background:transparent;
+	}
+
+	.sticky-banner .info-box{
+	  max-width:720px;
+	  margin:0 auto;
+	}
+
+	/* Box */
+
+	.info-box{
+	  margin-top:24px;
+	  background:#1b2a42;
+	  border:1px solid #334155;
+	  overflow:hidden;
+	  font-size:14px;
+	  color:white;
+	}
+
+	/* Header */
+
+	.countdown-header{
+	  padding:16px;
+	  cursor:pointer;
+	  display:grid;
+	  grid-template-columns:1fr auto;
+	  grid-template-rows:auto auto;
+	  align-items:center;
+	}
+
+	.countdown-header .label{
+	  grid-column:1 / -1;
+	}
+
+	.label-scar{
+	  grid-column:1 / -1;
+	}
+
+	/* Countdown */
+
+	.countdown-inline{
+	  font-weight:700;
+	  margin-top:6px;
+	  font-size:16px;
+	  display:flex;
+	  justify-content:center;
+	}
+
+	.countdown{
+	  display:flex;
+	  gap:14px;
+	}
+
+	.count-item{
+	  text-align:center;
+	}
+
+	.count-number{
+	  font-weight:700;
+	  font-size:18px;
+	}
+
+	.count-label{
+	  font-size:12px;
+	  color:#94a3b8;
+	}
+
+	/* Arrow */
+
+	.arrow{
+	  margin-top:8px;
+	  font-size:14px;
+	  color:#94a3b8;
+	  transition:transform .25s ease;
+	  justify-self:end;
+	}
+
+	.arrow.rotate{
+	  transform:rotate(180deg);
+	}
+
+	/* Expandable section */
+
+	.details{
+	  max-height:0;
+	  overflow:hidden;
+	  transition:max-height .35s ease;
+	}
+
+	.details.open{
+	  max-height:300px;
+	}
+
+	/* Info rows */
+
+	.row{
+	  display:grid;
+	  grid-template-columns:120px 1fr;
+	  padding:12px 16px;
+	  border-bottom:1px solid #334155;
+	  align-items:center;
+	}
+
+	.row:last-child{
+	  border-bottom:none;
+	}
+
+	.label{
+	  color:#94a3b8;
+	}
+
+	.small{
+	  font-size:12px;
+	}
+
+
+	.benefit-checkmark {
+	  display: grid;
+	  grid-template-columns: 24px 1fr;
+	  gap: 12px;
+	  align-items: start;
+	}
+	.benefit-checkmark::before {
+	  content: "";
+	  width: 22px;
+	  height: 22px;
+	  background: url("svg/checkmark1.svg") no-repeat center;
+	  background-size: contain;
+	  display: block;
+	  align-self: start;
+	  transform: translateY(2px);
+	}
+
+	.checkout-section{
+	  background:#0f172a;
+	  color:#fff;
+	  font-family:Inter,system-ui,-apple-system,sans-serif;
+	  padding:32px 16px;
+	}
+
+	.checkout-container{
+	  max-width:720px;
+	  margin:auto;
+	}
+
+	.checkout-tag{
+	  font-size:12px;
+	  text-transform:uppercase;
+	  font-weight:500;
+	  color:#93c5fd;
+	}
+
+	.checkout-title{
+	  font-size:22px;
+	  font-weight:700;
+	  margin-top:10px;
+	}
+
+	.checkout-info{
+	  margin-top:24px;
+	  background:#1b2a42;
+	  border:1px solid #334155;
+	  border-radius:8px;
+	  overflow:hidden;
+	  font-size:14px;
+	}
+
+	.checkout-row{
+	  display:grid;
+	  grid-template-columns:120px 1fr;
+	  padding:12px 16px;
+	  border-bottom:1px solid #334155;
+	  align-items:center;
+	}
+
+	.checkout-row:last-child{
+	  border-bottom:none;
+	}
+
+	.checkout-label{
+	  color:#94a3b8;
+	}
+
+	.checkout-countdown{
+	  display:flex;
+	  gap:14px;
+	}
+
+	.checkout-count{
+	  text-align:center;
+	}
+
+	.checkout-count-number{
+	  font-weight:700;
+	  font-size:14px;
+	}
+
+	.checkout-count-text{
+	  font-size:10px;
+	  color:#94a3b8;
+	}
+
+	.checkout-trust{
+	  margin-top:24px;
+	  display:flex;
+	  align-items:center;
+	  gap:10px;
+	  font-size:14px;
+	  color:#cbd5e1;
+	}
+
+	.checkout-check{
+	  width:18px;
+	  height:18px;
+	  background:#16a34a;
+	  border-radius:50%;
+	  display:flex;
+	  align-items:center;
+	  justify-content:center;
+	}
+
+	.checkout-check svg{
+	  width:10px;
+	  height:10px;
+	  stroke:white;
+	}
+
+	.checkout-button{
+	  display:block;
+	  width:100%;
+	  margin-top:28px;
+	  padding:12px;
+	  text-align:center;
+	  font-weight:600;
+	  border-radius:8px;
+	  text-decoration:none;
+
+	  color:#3b2f00;
+
+	  background:linear-gradient(
+	    to bottom,
+	    #fde047,
+	    #facc15,
+	    #eab308
+	  );
+
+	  box-shadow:0 4px 10px rgba(0,0,0,0.15);
+	  transition:0.15s;
+	}
+
+	.checkout-button:hover{
+	  filter:brightness(1.05);
+	}
+	
+</style>
+
+</head>
+
+<body class="bg-white text-gray-900">
+	<section class="bg-white lg:grid lg:h-screen lg:place-content-center">
+
+	  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
+	    <div class="max-w-prose text-left">
+	      <h1 class="uppercase text-3xl font-black text-gray-900 sm:text-3xl leading-none">
+	        Fahami Coding <strong class="text-indigo-600">semudah ABC</strong> dalam 60 Minit (Walaupun anda tak pernah sentuh coding)
+	      </h1>      
+
+	      <p class="mt-4 mb-4 text-base text-pretty text-gray-700 text-md">
+	        Saya dedahkan teknik memahami coding sampai jadi sangat <b>mudah, seronok dan anda akan rasa tak sabar</b> untuk dalami coding selepas kelas ini
+	      </p>
+
+	      <img 
+	        src="images/hero.png" 
+	        alt="Pra-Semester 1 Program Persediaan Awal Coding"
+	        class="w-full h-auto"
+	      />
+
+	      <div class="mt-4 flex gap-4 sm:mt-6">
+	        <a class="inline-block rounded border border-indigo-600 bg-indigo-600 px-5 py-3 font-medium text-white shadow-sm transition-colors ho:bg-indigo-700" href="#daftar">
+	          👉 Daftar Kelas Sekarang
+	        </a>
+	      </div>
+	    </div>
+	  </div>
+	</section>
+
+	<section class="bg-white">
+	  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
+	    <div class="mx-auto max-w-3xl">
+
+	      <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">
+	        Kenapa Ramai Pelajar Tak Faham Coding?
+	      </h2>
+
+	      <div class="mt-4 text-lg text-black space-y-4">
+
+	      	<p>
+	      		Pada semester 1, pelajar akan jumpa subject : 
+	      	</p>
+
+	      	<ul class="list-disc list-inside">
+	      		<li>Programming Fundamentals</li>
+	      		<li>Programming I</li>
+	      		<li>atau nama-nama lain</li>
+	      	</ul>
+
+	      	<p>
+	      		dengan harapan mereka akan belajar dari zero.
+	      	</p>
+
+	        <p>
+	          Awal-awal macam boleh faham
+	        </p>
+
+	        <p>
+	          Semua yang lecturer ajar "makes sense" je
+	        </p>
+
+	        <p>
+	          Tapi rupanya ada masalah tersembunyi
+	        </p>
+
+	        <p>
+	          Yang akan menghantui pelajar hingga hujung semester
+	        </p>
+
+	        <h3 class="!mt-12 text-center text-3xl font-bold">
+	          Sebab bila dapat soalan coding je.. ramai pelajar tiba-tiba rasa blur.
+	        </h3>
+
+	        <p>
+	          Bila tengok soalan, mereka fikir:
+	        </p>
+
+	        <p>
+	          “Nak kena buat apa dulu ni??”
+	        </p>
+
+	        <p>
+	          “Dalam kelas tadi macam faham, tapi tak boleh pun buat soalan sendiri”
+	        </p>
+
+	        <p>
+	          Mereka tahu <i>syntax (cara tulis coding)</i>,
+	        </p>
+
+	        <p>
+	        	Mereka boleh sebut keyword-keyword yang diorang belajar macam : <b>cin, for loop, class, private, void, etc</b>
+	        </p>
+
+	        <p>
+	          tetapi tak tahu cara berfikir untuk selesaikan soalan
+	        </p>
+
+	        <p>
+	        	Tak kisah anda belajar apa sekali pun
+	        </p>
+
+	        <p>
+	        	Topik-topik semester 1 :
+	        </p>
+
+	        <ul class="list-disc list-inside">
+	        	<li>If-Else</li>
+	        	<li>Loops</li>
+	        	<li>Functions</li>
+	        	<li>Array</li>
+	        </ul>
+
+	        <p>Atau subject semester 2 dan seterusnya :</p>
+
+	        <ul class="list-disc list-inside">
+        		<li>Object Oriented Programming</li>
+        		<li>Data Structure and Algorithms</li>
+        		<li>Programming II</li>
+        	</ul>
+
+	        <h3 class="!mt-12 text-center text-3xl font-bold">
+	          Sebab Itu Coding Mula Rasa Susah
+	        </h3>
+
+	        <p>
+	          Permulaan yang tak jelas, habis semuanya hancur
+	        </p>
+
+	        <ul class="list-disc list-outside pl-5">
+	          <li>Makin lama makin keliru</li>
+	          <li>Topik baru makin susah difahami</li>
+	          <li>Mula rasa coding terlalu susah (not for me)</li>
+	        </ul>
+
+	        <p>
+	          Akhirnya tak faham pun diorang sebenarnya belajar apa
+	        </p>
+
+	        <p>
+	          Belajar takat nak habiskan semester je 😥
+	        </p>
+
+	        <h3 class="!mt-12 text-center text-3xl font-bold">
+	          Tetapi Sebenarnya Masalahnya Bukan Anda
+	        </h3>
+
+	        <p>
+	          Masalahnya ialah…
+	        </p>
+
+	        <p>
+	          Ramai pelajar tak pernah nampak bagaimana <b>coding sebenarnya berfungsi dari awal</b>.
+	        </p>
+
+	      </div>
+
+	    </div>
+	  </div>
+	</section>
+
+	<section class="bg-gray-900 p-4 text-white mx-auto" id="daftar">
+	  <h4 class="text-5xl text-bold font-['Oswald'] font-bold uppercase mb-4">
+	    CS Coding Made Easy  <br>
+	    Dalam 60 Minit
+	  </h4>
+
+	  <p>
+	    Teknik memahami coding sampai jadi sangat <b>mudah, seronok dan anda akan rasa tak sabar</b> untuk dalami coding
+	  </p>
+
+	  <img class="bg-gray-800 rounded-xl mt-4" src="images/pakej.png">
+
+	  <div class="space-y-4 mt-8 text-md">
+
+	    <div class="benefit-checkmark">
+	      LIVE! Bukan recording
+	    </div>
+
+	    <div class="benefit-checkmark">
+	      Untuk pelajar yang TAK PERNAH SENTUH CODING
+	    </div>
+
+	    <div class="benefit-checkmark">
+	      Untuk pelajar yang DAH PERNAH BELAJAR TAPI TETAP RASA SUSAH
+	    </div>
+
+	    <div class="benefit-checkmark">
+	      Fahami prinsip asas coding yang anda akan guna sampai bila-bila
+	    </div>
+	  </div>
+
+	  <h3 class="font-bold text-center mt-12 text-3xl">
+	    Apa yang anda akan belajar dalam kelas ni?
+	  </h3>
+
+	  <div class="mt-10 grid gap-6 md:grid-cols-2">
+
+	    <!-- Feature 1 -->
+	    <div class="rounded-xl bg-gray-800 p-6 border border-gray-700">
+	    	<h3 class="mt-1 text-xl font-bold uppercase leading-none mb-2">
+	        Coding bukan sekadar "Membina sistem"
+	      </h3>
+
+	      <p>
+	        Fahami maksud coding lebih mendalam melalui penjelasan yang pelajar sekolah rendah pun boleh faham
+	      </p>
+	    </div>
+
+	    <!-- Feature 2 -->
+	    <div class="rounded-xl bg-gray-800 p-6 border border-gray-700">
+	      <h3 class="mt-1 text-xl font-bold uppercase leading-none mb-2">
+	        Cara buat coding jadi mudah dan seronok
+	      </h3>
+
+	      <p>
+	      	Kebanyakkan pelajar tak nampak benda ni, hingga coding jadi bosan dan rasa susah sangat
+	      </p>
+	    </div>
+
+	    <!-- Feature 3 -->
+	    <div class="rounded-xl bg-gray-800 p-6 border border-gray-700">
+	      <h3 class="mt-1 text-xl font-bold uppercase leading-none mb-2">
+	        Live Coding Demo
+	      </h3>
+
+	      <p>
+	      	Lihat dan perhatikan sendiri saya tulis coding bersama anda
+	      </p>
+
+	      <ul class="mt-4 text-sm text-gray-300">
+	        <li>• Demo C++</li>
+	        <li>• Demo Java</li>
+	        <li>• Demo Python</li>
+	      </ul>
+	    </div>
+
+	    <!-- Feature 4 -->
+	    <div class="rounded-xl bg-gray-800 p-6 border border-gray-700">
+	      <h3 class="mt-1 text-xl font-bold uppercase leading-none mb-2">
+	        Faham teknik belajar 3 Language sekaligus: C++, Java, Python
+	      </h3>
+
+	      <p>
+	      	Rugi kalau tak tahu sebab lepas ni anda confirm rasa "lah.. sama je semuanya"
+	      </p>
+	    </div>
+
+	    <!-- Feature 5 -->
+	    <div class="rounded-xl bg-gray-800 p-6 border border-gray-700">
+	      <h3 class="mt-1 text-xl font-bold uppercase leading-none mb-2">
+	        "Lepas ni aku kena belajar apa dulu?"
+	      </h3>
+
+	      <p>
+	      	Pulang dari kelas ini dengan gambaran jelas tentang skill apa yang anda kena kuasai
+	      </p>
+	    </div>
+
+	  </div>
+
+
+	  <!-- Bonus Section -->
+
+	  <div class="mt-12">
+
+	    <h3 class="text-2xl font-bold text-white text-center">
+	      🎁 Bonus Tambahan Percuma
+	    </h3>
+
+	    <div class="mt-6 grid gap-6 md:grid-cols-3">
+
+	      <!-- Bonus 1 -->
+	      <div class="rounded-xl bg-gray-800 p-6 border border-gray-700">
+	        <h4 class="font-semibold text-lg">
+	          3 Kamus Coding : Python, Java, C++
+	        </h4>
+	        <p class="mt-2 text-sm text-gray-300">
+	          Rujukan ekspress dan padat untuk anda tulis coding dan bina apa-apa program
+	        </p>
+	      </div>
+
+	      <!-- Bonus 2 -->
+	      <div class="rounded-xl bg-gray-800 p-6 border border-gray-700">
+	        <h4 class="font-semibold text-lg">
+	          Beginner Roadmap : Skill apa anda kena kuasai?
+	        </h4>
+	        <p class="mt-2 text-sm text-gray-300">
+	          Senarai skill-skill dan huraian ringkas yang anda perlu tahu untuk jadi pelajar CS yang power
+	        </p>
+
+	        <p class="mt-2 text-sm text-gray-300">
+	        	Banyak skill-skill ini tidak ditekankan di Universiti. <b>Tapi saya dedahkan supaya anda tahu selok belok kuasai asas coding</b>
+	        </p>
+	      </div>
+	    </div>
+
+	    <div class="mt-12 text-center bg-gray-900 p-8 rounded-2xl border border-gray-700">
+
+	      <p class="font-['Oswald'] text-2xl uppercase tracking-widest text-gray-400">
+	        
+	      </p>
+
+	      <!-- <p class="font-['Oswald'] text-5xl font-extrabold text-gray-300 mt-1">
+	        RM 77
+	      </p> -->
+
+	      <p class="mt-2 text-gray-300 max-w-lg mx-auto">
+	        Kelas ini direka khas untuk unlock satu mindset pelajar CS dari kabur jadi jelas. Dari susah jadi mudah dan yakin.
+	      </p>
+
+	      <div class="mt-4 inline-block py-3 rounded-xl">
+
+	        <p class="text-xs uppercase tracking-widest text-yellow-400">
+	          Yuran Kelas Ini
+	        </p>
+
+	        <div class="text-yellow-400">
+	          <p class="font-['Oswald'] text-8xl font-extrabold">
+	            RM 20
+	          </p>
+	        </div>
+
+	      </div>
+
+	      <a href="#bcl-payment-form"
+	      class="shiny-btn mt-8 inline-flex flex-col items-center justify-center
+	      bg-green-500 hover:bg-green-600
+	      text-black px-8 py-4
+	      rounded-xl shadow-lg shadow-green-500/30
+	      transition hover:scale-105 w-full border border-green-300" onclick="fbq('track', 'InitiateCheckout')">
+
+	      <span class="text-lg font-bold">
+	        Daftar Sekarang
+	      </span>
+
+	      <span class="flex items-center gap-2 text-xs">
+	        Sahkan tempat anda
+	      </span>
+
+	    </a>
+	    <p class="mt-2 text-slate-400 text-xs">Bayar guna QR Payment, Online Banking (FPX) atau Credit/Debit Card</p>
+	  </div>
+	</section>
+
+	<section class="sticky-banner">
+
+	  <div class="info-box">
+
+	    <!-- Countdown Header -->
+	    <div class="countdown-header" onclick="toggleDetails()">
+
+	      <div class="small label text-center">
+	        Kelas seterusnya <a href="#daftar" class="text-indigo-400 underline">Daftar Sekarang</a>
+	      </div>
+
+	      <div class="countdown-inline">
+	        <div class="countdown">
+	          <div class="count-item">
+	            <div id="days" class="count-number">00</div>
+	            <div class="count-label">Hari</div>
+	          </div>
+
+	          <div class="count-item">
+	            <div id="hours" class="count-number">00</div>
+	            <div class="count-label">Jam</div>
+	          </div>
+
+	          <div class="count-item">
+	            <div id="minutes" class="count-number">00</div>
+	            <div class="count-label">Minit</div>
+	          </div>
+
+	          <div class="count-item">
+	            <div id="seconds" class="count-number">00</div>
+	            <div class="count-label">Saat</div>
+	          </div>
+	        </div>
+	      </div>
+
+	      <div class="arrow" id="arrow">▲</div>
+
+	      <div class="label-scar text-red-500 text-center mt-2">
+	        <p>Hanya 15 Slot Dibuka</p>
+	      </div>
+
+	      
+
+	    </div>
+
+	    <!-- Expandable Section -->
+	    <div class="details" id="details">
+
+	      <div class="row">
+	        <div class="label">Tarikh</div>
+	        <div id="session-date">Isnin, 2 Mac 2026</div>
+	      </div>
+
+	      <div class="row">
+	        <div class="label">Masa</div>
+	        <div>10:15 PM – 11:15 PM</div>
+	      </div>
+
+	      <div class="row">
+	        <div class="label">Platform</div>
+	        <div>Zoom</div>
+	      </div>
+
+	      <div class="row">
+	        <div class="label">Link</div>
+	        <div>Akan dihantar melalui Email selepas pembayaran disahkan</div>
+	      </div>
+
+	    </div>
+
+	  </div>
+
+	</section>
+
+	<div id="bcl-payment-form" data-url="https://syafihakimresources.bcl.my/embed/form/cme"></div>
+	<script src="https://bcl.my/js/bc-encrypted-payment-embed.js"></script>
+
+
+	<script>
+
+	const sessions = [
+	    {
+	      date: new Date("March 9, 2026 22:15:00 GMT+08:00"),
+	      label: "Isnin, 9 Mac 2026"
+	    },
+	    {
+	      date: new Date("March 16, 2026 22:15:00 GMT+08:00"),
+	      label: "Isnin, 16 Mac 2026"
+	    }
+	  ];
+
+	function getNextSession() {
+	  const now = new Date();
+	  for (let i = 0; i < sessions.length; i++) {
+	    if (now < sessions[i].date) {
+	      return sessions[i];
+	    }
+	  }
+	  return sessions[sessions.length - 1];
+	}
+
+
+	function toggleDetails(){
+
+	  const details = document.getElementById("details");
+	  const arrow = document.getElementById("arrow");
+
+	  details.classList.toggle("open");
+	  arrow.classList.toggle("rotate");
+
+	}
+
+	function updateCountdown() {
+	  const now = new Date().getTime();
+	  const nextSession = getNextSession();
+	  const target = nextSession.date.getTime();
+	  const distance = target - now;
+
+	  // Update visible date
+	  document.getElementById("session-date").innerText = nextSession.label;
+
+	  if (distance <= 0) return;
+
+	  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+	  const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+	  const minutes = Math.floor((distance / (1000 * 60)) % 60);
+	  const seconds = Math.floor((distance / 1000) % 60);
+
+	  document.getElementById("days").innerText = days.toString().padStart(2,"0");
+	  document.getElementById("hours").innerText = hours.toString().padStart(2,"0");
+	  document.getElementById("minutes").innerText = minutes.toString().padStart(2,"0");
+	  document.getElementById("seconds").innerText = seconds.toString().padStart(2,"0");
+	}
+
+
+	setInterval(updateCountdown, 1000);
+
+	</script>
+
+</body>
+</html>
