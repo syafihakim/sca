@@ -9,30 +9,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;900&display=swap" rel="stylesheet">
   </head>
 
   <body>
 
     <section class="bg-white lg:grid lg:h-screen lg:place-content-center px-auto">
-      <div class="mx-auto w-screen max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
+      <div class="mx-auto w-screen max-w-7xl px-4 py-8 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
         <div class="max-w-prose text-left">
-          <h1 class="uppercase text-3xl font-black text-gray-900 text-4xl">
+          <h1 class="font-['Raleway'] uppercase font-black text-gray-900 text-3xl">
             Anda belajar coding dekat Universiti, tapi masih lemah dan rasa tak yakin
           </h1>      
 
-          <p class="mt-4 mb-8 text-base text-pretty text-gray-700 text-lg/relaxed">
+          <p class="mt-4 mb-4 text-base text-pretty text-gray-700 text-md/relaxed">
             Bila dapat soalan coding je mesti stuck. Belajar dah banyak, tapi macam takleh buat jugak coding. Akhirnya.. ChatGPT jugak la yang buatkan coding. Betul tak?
           </p>
 
-          <video
-          class="w-full rounded-xl my-4"
-          controls
-          preload="none"
-          poster="images/hero_tb.png"
-          >
-          <source src="videos/hero.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+          <img class="bg-gray-800 rounded-xl" src="images/hero_cme.png">
 
           <div class="mt-4 flex gap-4 sm:mt-6">
             <a class="inline-block rounded border border-indigo-600 bg-indigo-600 px-5 py-3 font-medium text-white shadow-sm transition-colors ho:bg-indigo-700" href="#daftar">
@@ -393,7 +386,7 @@
 
           </div>
 
-          <a href="https://syafihakimresources.bcl.my/form/csstarterkit?coupon=CSLY7"
+          <a href="https://syafihakimresources.bcl.my/form/cme"
           class="shiny-btn mt-8 inline-flex flex-col items-center justify-center
           bg-green-500 hover:bg-green-600
           text-black px-8 py-4
@@ -652,6 +645,131 @@
       <p class="mt-2 text-slate-400 text-xs">Bayar guna QR Payment, Online Banking (FPX) atau Credit/Debit Card</p>
     </div>
   </section>
+
+  <section class="sticky-banner">
+
+    <div class="info-box">
+
+      <!-- Countdown Header -->
+      <div class="countdown-header" onclick="toggleDetails()">
+
+        <div class="small label text-center">
+          Kelas seterusnya <a href="#daftar" class="text-indigo-400 underline">Daftar Sekarang</a>
+        </div>
+
+        <div class="countdown-inline">
+          <div class="countdown">
+            <div class="count-item">
+              <div id="days" class="count-number">00</div>
+              <div class="count-label">Hari</div>
+            </div>
+
+            <div class="count-item">
+              <div id="hours" class="count-number">00</div>
+              <div class="count-label">Jam</div>
+            </div>
+
+            <div class="count-item">
+              <div id="minutes" class="count-number">00</div>
+              <div class="count-label">Minit</div>
+            </div>
+
+            <div class="count-item">
+              <div id="seconds" class="count-number">00</div>
+              <div class="count-label">Saat</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="arrow" id="arrow">▲</div>        
+
+      </div>
+
+      <!-- Expandable Section -->
+      <div class="details" id="details">
+
+        <div class="row">
+          <div class="label">Tarikh</div>
+          <div id="session-date">Isnin, 2 Mac 2026</div>
+        </div>
+
+        <div class="row">
+          <div class="label">Masa</div>
+          <div>9:00 PM – 10:00 PM</div>
+        </div>
+
+        <div class="row">
+          <div class="label">Platform</div>
+          <div>Zoom</div>
+        </div>
+
+        <div class="row">
+          <div class="label">Link</div>
+          <div>Akan dihantar melalui Email selepas pembayaran disahkan</div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <script>
+
+  const sessions = [
+      {
+        date: new Date("March 30, 2026 21:00:00 GMT+08:00"),
+        label: "Isnin, 30 Mac 2026"
+      }
+    ];
+
+  function getNextSession() {
+    const now = new Date();
+    for (let i = 0; i < sessions.length; i++) {
+      if (now < sessions[i].date) {
+        return sessions[i];
+      }
+    }
+    return sessions[sessions.length - 1];
+  }
+
+
+  function toggleDetails(){
+
+    const details = document.getElementById("details");
+    const arrow = document.getElementById("arrow");
+
+    details.classList.toggle("open");
+    arrow.classList.toggle("rotate");
+
+  }
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const nextSession = getNextSession();
+    const target = nextSession.date.getTime();
+    const distance = target - now;
+
+    // Update visible date
+    document.getElementById("session-date").innerText = nextSession.label;
+
+    if (distance <= 0) return;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((distance / (1000 * 60)) % 60);
+    const seconds = Math.floor((distance / 1000) % 60);
+
+    document.getElementById("days").innerText = days.toString().padStart(2,"0");
+    document.getElementById("hours").innerText = hours.toString().padStart(2,"0");
+    document.getElementById("minutes").innerText = minutes.toString().padStart(2,"0");
+    document.getElementById("seconds").innerText = seconds.toString().padStart(2,"0");
+  }
+
+
+  setInterval(updateCountdown, 1000);
+
+  </script>
 
   <script src="script.js"></script>
 </body>
