@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Latihan Sebelum Workshop</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-gray-100 to-gray-200 min-h-screen text-gray-900">
+
+  <div class="max-w-2xl mx-auto px-6 py-12">
+
+    <!-- Title -->
+    <h1 class="text-5xl font-black text-center mb-10 tracking-tight">
+      Latihan Sebelum Workshop
+    </h1>
+
+    <!-- Step 1: Video -->
+    <div class="bg-white/80 backdrop-blur border border-gray-200 rounded-2xl p-6 mb-6 shadow-lg">
+      <p class="font-medium mb-3">
+        1. Tonton video dan siapkan Soalan 1 dari "Cabaran Tulis Coding Sendiri"
+      </p>
+
+      <div class="aspect-video rounded-xl overflow-hidden bg-gray-100">
+        <video class="w-full h-full" controls>
+          <source src="tutorial.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="bg-white/80 backdrop-blur border border-gray-200 rounded-2xl p-6 mb-6 shadow-lg">
+      <p class="font-medium mb-3">2. Pilih 1 language anda</p>
+
+      <select id="languageSelect" class="w-full p-3 border rounded-xl mb-4 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-400">
+        <option value="">-- Pilih Language --</option>
+        <option value="cpp">C++</option>
+        <option value="python">Python</option>
+        <option value="java">Java</option>
+      </select>
+
+      <!-- Placeholder -->
+      <p id="placeholderText" class="text-sm text-gray-500 mb-4">
+        Sila pilih 1 language untuk teruskan
+      </p>
+
+      <!-- Buttons -->
+      <div id="actionSection" class="hidden space-y-3">
+
+        <!-- Primary -->
+        <a id="editorBtn"
+           target="_blank"
+           class="block w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl py-3 text-sm font-semibold transition shadow-md">
+          Buka Editor
+        </a>
+
+        <!-- Secondary -->
+        <a id="kamusBtn"
+           target="_blank"
+           class="block w-full text-center bg-gray-900 hover:bg-gray-800 text-white rounded-xl py-3 text-sm font-medium transition">
+          Buka Kamus
+        </a>
+
+        <!-- Secondary -->
+        <a id="latihanBtn"
+           href="https://drive.google.com/file/d/1-2CBZbOpPu1cIcVLPrnhyqXOCPfe-g7A/view"
+           target="_blank"
+           class="block w-full text-center bg-gray-900 hover:bg-gray-800 text-white rounded-xl py-3 text-sm font-medium transition">
+          Buka Latihan Cabaran Mini
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="bg-white/80 backdrop-blur border border-gray-200 rounded-2xl p-6 shadow-lg">
+      <p class="font-medium mb-3">
+        3. Screenshot kejayaan anda dan hantar di group Workshop
+      </p>
+
+      <img src="success.png"
+           class="rounded-xl border"
+           alt="Sample Screenshot"/>
+    </div>
+
+  </div>
+
+  <script>
+    const data = {
+      cpp: {
+        name: "C++",
+        editor: "https://www.onlineide.pro/playground/share/8d6c968b-8559-4612-a07d-bd8cd8816017",
+        kamus: "https://drive.google.com/file/d/1YFKMqRFb6O55GJ8yESpdxYHCqRyAhGIs/view?usp=drive_link"
+      },
+      python: {
+        name: "Python",
+        editor: "https://www.onlineide.pro/playground/share/ab04a4e3-38c6-41e7-8d64-c1f0916b6601",
+        kamus: "https://drive.google.com/file/d/1ajH6D0puN6OadiKVogJ3IX_lJpCEGdUr/view?usp=drive_link"
+      },
+      java: {
+        name: "Java",
+        editor: "https://www.onlineide.pro/playground/share/7ef18c7f-27fe-4246-b193-e967517fd3c9",
+        kamus: "https://drive.google.com/file/d/1bbSio2aFTPlpryo-TmJX0MBwo1-VHE5g/view?usp=drive_link"
+      }
+    };
+
+    const select = document.getElementById("languageSelect");
+    const section = document.getElementById("actionSection");
+    const editorBtn = document.getElementById("editorBtn");
+    const kamusBtn = document.getElementById("kamusBtn");
+    const placeholder = document.getElementById("placeholderText");
+
+    select.addEventListener("change", () => {
+      const selected = data[select.value];
+
+      if (!selected) {
+        section.classList.add("hidden");
+        placeholder.classList.remove("hidden");
+        return;
+      }
+
+      editorBtn.href = selected.editor;
+      kamusBtn.href = selected.kamus;
+
+      editorBtn.innerText = `Buka Editor ${selected.name}`;
+      kamusBtn.innerText = `Buka Kamus ${selected.name}`;
+
+      section.classList.remove("hidden");
+      placeholder.classList.add("hidden");
+    });
+  </script>
+
+</body>
+</html>
