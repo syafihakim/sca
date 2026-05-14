@@ -419,8 +419,8 @@
           </div>
 
           <!-- CTA BUTTON -->
-          <button
-            class="open-checkout-popup shiny-btn mt-8 inline-flex flex-col items-center justify-center
+          <a href="https://syafihakimresources.bcl.my/form/cis"
+            class="shiny-btn mt-8 inline-flex flex-col items-center justify-center
             bg-green-500 hover:bg-green-600
             text-black px-8 py-4
             rounded-xl shadow-lg shadow-green-500/30
@@ -434,128 +434,7 @@
               QR Payment • FPX • Card
             </span>
 
-          </button>
-
-          <!-- POPUP -->
-          <div
-            id="checkoutPopup"
-            class="hidden fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center px-4">
-
-            <!-- CARD -->
-            <div class="w-full max-w-md bg-zinc-950 border border-zinc-800 rounded-2xl p-6 relative">
-
-              <!-- CLOSE -->
-              <button
-                onclick="closeCheckoutPopup()"
-                class="absolute top-4 right-4 text-slate-500 hover:text-white text-xl">
-
-                ✕
-
-              </button>
-
-              <!-- TITLE -->
-              <div class="text-center">
-
-                <p class="text-2xl font-bold text-white">
-                  Isi Maklumat Anda
-                </p>
-
-                <p class="mt-2 text-sm text-slate-400">
-                  Kami akan bawa anda ke halaman pembayaran selepas ini.
-                </p>
-
-              </div>
-
-              <!-- FORM -->
-              <form
-                id="checkoutForm"
-                class="mt-6 flex flex-col gap-4">
-
-                <!-- NAME -->
-                <input
-                  id="nameInput"
-                  type="text"
-                  placeholder="Nama panggilan"
-                  required
-                  class="w-full rounded-xl bg-zinc-900 border border-zinc-700 px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:border-green-400"
-                >
-
-                <!-- PHONE -->
-                <div>
-
-                  <input
-                    id="phoneInput"
-                    type="text"
-                    placeholder="Nombor WhatsApp"
-                    required
-                    class="w-full rounded-xl bg-zinc-900 border border-zinc-700 px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:border-green-400"
-                  >
-
-                  <p
-                    id="phoneError"
-                    class="hidden text-red-400 text-sm mt-2">
-
-                    Sila masukkan nombor telefon yang sah.
-
-                  </p>
-
-                </div>
-
-                <!-- EMAIL -->
-                <input
-                  id="emailInput"
-                  type="email"
-                  placeholder="Email"
-                  required
-                  class="w-full rounded-xl bg-zinc-900 border border-zinc-700 px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:border-green-400"
-                >
-
-                <!-- SUBMIT -->
-                <button
-                  id="submitButton"
-                  type="submit"
-                  class="bg-green-500 hover:bg-green-600
-                  text-black font-bold py-4 rounded-xl
-                  transition hover:scale-[1.02]
-                  flex items-center justify-center gap-3">
-
-                  <!-- Spinner -->
-                  <svg
-                    id="loadingSpinner"
-                    class="hidden animate-spin h-5 w-5"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24">
-
-                    <circle
-                      class="opacity-25"
-                      cx="12"
-                      cy="12"
-                      r="10"
-                      stroke="currentColor"
-                      stroke-width="4">
-                    </circle>
-
-                    <path
-                      class="opacity-75"
-                      fill="currentColor"
-                      d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z">
-                    </path>
-
-                  </svg>
-
-                  <!-- Button Text -->
-                  <span id="submitButtonText">
-                    Teruskan Ke Pembayaran
-                  </span>
-
-                </button>
-
-              </form>
-
-            </div>
-
-          </div>
+          </a>
       </div>
     </section>
 
@@ -779,24 +658,23 @@
 
       </div>
 
-        <!-- CTA BUTTON -->
-          <button
-            class="open-checkout-popup shiny-btn mt-8 inline-flex flex-col items-center justify-center
-            bg-green-500 hover:bg-green-600
-            text-black px-8 py-4
-            rounded-xl shadow-lg shadow-green-500/30
-            transition hover:scale-105 w-full border border-green-300">
+      <!-- CTA BUTTON -->
+      <a href="https://syafihakimresources.bcl.my/form/cis"
+        class="shiny-btn mt-8 inline-flex flex-col items-center justify-center
+        bg-green-500 hover:bg-green-600
+        text-black px-8 py-4
+        rounded-xl shadow-lg shadow-green-500/30
+        transition hover:scale-105 w-full border border-green-300">
 
-            <span class="text-lg font-bold">
-              Sertai Sekarang
-            </span>
+        <span class="text-lg font-bold">
+          Sertai Sekarang
+        </span>
 
-            <span class="flex items-center gap-2 text-xs">
-              QR Payment • FPX • Card
-            </span>
+        <span class="flex items-center gap-2 text-xs">
+          QR Payment • FPX • Card
+        </span>
 
-          </button>
-      <p class="mt-2 text-slate-400 text-xs">Bayar guna QR Payment, Online Banking (FPX) atau Credit/Debit Card</p>
+      </a>
     </div>
   </section>
 
@@ -805,7 +683,7 @@
     <div class="info-box">
 
       <!-- Countdown Header -->
-      <div class="countdown-header" onclick="toggleDetails()">
+      <div class="countdown-header">
 
         <div class="small label text-center">
           Kelas seterusnya <a href="#daftar" class="text-indigo-400 underline">Daftar Sekarang</a>
@@ -835,7 +713,7 @@
           </div>
         </div>
 
-        <div class="arrow" id="arrow">▲</div>        
+        <div class="arrow" id="arrow"  onclick="toggleDetails()">▲</div>        
 
       </div>
 
@@ -922,196 +800,6 @@
 
 
   setInterval(updateCountdown, 1000);
-
-  </script>
-
-  <script>
-
-    // ====================================
-    // CONFIG
-    // ====================================
-
-    const APPS_SCRIPT_URL =
-      "https://script.google.com/macros/s/AKfycbzD-hXyKvqUgtvjk5KCNgaH7ApLQHYweerkbgQA7NJBxtnHoHLPWxb8Dmh9yTENYQtYXg/exec";
-
-
-    // ====================================
-    // POPUP CONTROLS
-    // ====================================
-
-    document
-      .querySelectorAll(".open-checkout-popup")
-      .forEach(button => {
-
-        button.addEventListener("click", () => {
-
-          document
-            .getElementById("checkoutPopup")
-            .classList.remove("hidden");
-
-        });
-
-      });
-
-
-    // ====================================
-    // FORM SUBMIT
-    // ====================================
-
-    document
-      .getElementById("checkoutForm")
-      .addEventListener("submit", async function(event) {
-
-        event.preventDefault();
-
-        // =========================
-        // GET INPUTS
-        // =========================
-
-        const name = document
-          .getElementById("nameInput")
-          .value
-          .trim();
-
-        const email = document
-          .getElementById("emailInput")
-          .value
-          .trim();
-
-        const phoneError = document
-          .getElementById("phoneError");
-
-        const submitButton = document
-          .getElementById("submitButton");
-
-        let phone = document
-          .getElementById("phoneInput")
-          .value
-          .trim();
-
-
-        // =========================
-        // CLEAN PHONE
-        // =========================
-
-        // Remove all non-digits
-        phone = phone.replace(/\D/g, "");
-
-        // Convert 60123456789 -> 0123456789
-        if (phone.startsWith("60")) {
-
-          phone = "0" + phone.substring(2);
-
-        }
-
-        // Ensure starts with 0
-        if (!phone.startsWith("0")) {
-
-          phone = "0" + phone;
-
-        }
-
-
-        // =========================
-        // VALIDATE PHONE
-        // =========================
-
-        let isValid = false;
-
-        if (phone.startsWith("011")) {
-
-          isValid = phone.length === 12;
-
-        } else {
-
-          isValid = phone.length === 11 || phone.length === 10;
-
-        }
-
-        if (!isValid) {
-
-          phoneError.classList.remove("hidden");
-
-          return;
-
-        }
-
-        phoneError.classList.add("hidden");
-
-
-        // =========================
-        // LOADING STATE
-        // =========================
-
-        const loadingSpinner =
-          document.getElementById("loadingSpinner");
-
-        const submitButtonText =
-          document.getElementById("submitButtonText");
-
-        submitButton.disabled = true;
-
-        loadingSpinner.classList.remove("hidden");
-
-        submitButtonText.innerText =
-          "Sedang Diproses...";
-
-
-        // =========================
-        // SEND TO BACKEND
-        // =========================
-
-        try {
-          await fetch(APPS_SCRIPT_URL, {
-            method: "POST",
-            mode: "no-cors",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-              name: name,
-              phone: phone,
-              email: email
-            })
-          });
-
-
-          // =========================
-          // META LEAD EVENT
-          // =========================
-
-          if (typeof fbq !== "undefined") {
-
-            fbq('track', 'AddToCart');
-
-          }
-
-
-          // =========================
-          // REDIRECT
-          // =========================
-
-          const redirectUrl =
-            `https://syafihakimresources.bcl.my/form/cis?name=${encodeURIComponent(name)}&phone=${encodeURIComponent(phone)}&email=${encodeURIComponent(email)}`;
-
-          window.location.href = redirectUrl;
-
-        } catch (error) {
-
-          alert(
-            "Maaf, sila cuba sekali lagi"
-          );
-
-          submitButton.disabled = false;
-
-          submitButton.innerText =
-            "Teruskan Ke Pembayaran";
-
-          console.error(error);
-
-        }
-
-      });
 
   </script>
 
