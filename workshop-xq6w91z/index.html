@@ -3,132 +3,93 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Latihan Sebelum Workshop</title>
+  <title>Day 0 : KickStart Workshop</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gradient-to-br from-gray-100 to-gray-200 min-h-screen text-gray-900">
 
-  <div class="max-w-2xl mx-auto px-6 py-12">
+<body class="bg-gray-100 text-gray-900 min-h-screen">
+
+  <div class="max-w-2xl mx-auto px-5 py-10">
 
     <!-- Title -->
-    <h1 class="text-5xl font-black text-center mb-10 tracking-tight">
-      Latihan Sebelum Workshop
+    <h1 class="text-4xl font-black text-center mb-8 tracking-tight">
+      Day 0 : KickStart Workshop
     </h1>
 
-    <!-- Step 1: Video -->
-    <div class="bg-white/80 backdrop-blur border border-gray-200 rounded-2xl p-6 mb-6 shadow-lg">
-      <p class="font-medium mb-3">
-        1. Tonton video dan siapkan Soalan 1 dari "Cabaran Tulis Coding Sendiri"
+    <!-- Message Box -->
+    <div class="bg-blue-100 border border-blue-200 text-blue-900 rounded-2xl p-5 mb-6">
+      <p class="leading-relaxed">
+        Sepanjang Day 1, kita akan fokus sepenuh pada C++ sahaja.
+        Pada hari ke-2, kita akan belajar cara nak gunakan teknik
+        yang sama untuk Java dan Python.
       </p>
+    </div>
 
-      <div class="aspect-video rounded-xl overflow-hidden bg-gray-100">
-        <video class="w-full h-full" controls>
-          <source src="tutorial.mp4" type="video/mp4">
-        </video>
+    <div class="bg-white border border-gray-200 rounded-2xl p-6 mb-5 shadow-sm">
+      <h2 class="text-lg font-semibold mb-4">
+        Step 1 : Tonton Video ni sampai habis
+      </h2>
+
+      <video class="w-full h-full" controls>
+        <source src="tutorial.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="bg-white border border-gray-200 rounded-2xl p-6 mb-5 shadow-sm">
+      <h2 class="text-lg font-semibold mb-4">
+        Step 2 : Buka Panduan Day 0
+      </h2>
+
+      <a target="_blank" href="https://drive.google.com/file/d/19gqpZyKkeTslc4xpvQJkvfVy8hmg1JKg/view?usp=sharing"
+         class="block w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl py-3 font-medium transition">
+        Tekan sini untuk buka Panduan
+      </a>
+    </div>
+
+    <div class="bg-white border border-gray-200 rounded-2xl p-6 mb-5 shadow-sm">
+      <h2 class="text-lg font-semibold mb-4">
+        Step 3 : Buka Editor C++
+      </h2>
+
+      <a target="_blank" href="https://www.onlineide.pro/playground/share/8d6c968b-8559-4612-a07d-bd8cd8816017"
+         class="block w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl py-3 font-medium transition">
+        Tekan sini untuk buka editor C++
+      </a>
+    </div>
+
+    <div class="bg-white border border-gray-200 rounded-2xl p-6 mb-5 shadow-sm">
+      <h2 class="text-lg font-semibold">
+        Step 4 : Buat soalan 1 sehingga siap
+      </h2>      
+    </div>
+
+    <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm mb-5">
+      <h2 class="text-lg font-semibold mb-4">
+        Step 5 : Hantar gambar. Caption letak Nama + Nombor Soalan
+      </h2>
+
+      <div class="border-2 border-gray-300 rounded-2xl flex items-center justify-center bg-gray-50">
+        <img src="submission.png"
+                   class="rounded-xl border"
+                   alt="Sample Screenshot"/>
       </div>
     </div>
 
-    <!-- Step 2 -->
-    <div class="bg-white/80 backdrop-blur border border-gray-200 rounded-2xl p-6 mb-6 shadow-lg">
-      <p class="font-medium mb-3">2. Pilih 1 language anda</p>
+    <div class="bg-white border border-gray-200 rounded-2xl p-6 mb-5 shadow-sm">
+      <h2 class="text-lg font-semibold mb-4">
+        Step 6 : Siapkan latihan lain dan hantar ke group 🔥
+      </h2>
 
-      <select id="languageSelect" class="w-full p-3 border rounded-xl mb-4 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-400">
-        <option value="">-- Pilih Language --</option>
-        <option value="cpp">C++</option>
-        <option value="python">Python</option>
-        <option value="java">Java</option>
-      </select>
-
-      <!-- Placeholder -->
-      <p id="placeholderText" class="text-sm text-gray-500 mb-4">
-        Sila pilih 1 language untuk teruskan
-      </p>
-
-      <!-- Buttons -->
-      <div id="actionSection" class="hidden space-y-3">
-
-        <!-- Primary -->
-        <a id="editorBtn"
-           target="_blank"
-           class="block w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl py-3 text-sm font-semibold transition shadow-md">
-          Buka Editor
-        </a>
-
-        <!-- Secondary -->
-        <a id="kamusBtn"
-           target="_blank"
-           class="block w-full text-center bg-gray-900 hover:bg-gray-800 text-white rounded-xl py-3 text-sm font-medium transition">
-          Buka Kamus
-        </a>
-
-        <!-- Secondary -->
-        <a id="latihanBtn"
-           href="https://drive.google.com/file/d/1-2CBZbOpPu1cIcVLPrnhyqXOCPfe-g7A/view"
-           target="_blank"
-           class="block w-full text-center bg-gray-900 hover:bg-gray-800 text-white rounded-xl py-3 text-sm font-medium transition">
-          Buka Latihan Cabaran Mini
-        </a>
-
-      </div>
+      <a target="_blank" href="https://drive.google.com/file/d/1DboudIQ1sn91DdOFTU6k6Uq0uNdRRf42/view?usp=sharing"
+         class="block w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl py-3 font-medium transition">
+        Tekan untuk lihat latihan lain
+      </a>
     </div>
 
-    <!-- Step 3 -->
-    <div class="bg-white/80 backdrop-blur border border-gray-200 rounded-2xl p-6 shadow-lg">
-      <p class="font-medium mb-3">
-        3. Screenshot kejayaan anda dan hantar di group Workshop
-      </p>
 
-      <img src="success.png"
-           class="rounded-xl border"
-           alt="Sample Screenshot"/>
-    </div>
 
   </div>
-
-  <script>
-    const data = {
-      cpp: {
-        name: "C++",
-        editor: "https://www.onlineide.pro/playground/share/8d6c968b-8559-4612-a07d-bd8cd8816017",
-        kamus: "https://drive.google.com/file/d/1YFKMqRFb6O55GJ8yESpdxYHCqRyAhGIs/view?usp=drive_link"
-      },
-      python: {
-        name: "Python",
-        editor: "https://www.onlineide.pro/playground/share/ab04a4e3-38c6-41e7-8d64-c1f0916b6601",
-        kamus: "https://drive.google.com/file/d/1ajH6D0puN6OadiKVogJ3IX_lJpCEGdUr/view?usp=drive_link"
-      },
-      java: {
-        name: "Java",
-        editor: "https://www.onlineide.pro/playground/share/7ef18c7f-27fe-4246-b193-e967517fd3c9",
-        kamus: "https://drive.google.com/file/d/1bbSio2aFTPlpryo-TmJX0MBwo1-VHE5g/view?usp=drive_link"
-      }
-    };
-
-    const select = document.getElementById("languageSelect");
-    const section = document.getElementById("actionSection");
-    const editorBtn = document.getElementById("editorBtn");
-    const kamusBtn = document.getElementById("kamusBtn");
-    const placeholder = document.getElementById("placeholderText");
-
-    select.addEventListener("change", () => {
-      const selected = data[select.value];
-
-      if (!selected) {
-        section.classList.add("hidden");
-        placeholder.classList.remove("hidden");
-        return;
-      }
-
-      editorBtn.href = selected.editor;
-      kamusBtn.href = selected.kamus;
-
-      editorBtn.innerText = `Buka Editor ${selected.name}`;
-      kamusBtn.innerText = `Buka Kamus ${selected.name}`;
-
-      section.classList.remove("hidden");
-      placeholder.classList.add("hidden");
-    });
-  </script>
 
 </body>
 </html>
