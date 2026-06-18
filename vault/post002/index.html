@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
@@ -10,9 +11,11 @@
   <title>Loading...</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
+
   <link
     rel="preconnect"
     href="https://fonts.gstatic.com"
@@ -102,10 +105,12 @@
           </a>
 
           <a
+            id="nextButton"
             href="#"
             class="
               text-gray-500
               hover:text-gray-900
+              hidden
             "
           >
             Next →
@@ -119,10 +124,12 @@
 
       <!-- Video -->
       <div
+        id="videoContainer"
         class="
           border-y
           border-gray-200
           bg-black
+          hidden
         "
       >
 
@@ -134,6 +141,7 @@
               w-full
               h-full
             "
+            loading="lazy"
             allowfullscreen
           ></iframe>
 
@@ -164,17 +172,23 @@
       const text =
         await response.text();
 
-      const end =
-        text.indexOf("---", 4);
+      const parts =
+        text.split("[content]");
+
+      if (parts.length < 2) {
+        console.error(
+          "Missing [content] section."
+        );
+        return;
+      }
 
       const frontMatter =
-        text
-          .slice(3, end)
-          .trim();
+        parts[0].trim();
 
       const markdown =
-        text
-          .slice(end + 3)
+        parts
+          .slice(1)
+          .join("[content]")
           .trim();
 
       const post = {};
@@ -185,6 +199,10 @@
 
           const separator =
             line.indexOf(":");
+
+          if (separator < 0) {
+            return;
+          }
 
           const key =
             line
@@ -200,7 +218,7 @@
         });
 
       document.title =
-        post.title;
+        post.title || "Untitled";
 
       document
         .getElementById("meta")
@@ -212,7 +230,9 @@
               mb-2
             "
           >
-            Video · ${post.date}
+            ${post.type || "Resource"}
+            ·
+            ${post.date || ""}
           </p>
 
           <h1
@@ -223,7 +243,7 @@
               mb-4
             "
           >
-            ${post.title}
+            ${post.title || ""}
           </h1>
 
           <p
@@ -232,14 +252,42 @@
               leading-relaxed
             "
           >
-            ${post.description}
+            ${post.description || ""}
           </p>
         `;
 
-      document
-        .getElementById("video")
-        .src =
-          post.video;
+      if (post.video) {
+
+        document
+          .getElementById("video")
+          .src =
+            post.video;
+
+        document
+          .getElementById(
+            "videoContainer"
+          )
+          .classList
+          .remove("hidden");
+      }
+
+      if (post.next) {
+
+        const next =
+          document.getElementById(
+            "nextButton"
+          );
+
+        next.href =
+          post.next;
+
+        next.textContent =
+          `${post.nextTitle || "Next"} →`;
+
+        next.classList.remove(
+          "hidden"
+        );
+      }
 
       document
         .getElementById("content")
