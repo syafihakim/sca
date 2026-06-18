@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>PDF Resource</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    .heading {
+      font-family: 'Oswald', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+
+  <main class="max-w-4xl mx-auto px-5 py-8 space-y-5">
+
+    <!-- Header -->
+    <section
+      class="bg-white rounded-3xl border border-gray-200 shadow-sm p-7"
+    >
+
+      <a
+        href="/"
+        class="inline-block text-gray-500 hover:text-gray-900 mb-6"
+      >
+        ← Back to Library
+      </a>
+
+      <div id="meta"></div>
+
+    </section>
+
+    <!-- PDF Viewer -->
+    <section
+      class="
+        bg-white
+        rounded-3xl
+        border
+        border-gray-200
+        shadow-sm
+        overflow-hidden
+      "
+    >
+      <iframe
+        id="pdfViewer"
+        class="w-full h-[80vh]"
+      ></iframe>
+    </section>
+
+  </main>
+
+  <script>
+    /*
+      Change these 4 values only
+    */
+
+    const pdf = {
+      title:
+        "Susunan Topik Pelajar Coding di Universiti",
+
+      description:
+        "Peta topik programming yang biasa diajar di universiti di Malaysia.",
+
+      date:
+        "17 Jun 2026",
+
+      file:
+        "../pdf/peta-uni.pdf"
+    };
+
+    /*
+      Everything below can remain untouched
+    */
+
+    const meta =
+      document.getElementById("meta");
+
+    const viewer =
+      document.getElementById("pdfViewer");
+
+    meta.innerHTML = `
+      <p class="text-sm text-gray-500 mb-2">
+        PDF · ${pdf.date}
+      </p>
+
+      <h1
+        class="
+          heading
+          text-4xl
+          leading-tight
+          mb-4
+        "
+      >
+        ${pdf.title}
+      </h1>
+
+      <p
+        class="
+          text-gray-600
+          leading-relaxed
+          mb-6
+        "
+      >
+        ${pdf.description}
+      </p>
+
+      <a
+        href="${pdf.file}"
+        download
+        class="
+          inline-flex
+          items-center
+          px-5
+          py-3
+          rounded-2xl
+          bg-gray-900
+          text-white
+          font-semibold
+          hover:bg-black
+          transition
+        "
+      >
+        Muat Turun PDF
+      </a>
+    `;
+
+    viewer.src = `https://docs.google.com/gview?embedded=1&url=${encodeURIComponent(pdf.file)}`;
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Collection Rujukan Untuk Pelajar Coding</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    .heading {
+      font-family: 'Oswald', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+
+  <main class="max-w-2xl mx-auto px-5 py-8 space-y-5">
+
+    <!-- Header -->
+    <section
+      class="bg-white rounded-3xl border border-gray-200 shadow-sm p-7"
+    >
+      <h1
+        class="heading text-4xl uppercase tracking-wide mb-4"
+      >
+        Rujukan Pelajar Coding (Matrik/University)
+      </h1>
+
+      <p class="text-gray-600 leading-relaxed">
+        Koleksi PDF, video dan resource percuma untuk
+        membantu anda memahami programming dengan lebih
+        mudah.
+      </p>
+    </section>
+
+    <!-- Resources -->
+    <section
+      class="bg-white rounded-3xl border border-gray-200 shadow-sm overflow-hidden"
+    >
+      <div id="resources">
+
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const resources = [
+      {
+        type: "PDF",
+        title:
+          "Susunan Topik Coding di Kebanyakkan Universiti Malaysia",
+        description:
+          "Peta topik programming yang biasa diajar di universiti di Malaysia.",
+        date: "17 Jun 2026",
+        url: "posts/peta-uni.html"
+      },
+      {
+        type: "Video",
+        title:
+          "Kenapa Coding di Universiti Rasa Susah Sangat?",
+        description:
+          "Benda ni ramai pelajar tak nampak sampai habis diploma dan degree",
+        date: "18 Jun 2026",
+        url: "#"
+      }
+    ];
+
+    const container =
+      document.getElementById("resources");
+
+    resources.forEach(resource => {
+      const article =
+        document.createElement("article");
+
+      article.className =
+        "px-6 py-6 border-b border-gray-100 last:border-b-0";
+
+      article.innerHTML = `
+        <div
+          class="text-sm text-gray-500 mb-3"
+        >
+          ${resource.type}
+          ·
+          ${resource.date}
+        </div>
+
+        <h3
+          class="heading text-2xl leading-tight mb-3"
+        >
+          ${resource.title}
+        </h3>
+
+        <p
+          class="text-gray-600 leading-relaxed mb-5"
+        >
+          ${resource.description}
+        </p>
+
+        <a
+          href="${resource.url}"
+          class="font-semibold hover:underline"
+        >
+          Buka Resource →
+        </a>
+      `;
+
+      container.appendChild(article);
+    });
+  </script>
+
+</body>
+</html>
