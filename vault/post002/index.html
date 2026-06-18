@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Loading...</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    .heading {
+      font-family: 'Oswald', sans-serif;
+    }
+
+    .content h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.875rem;
+      line-height: 1.2;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .content p {
+      color: rgb(75 85 99);
+      line-height: 1.9;
+      margin-bottom: 1.25rem;
+    }
+
+    .content ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .content li {
+      color: rgb(55 65 81);
+      line-height: 1.8;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+
+  <main
+    class="
+      max-w-4xl
+      mx-auto
+      px-5
+      py-8
+    "
+  >
+
+    <article
+      class="
+        bg-white
+        rounded-3xl
+        border
+        border-gray-200
+        shadow-sm
+        overflow-hidden
+      "
+    >
+
+      <!-- Header -->
+      <section class="p-7">
+
+        <div
+          class="
+            flex
+            items-center
+            justify-between
+            mb-8
+          "
+        >
+
+          <a
+            href="../"
+            class="
+              text-gray-500
+              hover:text-gray-900
+            "
+          >
+            ← Back to Library
+          </a>
+
+          <a
+            href="#"
+            class="
+              text-gray-500
+              hover:text-gray-900
+            "
+          >
+            Next →
+          </a>
+
+        </div>
+
+        <div id="meta"></div>
+
+      </section>
+
+      <!-- Video -->
+      <div
+        class="
+          border-y
+          border-gray-200
+          bg-black
+        "
+      >
+
+        <div class="aspect-video">
+
+          <iframe
+            id="video"
+            class="
+              w-full
+              h-full
+            "
+            allowfullscreen
+          ></iframe>
+
+        </div>
+
+      </div>
+
+      <!-- Content -->
+      <section class="p-7">
+
+        <div
+          id="content"
+          class="content"
+        ></div>
+
+      </section>
+
+    </article>
+
+  </main>
+
+  <script>
+    async function loadPost() {
+
+      const response =
+        await fetch("./post.md");
+
+      const text =
+        await response.text();
+
+      const end =
+        text.indexOf("---", 4);
+
+      const frontMatter =
+        text
+          .slice(3, end)
+          .trim();
+
+      const markdown =
+        text
+          .slice(end + 3)
+          .trim();
+
+      const post = {};
+
+      frontMatter
+        .split("\n")
+        .forEach(line => {
+
+          const separator =
+            line.indexOf(":");
+
+          const key =
+            line
+              .slice(0, separator)
+              .trim();
+
+          const value =
+            line
+              .slice(separator + 1)
+              .trim();
+
+          post[key] = value;
+        });
+
+      document.title =
+        post.title;
+
+      document
+        .getElementById("meta")
+        .innerHTML = `
+          <p
+            class="
+              text-sm
+              text-gray-500
+              mb-2
+            "
+          >
+            Video · ${post.date}
+          </p>
+
+          <h1
+            class="
+              heading
+              text-4xl
+              leading-tight
+              mb-4
+            "
+          >
+            ${post.title}
+          </h1>
+
+          <p
+            class="
+              text-gray-600
+              leading-relaxed
+            "
+          >
+            ${post.description}
+          </p>
+        `;
+
+      document
+        .getElementById("video")
+        .src =
+          post.video;
+
+      document
+        .getElementById("content")
+        .innerHTML =
+          marked.parse(markdown);
+    }
+
+    loadPost();
+  </script>
+
+</body>
+</html>

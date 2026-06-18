@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Free Resource</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    .heading {
+      font-family: 'Oswald', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+
+  <main
+    class="
+      max-w-4xl
+      mx-auto
+      px-5
+      py-8
+    "
+  >
+
+    <article
+      class="
+        bg-white
+        rounded-3xl
+        border
+        border-gray-200
+        shadow-sm
+        overflow-hidden
+      "
+    >
+
+      <!-- Header -->
+     <section class="p-7">
+
+       <div class="flex items-center justify-between mb-8">
+
+         <a
+           href="../"
+           class="
+             text-gray-500
+             hover:text-gray-900
+           "
+         >
+           ← Back to Library
+         </a>
+
+         <a
+           href="#"
+           class="
+             text-gray-500
+             hover:text-gray-900
+           "
+         >
+           Next →
+         </a>
+
+       </div>
+
+       <div id="meta"></div>
+
+     </section>
+
+      <!-- Divider -->
+      <div
+        class="
+          border-t
+          border-gray-200
+        "
+      ></div>
+
+      <!-- PDF Pages -->
+      <div id="pages"></div>
+
+    </article>
+
+  </main>
+
+  <script>
+    /*
+      Change these only
+    */
+
+    const resource = {
+      title:
+        "Topik Yang Kebanyakan Universiti Malaysia Ajar Dalam Pengaturcaraan",
+
+      date:
+        "17 Jun 2026",
+
+      description:
+        "Peta topik programming yang biasa diajar di universiti di Malaysia.",
+
+      pdf:
+        "https://syafi.github.io/free-resources/pdf/topik-programming.pdf",
+
+      pages: [
+        "content-1.webp"
+      ]
+    };
+
+    /*
+      Everything below remains untouched
+    */
+
+    document.getElementById("meta")
+      .innerHTML = `
+        <p
+          class="
+            text-sm
+            text-gray-500
+            mb-2
+          "
+        >
+          PDF · ${resource.date}
+        </p>
+
+        <h1
+          class="
+            heading
+            text-4xl
+            leading-tight
+            mb-4
+          "
+        >
+          ${resource.title}
+        </h1>
+
+        <p
+          class="
+            text-gray-600
+            leading-relaxed
+            mb-6
+          "
+        >
+          ${resource.description}
+        </p>
+      `;
+
+    const pages =
+      document.getElementById("pages");
+
+    resource.pages.forEach(page => {
+      pages.innerHTML += `
+        <img
+          src="${page}"
+          class="w-full block"
+          loading="lazy"
+          alt=""
+        >
+      `;
+    });
+  </script>
+
+</body>
+</html>
