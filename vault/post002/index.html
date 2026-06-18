@@ -2,20 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>Loading...</title>
+  <title>Free Resource</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
-
   <link
     rel="preconnect"
     href="https://fonts.gstatic.com"
@@ -30,32 +26,6 @@
   <style>
     .heading {
       font-family: 'Oswald', sans-serif;
-    }
-
-    .content h2 {
-      font-family: 'Oswald', sans-serif;
-      font-size: 1.875rem;
-      line-height: 1.2;
-      margin-top: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    .content p {
-      color: rgb(75 85 99);
-      line-height: 1.9;
-      margin-bottom: 1.25rem;
-    }
-
-    .content ul {
-      list-style: disc;
-      padding-left: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .content li {
-      color: rgb(55 65 81);
-      line-height: 1.8;
-      margin-bottom: 0.5rem;
     }
   </style>
 </head>
@@ -83,219 +53,125 @@
     >
 
       <!-- Header -->
-      <section class="p-7">
+     <section class="p-7">
 
-        <div
-          class="
-            flex
-            items-center
-            justify-between
-            mb-8
-          "
-        >
+       <div class="flex items-center justify-between mb-8">
 
-          <a
-            href="../"
-            class="
-              text-gray-500
-              hover:text-gray-900
-            "
-          >
-            ← Back to Library
-          </a>
+         <a
+           href="../"
+           class="
+             text-gray-500
+             hover:text-gray-900
+           "
+         >
+           ← Back to Library
+         </a>
 
-          <a
-            id="nextButton"
-            href="#"
-            class="
-              text-gray-500
-              hover:text-gray-900
-              hidden
-            "
-          >
-            Next →
-          </a>
+         <a
+           href="../post002"
+           class="
+             text-gray-500
+             hover:text-gray-900
+           "
+         >
+           Next →
+         </a>
 
-        </div>
+       </div>
 
-        <div id="meta"></div>
+       <div id="meta"></div>
 
-      </section>
+     </section>
 
-      <!-- Video -->
+      <!-- Divider -->
       <div
-        id="videoContainer"
         class="
-          border-y
+          border-t
           border-gray-200
-          bg-black
-          hidden
         "
-      >
+      ></div>
 
-        <div class="aspect-video">
-
-          <iframe
-            id="video"
-            class="
-              w-full
-              h-full
-            "
-            loading="lazy"
-            allowfullscreen
-          ></iframe>
-
-        </div>
-
-      </div>
-
-      <!-- Content -->
-      <section class="p-7">
-
-        <div
-          id="content"
-          class="content"
-        ></div>
-
-      </section>
+      <!-- PDF Pages -->
+      <div id="pages"></div>
 
     </article>
 
   </main>
 
   <script>
-    async function loadPost() {
+    /*
+      Change these only
+    */
 
-      const response =
-        await fetch("./post.txt");
+    const resource = {
+      title:
+        "Coding penting ke untuk CS vs IT vs S.E",
 
-      const text =
-        await response.text();
+      date:
+        "19 Jun 2026",
 
-      const parts =
-        text.split("[content]");
+      description:
+        "Biasanya saya akan cakap IT kurang coding, dan CS/SE banyak coding. Apa bezanya?",
 
-      if (parts.length < 2) {
-        console.error(
-          "Missing [content] section."
-        );
-        return;
-      }
+      pdf:
+        "https://syafi.github.io/free-resources/pdf/topik-programming.pdf",
 
-      const frontMatter =
-        parts[0].trim();
+      pages: [
+        "content-1.png"
+      ]
+    };
 
-      const markdown =
-        parts
-          .slice(1)
-          .join("[content]")
-          .trim();
+    /*
+      Everything below remains untouched
+    */
 
-      const post = {};
+    document.getElementById("meta")
+      .innerHTML = `
+        <p
+          class="
+            text-sm
+            text-gray-500
+            mb-2
+          "
+        >
+          PDF · ${resource.date}
+        </p>
 
-      frontMatter
-        .split("\n")
-        .forEach(line => {
+        <h1
+          class="
+            heading
+            text-4xl
+            leading-tight
+            mb-4
+          "
+        >
+          ${resource.title}
+        </h1>
 
-          const separator =
-            line.indexOf(":");
+        <p
+          class="
+            text-gray-600
+            leading-relaxed
+            mb-6
+          "
+        >
+          ${resource.description}
+        </p>
+      `;
 
-          if (separator < 0) {
-            return;
-          }
+    const pages =
+      document.getElementById("pages");
 
-          const key =
-            line
-              .slice(0, separator)
-              .trim();
-
-          const value =
-            line
-              .slice(separator + 1)
-              .trim();
-
-          post[key] = value;
-        });
-
-      document.title =
-        post.title || "Untitled";
-
-      document
-        .getElementById("meta")
-        .innerHTML = `
-          <p
-            class="
-              text-sm
-              text-gray-500
-              mb-2
-            "
-          >
-            ${post.type || "Resource"}
-            ·
-            ${post.date || ""}
-          </p>
-
-          <h1
-            class="
-              heading
-              text-4xl
-              leading-tight
-              mb-4
-            "
-          >
-            ${post.title || ""}
-          </h1>
-
-          <p
-            class="
-              text-gray-600
-              leading-relaxed
-            "
-          >
-            ${post.description || ""}
-          </p>
-        `;
-
-      if (post.video) {
-
-        document
-          .getElementById("video")
-          .src =
-            post.video;
-
-        document
-          .getElementById(
-            "videoContainer"
-          )
-          .classList
-          .remove("hidden");
-      }
-
-      if (post.next) {
-
-        const next =
-          document.getElementById(
-            "nextButton"
-          );
-
-        next.href =
-          post.next;
-
-        next.textContent =
-          `${post.nextTitle || "Next"} →`;
-
-        next.classList.remove(
-          "hidden"
-        );
-      }
-
-      document
-        .getElementById("content")
-        .innerHTML =
-          marked.parse(markdown);
-    }
-
-    loadPost();
+    resource.pages.forEach(page => {
+      pages.innerHTML += `
+        <img
+          src="${page}"
+          class="w-full block"
+          loading="lazy"
+          alt=""
+        >
+      `;
+    });
   </script>
 
 </body>
